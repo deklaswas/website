@@ -112,13 +112,26 @@ function test_input($data) {
 </div>
 
 
-<canvas id="avatarCanvas" width="160" height="160" style="border:1px solid grey"></canvas>
+<canvas 
+  id="avatarCanvas"
+  width="160"
+  height="160"
+  style="border:1px solid grey"
+  onmousedown="drawClick(event)">
+</canvas>
 
 <script>
   const c = document.getElementById("avatarCanvas");
   const ctx = c.getContext("2d");
 
   var avatar = <?php echo json_encode($avatar);?>
+
+  function drawClick(event) {
+    var color = "";
+    if (event.button == 0) color = "p";
+
+    avatar[ floor(event.offsetX/20) ][ floor(event.offsetY/20) ] = color;
+  }
 
   for (let i = 0; i < 8; i++) {
     for (let j = 0; j < 8; j++) {
@@ -132,10 +145,7 @@ function test_input($data) {
   }
 
 
-  ctx.fillStyle = "red";
-  ctx.font = "20px Georgia";
-  ctx.fillText( <?php echo '"hello"';?> , 10, 10);
-  ctx.fillText( "hello" , 10, 20);
+
 </script> 
 
 </body>
