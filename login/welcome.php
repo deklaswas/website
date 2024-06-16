@@ -44,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $sql = 'SELECT * FROM users';
         foreach ($db->query($sql) as $row) {
             if ($name == $row["name"]) {
-                $nameErr = "username is taken"
+                $nameErr = "username is taken";
             }
         }
 
