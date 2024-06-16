@@ -57,18 +57,20 @@ function test_input($data) {
 <p><span class="error">* required field</span></p>
 
 <div class="wrapper">
-    <form class="square" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
+    <div class="square">
+        <form  method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
 
-        Username <input type="text" name="name" value="<?php echo $name;?>">
-        <span class="error">* <?php echo $nameErr;?></span>
-        <br>
+            Username <input type="text" name="name" value="<?php echo $name;?>">
+            <span class="error">* <?php echo $nameErr;?></span>
+            <br>
 
-        Password <input type="password" name="password" value="<?php echo $password;?>">
-        <span class="error"><?php echo $emailErr;?></span>
-        <br>
+            Password <input type="password" name="password" value="<?php echo $password;?>">
+            <span class="error"><?php echo $emailErr;?></span>
+            <br>
 
-        <input type="submit" name="submit" value="Log in">  
-    </form>
+            <input type="submit" name="submit" value="Log in">  
+        </form>
+    </div>
 </div>
 
 
