@@ -124,20 +124,21 @@ function test_input($data) {
   height="160"
   style="border:1px solid grey">
 </canvas>
+<button type="button" onclick='paintColor = "0"'>Black</button>
+<button type="button" onclick='paintColor = "1"'>White</button>
 
 <script>
   const c = document.getElementById("avatarCanvas");
   const ctx = c.getContext("2d");
   var avatar = <?php echo json_encode($avatar);?>
+  var paintColor = "0";
 
   function getCursorPosition(canvas, event) {
     const rect = canvas.getBoundingClientRect()
     const x = event.clientX - rect.left
     const y = event.clientY - rect.top
-    
-    var color = "1";
 
-    avatar[ Math.floor(x/20) ][ Math.floor(y/20) ] = color;
+    avatar[ Math.floor(x/20) ][ Math.floor(y/20) ] = paintColor;
     drawAvatar();
   }
 
