@@ -29,11 +29,17 @@ $avatar = array (
   array("","","","","","","",""),
   array("","","","","","","",""),
   array("","","","","","","",""),
-  array("","","","","p","","",""),
+  array("","","","","","","",""),
   array("","","","","","","",""),
   array("","","","","","","",""),
   array("","","","","","","",""),
 );
+
+for ($i = 0; $i < count($avatar); $i++) {
+  for ($j = 0; $j < count($avatar); $j++) {
+    $avatar[$i][$j] = "0";
+  }
+}
 
 
 
@@ -122,21 +128,15 @@ function test_input($data) {
 <script>
   const c = document.getElementById("avatarCanvas");
   const ctx = c.getContext("2d");
-
   var avatar = <?php echo json_encode($avatar);?>
-
 
   function getCursorPosition(canvas, event) {
     const rect = canvas.getBoundingClientRect()
     const x = event.clientX - rect.left
     const y = event.clientY - rect.top
-    //console.log("x: " + x + " y: " + y)
     
     var color = "p";
-    if (event.button == 0) color = "p";
-    avatar[0][0] = "p";
 
-    //console.log(color);
     avatar[ Math.floor(x/20) ][ Math.floor(y/20) ] = color;
     drawAvatar();
   }
@@ -146,21 +146,33 @@ function test_input($data) {
       getCursorPosition(canvas, e)
   })
 
+  function colorGrab(c) {
+    switch (c) {
+      case "0": return "black";
+      case "1": return "white";
+      case "2": return "red";
+      case "3": return "blue";
+      case "4": return "lime";
+      case "5": return "cyan";
+      case "6": return "magenta";
+      case "7": return "yellow";
+      case "8": return "brown";
+      case "9": return "green";
+    }
+  }
+
   function drawAvatar() {
     console.log(avatar);
     for (let i = 0; i < 8; i++) {
       for (let j = 0; j < 8; j++) {
-        if (avatar[i][j] === "") {
-          ctx.fillStyle = "red";
-        } else {
-          ctx.fillStyle = "black";
-        }
+        ctx.fillStyle = colorGrab(avatar[i][j]);
         ctx.fillRect(i*20, j*20, 20, 20);
       }
     }
   }
 
   drawAvatar()
+
 
 </script> 
 
