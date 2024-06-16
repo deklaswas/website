@@ -145,6 +145,7 @@ function test_input($data) {
     avatar[0][0] = "p";
 
     avatar[ x/20 ][ y/20 ] = color;
+    console.log(color);
   }
 
   const canvas = document.querySelector('canvas')
