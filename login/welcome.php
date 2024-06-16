@@ -8,6 +8,7 @@
         .wrapper {
             margin: auto;
             width: 50%;
+            border-style: inset;
         }
         .box {text-align: left;}
     </style>
