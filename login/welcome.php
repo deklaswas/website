@@ -6,8 +6,8 @@
         .error {color: #FF0000;}
         .disclaimer {color: #7F7F7F;}
         .wrapper {
-            margin-left:auto;
-            margin-right:auto;
+            margin: auto;
+            width: 50%;
         }
         .box {text-align: left;}
     </style>
