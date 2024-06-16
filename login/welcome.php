@@ -28,6 +28,8 @@ $name = $password = "";
 
 $db = new PDO('sqlite:sqluserbase.db');
 
+$userRow = '';
+
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -44,15 +46,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $sql = 'SELECT * FROM users';
         foreach ($db->query($sql) as $row) {
             if ($name == $row["name"]) {
-                $nameErr = "username is taken";
+                $userRow = $row;
+                $nameErr = "identified";
             }
         }
 
     }
   }
 
+  //make sure password is not empty
   if (empty($_POST["password"])) {
     $passwordErr = "password is required";
+
+
   } else {
     $password = test_input($_POST["password"]);
     // check if e-mail address is well-formed
