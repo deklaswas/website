@@ -16,7 +16,7 @@
         }
         .colbutton {
             height:20px;
-            width:75px
+            width:100px
         }
     </style>
 </head>
