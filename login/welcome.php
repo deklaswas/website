@@ -26,23 +26,33 @@ $name = $password = "";
 
 
 
+$db = new PDO('sqlite:sqluserbase.db');
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    //make sure name is valid and not taken
+  //make sure name is not empty
   if (empty($_POST["name"])) {
     $nameErr = "username is required";
+
+  // check if name only contains letters and whitespace
   } else {
     $name = test_input($_POST["name"]);
-    // check if name only contains letters and whitespace
     if (!preg_match("/^[a-zA-Z-' ]*$/",$name)) {
       $nameErr = "invalid username; only letters and whitespace";
+    } else {
+        $sql = 'SELECT name FROM users';
+        foreach ($db->query($sql) as $row) {
+            if ($name == $row["name"]) {
+                $nameErr = "username is taken"
+            }
+        }
+
     }
   }
-  
+
   if (empty($_POST["password"])) {
-    $passErr = "password is required";
+    $passwordErr = "password is required";
   } else {
     $password = test_input($_POST["password"]);
     // check if e-mail address is well-formed
@@ -50,7 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $passwordErr = "invalid username; only letters and whitespace";
     }
   }
-    
+
 }
 
 //sanitize inputs
@@ -60,8 +70,11 @@ function test_input($data) {
   $data = htmlspecialchars($data);
   return $data;
 }
-?>
 
+
+
+
+?>
 
 
 
@@ -71,16 +84,19 @@ function test_input($data) {
 
         Username <input type="text" name="name" value="<?php echo $name;?>"><br>
         <span class="error"><?php echo $nameErr;?></span><br>
-        
+
 
         Password <input type="password" name="password" value="<?php echo $password;?>"><br>
         <span class="error"><?php echo $passwordErr;?></span><br>
-        
+
 
         <input type="submit" name="submit" value="Log in">  
     </form>
-</div>
 
+
+
+
+</div>
 
 </body>
 </html>
