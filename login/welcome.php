@@ -25,11 +25,7 @@ $nameErr = $passwordErr = "";
 $name = $password = "";
 
 
-$db = new PDO('sqlite:user.db');
-$sql = 'SELECT * FROM users';
-foreach ($db->query($sql) as $row) {
-  print_r($row); 
-}
+
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
