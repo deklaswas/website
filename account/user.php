@@ -139,6 +139,7 @@ function test_input($data) {
     //console.log(color);
     avatar[ Math.floor(x/20) ][ Math.floor(y/20) ] = color;
     console.log(avatar);
+    drawAvatar();
   }
 
   const canvas = document.querySelector('canvas')
@@ -146,19 +147,20 @@ function test_input($data) {
       getCursorPosition(canvas, e)
   })
 
-
-  for (let i = 0; i < 8; i++) {
-    for (let j = 0; j < 8; j++) {
-      if (avatar[i][j] === "") {
-        ctx.fillStyle = "red";
-      } else {
-        ctx.fillStyle = "black";
+  function drawAvatar() {
+    for (let i = 0; i < 8; i++) {
+      for (let j = 0; j < 8; j++) {
+        if (avatar[i][j] === "") {
+          ctx.fillStyle = "red";
+        } else {
+          ctx.fillStyle = "black";
+        }
+        ctx.fillRect(i*20, j*20, 20, 20);
       }
-      ctx.fillRect(i*20, j*20, 20, 20);
     }
   }
 
-
+  drawAvatar()
 
 </script> 
 
