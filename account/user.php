@@ -16,7 +16,7 @@
         }
         .colbutton {
             height:20px;
-            width:20px;
+            width:100px;
         }
     </style>
 </head>
@@ -130,16 +130,16 @@ function test_input($data) {
     style="border:1px solid grey; display: inline-block;">
   </canvas>
   <div style='display: inline-block;'>
-    <button class="colButton" type="button" onclick='paintColor = "0"'>Black</button>
-    <button class="colButton" type="button" onclick='paintColor = "1"'>White</button><br>
-    <button class="colButton" type="button" onclick='paintColor = "2"'>Red</button>
-    <button class="colButton" type="button" onclick='paintColor = "3"'>Blue</button><br>
-    <button class="colButton" type="button" onclick='paintColor = "4"'>Lime</button>
-    <button class="colButton" type="button" onclick='paintColor = "5"'>Cyan</button><br>
-    <button class="colButton" type="button" onclick='paintColor = "6"'>Magenta</button>
-    <button class="colButton" type="button" onclick='paintColor = "7"'>Yellow</button><br>
-    <button class="colButton" type="button" onclick='paintColor = "8"'>Brown</button>
-    <button class="colButton" type="button" onclick='paintColor = "9"'>Green</button>
+    <button class="colbutton" type="button" onclick='paintColor = "0"'>Black</button>
+    <button class="colbutton" type="button" onclick='paintColor = "1"'>White</button><br>
+    <button class="colbutton" type="button" onclick='paintColor = "2"'>Red</button>
+    <button class="colbutton" type="button" onclick='paintColor = "3"'>Blue</button><br>
+    <button class="colbutton" type="button" onclick='paintColor = "4"'>Lime</button>
+    <button class="colbutton" type="button" onclick='paintColor = "5"'>Cyan</button><br>
+    <button class="colbutton" type="button" onclick='paintColor = "6"'>Magenta</button>
+    <button class="colbutton" type="button" onclick='paintColor = "7"'>Yellow</button><br>
+    <button class="colbutton" type="button" onclick='paintColor = "8"'>Brown</button>
+    <button class="colbutton" type="button" onclick='paintColor = "9"'>Green</button>
   </div>
 </div>
 
