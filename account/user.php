@@ -98,18 +98,21 @@ function test_input($data) {
 
         <input type="submit" name="submit" value="Log in">  
     </form>
-
-  <script>
-    const canvas = document.getElementById("myCanvas");
-    const ctx = canvas.getContext("2d");
-
-    ctx.beginPath();
-    ctx.rect(20, 20, 150, 100);
-    ctx.stroke();
-  </script>
-
-
 </div>
+
+
+<canvas id="avatarCanvas" width="160" height="160" style="border:1px solid grey"></canvas>
+
+<script>
+  const c = document.getElementById("avatarCanvas");
+  const ctx = c.getContext("2d");
+
+  ctx.fillText( <?php echo "hello";?> , 10, 50);
+
+  ctx.beginPath();
+  ctx.rect(20, 20, 150, 100);
+  ctx.stroke();
+</script> 
 
 </body>
 </html>
