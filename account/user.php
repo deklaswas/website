@@ -135,7 +135,7 @@ function test_input($data) {
     const x = event.clientX - rect.left
     const y = event.clientY - rect.top
     
-    var color = "p";
+    var color = "1";
 
     avatar[ Math.floor(x/20) ][ Math.floor(y/20) ] = color;
     drawAvatar();
