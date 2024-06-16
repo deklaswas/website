@@ -10,7 +10,7 @@
         .disclaimer {color: #7F7F7F;}
         .wrapper {
             margin: auto;
-            padding: auto;
+            padding: 50px;
             width: 50%;
             border-style: inset;
         }
@@ -69,11 +69,11 @@ function test_input($data) {
         <form  method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
 
             Username <input type="text" name="name" value="<?php echo $name;?>"><br>
-            <span class="error">* <?php echo $nameErr;?></span><br>
+            <span class="error">           <?php echo $nameErr;?></span><br>
             
 
             Password <input type="password" name="password" value="<?php echo $password;?>"><br>
-            <span class="error"><?php echo $emailErr;?></span><br>
+            <span class="error">            <?php echo $emailErr;?></span><br>
             
 
             <input type="submit" name="submit" value="Log in">  
