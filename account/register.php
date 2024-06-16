@@ -7,7 +7,10 @@
             color: #FF0000;
             font-size: 0.875em;
         }
-        .disclaimer {color: #7F7F7F;}
+        .disclaimer {
+          color: #7F7F7F;
+          font-style: italic;
+        }
         .wrapper {
             margin: auto;
             padding: 50px;
@@ -95,8 +98,9 @@ function test_input($data) {
 
         Password <input type="password" name="password" value="<?php echo $password;?>"><br>
         <span class="error"><?php echo $passwordErr;?></span><br>
-        <span class="disclaimer">yo</span><br>
+        <span class="disclaimer">Don't use a password you use for other websites</span><br>
 
+        <br>
 
         <input type="submit" name="submit" value="Create Account">  
     </form>
