@@ -68,11 +68,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if ($passwordErr === "" && $nameErr === "") {
 
     
-    //$sql = "INSERT INTO MyGuests (firstname, lastname, email)
-    //VALUES ('John', 'Doe', 'john@example.com')";
-    $sql = "INSERT INTO users (name, password)
-    VALUES ('poopy', 'poopword')";
-    $db->exec($sql);
+    try {
+      //$sql = "INSERT INTO MyGuests (firstname, lastname, email)
+      //VALUES ('John', 'Doe', 'john@example.com')";
+      $sql = "INSERT INTO users (name, password)
+      VALUES ('poopy', 'poopword')";
+      $db->exec($sql);
+    } catch(PDOException $e) {
+      echo $sql . "<br>" . $e->getMessage();
+    }
 
   }
 }
