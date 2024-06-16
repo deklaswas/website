@@ -71,13 +71,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //$sql = "INSERT INTO MyGuests (firstname, lastname, email)
     //VALUES ('John', 'Doe', 'john@example.com')";
     $sql = "INSERT INTO users (name, password)
-    VALUES ('SipTap', 'epicpassword')";
-
-    if ($db->query($sql) === TRUE) {
-      echo "New record created successfully";
-    } else {
-      echo "Error: " . $sql . "<br>" . $conn->error;
-    }
+    VALUES ('poopy', 'poopword')";
+    $db->exec($sql);
 
   }
 }
