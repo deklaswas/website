@@ -44,13 +44,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!preg_match("/^[a-zA-Z-' ]*$/",$name)) {
       $nameErr = "invalid username; only letters and whitespace";
     } else {
-        $sql = 'SELECT * FROM users';
-        foreach ($db->query($sql) as $row) {
-            if ($name == $row["name"]) {
-              $nameErr = "username already taken";
-            }
+      $sql = 'SELECT * FROM users';
+      foreach ($db->query($sql) as $row) {
+        if (strtolower($name) == strtolower($row["name"])) {
+          $nameErr = "username already taken";
         }
-
+      }
     }
   }
 
@@ -72,9 +71,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //$sql = "INSERT INTO MyGuests (firstname, lastname, email)
     //VALUES ('John', 'Doe', 'john@example.com')";
     $sql = "INSERT INTO users (name, password)
-    VALUES('SipTap', 'epicpassword')";
+    VALUES ('SipTap', 'epicpassword')";
 
-    if ($conn->query($sql) === TRUE) {
+    if ($db->query($sql) === TRUE) {
       echo "New record created successfully";
     } else {
       echo "Error: " . $sql . "<br>" . $conn->error;
