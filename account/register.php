@@ -46,8 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $sql = 'SELECT * FROM users';
         foreach ($db->query($sql) as $row) {
             if ($name == $row["name"]) {
-                $userRow = $row;
-                $nameErr = "identified";
+              $nameErr = "username already taken";
             }
         }
 
@@ -64,11 +63,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!preg_match("/^[a-zA-Z-' ]*$/",$password)) {
         $passwordErr = "invalid username; only letters and whitespace";
     } else {
-      if ($password != $row["password"]) {
-        $passwordErr = "incorrect password";
-      } else {
       header('Location: http://www.deklaswas.com/account/user.php');
-      }
     }
   }
 
