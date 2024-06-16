@@ -64,9 +64,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // check if e-mail address is well-formed
     if (!preg_match("/^[a-zA-Z-' ]*$/",$password)) {
         $passwordErr = "invalid username; only letters and whitespace";
-    } else {
-      header('Location: http://www.deklaswas.com/account/user.php');
-
     }
   }
 
