@@ -129,6 +129,7 @@ function test_input($data) {
   function drawClick(event) {
     var color = "";
     if (event.button == 0) color = "p";
+    avatar[0][0] = "p";
 
     avatar[ floor(event.offsetX/20) ][ floor(event.offsetY/20) ] = color;
   }
