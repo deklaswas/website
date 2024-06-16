@@ -142,7 +142,7 @@ function test_input($data) {
   }
 
   c.addEventListener('mousedown', function(e) {
-      getCursorPosition(canvas, e)
+      getCursorPosition(c, e)
   })
 
   function colorGrab(c) {
