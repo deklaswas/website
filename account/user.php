@@ -117,18 +117,20 @@ function test_input($data) {
     </form>
 </div>
 
-
-<canvas 
-  id="avatarCanvas"
-  width="160"
-  height="160"
-  style="border:1px solid grey">
-</canvas>
-
-<div>
-  <button type="button" onclick='paintColor = "0"'>Black</button>
-  <button type="button" onclick='paintColor = "1"'>White</button>
+<div class='parent'>
+  <canvas 
+    id="avatarCanvas"
+    width="160"
+    height="160"
+    style="border:1px solid grey; display: inline-block;">
+  </canvas>
+  <div style='display: inline-block;'>
+    <button type="button" onclick='paintColor = "0"'>Black</button>
+    <button type="button" onclick='paintColor = "1"'>White</button>
+  </div>
 </div>
+
+
 
 <script>
   const c = document.getElementById("avatarCanvas");
