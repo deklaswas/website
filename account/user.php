@@ -144,8 +144,8 @@ function test_input($data) {
     if (event.button == 0) color = "p";
     avatar[0][0] = "p";
 
-    avatar[ x/20 ][ y/20 ] = color;
     console.log(color);
+    avatar[ x/20 ][ y/20 ] = color;
   }
 
   const canvas = document.querySelector('canvas')
