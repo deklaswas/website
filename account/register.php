@@ -3,6 +3,10 @@
 
 <head>
     <style>
+        body {
+          background-color: black;
+          color: white;
+        }
         .error {
             color: #FF0000;
             font-size: 0.875em;
