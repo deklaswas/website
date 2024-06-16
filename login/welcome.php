@@ -1,19 +1,43 @@
 <!DOCTYPE HTML>  
 <html>
+
 <head>
+    <style>
+        .error {color: #FF0000;}
+        .disclaimer {color: #7F7F7F;}
+    </style>
 </head>
 <body>  
 
 <?php
+
 // define variables and set to empty values
-$name = $email = $gender = $comment = $website = "";
+$nameErr = $passwordErr = "";
+$name = $password = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  $name = test_input($_POST["name"]);
-  $email = test_input($_POST["email"]);
-  $website = test_input($_POST["website"]);
-  $comment = test_input($_POST["comment"]);
-  $gender = test_input($_POST["gender"]);
+
+    //make sure name is valid and not taken
+  if (empty($_POST["name"])) {
+    $nameErr = "username is required";
+  } else {
+    $name = test_input($_POST["name"]);
+    // check if name only contains letters and whitespace
+    if (!preg_match("/^[a-zA-Z-' ]*$/",$name)) {
+      $nameErr = "invalid username; only letters and whitespace";
+    }
+  }
+  
+  if (empty($_POST["password"])) {
+    $passErr = "password is required";
+  } else {
+    $password = test_input($_POST["password"]);
+    // check if e-mail address is well-formed
+    if (!preg_match("/^[a-zA-Z-' ]*$/",$name)) {
+        $passErr = "invalid username; only letters and whitespace";
+    }
+  }
+    
 }
 
 function test_input($data) {
@@ -24,36 +48,28 @@ function test_input($data) {
 }
 ?>
 
-<h2>PHP Form Validation Example</h2>
+
+
+<h2>User Login</h2>
+
+<p><span class="error">* required field</span></p>
+
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
-  Name: <input type="text" name="name">
+
+  Username <input type="text" name="name" value="<?php echo $name;?>">
+
+  <span class="error">* <?php echo $nameErr;?></span>
   <br><br>
-  E-mail: <input type="text" name="email">
+
+  Password <input type="password" name="password" value="<?php echo $password;?>">
+
+  <span class="error">* <?php echo $emailErr;?></span>
   <br><br>
-  Website: <input type="text" name="website">
-  <br><br>
-  Comment: <textarea name="comment" rows="5" cols="40"></textarea>
-  <br><br>
-  Gender:
-  <input type="radio" name="gender" value="female">Female
-  <input type="radio" name="gender" value="male">Male
-  <input type="radio" name="gender" value="other">Other
-  <br><br>
-  <input type="submit" name="submit" value="Submit">  
+
+  <input type="submit" name="submit" value="Log in">  
 </form>
 
-<?php
-echo "<h2>Your Input:</h2>";
-echo $name;
-echo "<br>";
-echo $email;
-echo "<br>";
-echo $website;
-echo "<br>";
-echo $comment;
-echo "<br>";
-echo $gender;
-?>
+
 
 </body>
 </html>
