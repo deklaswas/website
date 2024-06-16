@@ -5,6 +5,8 @@
     <style>
         .error {color: #FF0000;}
         .disclaimer {color: #7F7F7F;}
+        .wrapper {text-align: center;}
+        .box {text-align: left;}
     </style>
 </head>
 <body>  
@@ -33,8 +35,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   } else {
     $password = test_input($_POST["password"]);
     // check if e-mail address is well-formed
-    if (!preg_match("/^[a-zA-Z-' ]*$/",$name)) {
-        $passErr = "invalid username; only letters and whitespace";
+    if (!preg_match("/^[a-zA-Z-' ]*$/",$password)) {
+        $passwordErr = "invalid username; only letters and whitespace";
     }
   }
     
@@ -50,25 +52,24 @@ function test_input($data) {
 
 
 
-<h2>User Login</h2>
+<h2>Sign In</h2>
 
 <p><span class="error">* required field</span></p>
 
-<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
+<div class="wrapper">
+    <form class="square" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
 
-  Username <input type="text" name="name" value="<?php echo $name;?>">
+        Username <input type="text" name="name" value="<?php echo $name;?>">
+        <span class="error">* <?php echo $nameErr;?></span>
+        <br>
 
-  <span class="error">* <?php echo $nameErr;?></span>
-  <br><br>
+        Password <input type="password" name="password" value="<?php echo $password;?>">
+        <span class="error"><?php echo $emailErr;?></span>
+        <br>
 
-  Password <input type="password" name="password" value="<?php echo $password;?>">
-
-  <span class="error">* <?php echo $emailErr;?></span>
-  <br><br>
-
-  <input type="submit" name="submit" value="Log in">  
-</form>
-
+        <input type="submit" name="submit" value="Log in">  
+    </form>
+</div>
 
 
 </body>
