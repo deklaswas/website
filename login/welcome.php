@@ -3,10 +3,14 @@
 
 <head>
     <style>
-        .error {color: #FF0000;}
+        .error {
+            color: #FF0000;
+            font-size: 0.875em;
+        }
         .disclaimer {color: #7F7F7F;}
         .wrapper {
             margin: auto;
+            padding: auto;
             width: 50%;
             border-style: inset;
         }
@@ -64,13 +68,13 @@ function test_input($data) {
     <p style="text-align: left;">
         <form  method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
 
-            Username <input type="text" name="name" value="<?php echo $name;?>">
-            <span class="error">* <?php echo $nameErr;?></span>
-            <br>
+            Username <input type="text" name="name" value="<?php echo $name;?>"><br>
+            <span class="error">* <?php echo $nameErr;?></span><br>
+            
 
-            Password <input type="password" name="password" value="<?php echo $password;?>">
-            <span class="error"><?php echo $emailErr;?></span>
-            <br>
+            Password <input type="password" name="password" value="<?php echo $password;?>"><br>
+            <span class="error"><?php echo $emailErr;?></span><br>
+            
 
             <input type="submit" name="submit" value="Log in">  
         </form>
