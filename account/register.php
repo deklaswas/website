@@ -28,9 +28,6 @@ $name = $password = "";
 
 $db = new PDO('sqlite:sqluserbase.db');
 
-$userRow = '';
-
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   //make sure name is not empty
@@ -62,11 +59,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = test_input($_POST["password"]);
     if (!preg_match("/^[a-zA-Z-' ]*$/",$password)) {
         $passwordErr = "invalid username; only letters and whitespace";
-    } else {
-      header('Location: http://www.deklaswas.com/account/user.php');
     }
   }
 
+  if ($passwordErr === "" && $nameErr === "") {
+    $sql = 'INSERT INTO users (name, password) VALUES(' . $name . ', ' . $password . ')';
+    $db->exec($sql);
+
+    header('Location: http://www.deklaswas.com/account/user.php');
+  }
 }
 
 //sanitize inputs
