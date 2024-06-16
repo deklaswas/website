@@ -111,6 +111,7 @@ function test_input($data) {
   ctx.fillRect(20, 20, 150, 100);
   ctx.stroke();
 
+  ctx.fillStyle = "red";
   ctx.font = "20px Georgia";
   ctx.fillText( <?php echo "hello";?> , 10, 10);
   ctx.fillText( "hello" , 10, 20);
