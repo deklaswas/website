@@ -126,7 +126,7 @@ function test_input($data) {
     style="border:1px solid grey; display: inline-block;">
   </canvas>
   <div style='display: inline-block;'>
-    <button type="button" onclick='paintColor = "0"'>Black</button>
+    <button style="height:15px;width:40px" type="button" onclick='paintColor = "0"'>Black</button>
     <button type="button" onclick='paintColor = "1"'>White</button><br>
     <button type="button" onclick='paintColor = "2"'>Red</button>
     <button type="button" onclick='paintColor = "3"'>Blue</button><br>
@@ -169,7 +169,7 @@ function test_input($data) {
       case "5": return "cyan";
       case "6": return "magenta";
       case "7": return "yellow";
-      case "8": return "brown";
+      case "8": return "sienna";
       case "9": return "green";
     }
   }
