@@ -116,8 +116,7 @@ function test_input($data) {
   id="avatarCanvas"
   width="160"
   height="160"
-  style="border:1px solid grey"
-  onmousedown="drawClick(event)">
+  style="border:1px solid grey">
 </canvas>
 
 <script>
@@ -126,26 +125,20 @@ function test_input($data) {
 
   var avatar = <?php echo json_encode($avatar);?>
 
-  function drawClick(event) {
-    var color = "";
-    if (event.button == 0) color = "p";
-    avatar[0][0] = "p";
-
-//    avatar[ Math.floor(event.offsetX/20) ][ Math.floor(event.offsetY/20) ] = color;
-  }
 
   function getCursorPosition(canvas, event) {
     const rect = canvas.getBoundingClientRect()
     const x = event.clientX - rect.left
     const y = event.clientY - rect.top
-    console.log("x: " + x + " y: " + y)
+    //console.log("x: " + x + " y: " + y)
     
     var color = "p";
     if (event.button == 0) color = "p";
     avatar[0][0] = "p";
 
-    console.log(color);
+    //console.log(color);
     avatar[ Math.floor(x/20) ][ Math.floor(y/20) ] = color;
+    console.log(avatar);
   }
 
   const canvas = document.querySelector('canvas')
