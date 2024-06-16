@@ -21,8 +21,19 @@
 <?php
 
 // define variables and set to empty values
-$nameErr = $passwordErr = "";
 $name = $password = "";
+
+//avatar array
+$avatar = array (
+  array("","","","","","","",""),
+  array("","","","","","","",""),
+  array("","","","","","","",""),
+  array("","","","","","","",""),
+  array("","","","","p","","",""),
+  array("","","","","","","",""),
+  array("","","","","","","",""),
+  array("","","","","","","",""),
+);
 
 
 
@@ -107,8 +118,15 @@ function test_input($data) {
   const c = document.getElementById("avatarCanvas");
   const ctx = c.getContext("2d");
 
+  var avatar = <?php echo json_encode($avatar);?>
+
   for (let i = 0; i < 8; i++) {
     for (let j = 0; j < 8; j++) {
+      if (avatar[i][j] === "") {
+        ctx.fillStyle = "red";
+      } else {
+        ctx.fillStyle = "black";
+      }
       ctx.fillRect(i*20, j*20, 20, 20);
     }
   }
