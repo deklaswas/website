@@ -14,7 +14,6 @@
             width: 50%;
             border-style: inset;
         }
-        .box {text-align: left;}
     </style>
 </head>
 <body>  
@@ -24,6 +23,14 @@
 // define variables and set to empty values
 $nameErr = $passwordErr = "";
 $name = $password = "";
+
+
+$db = new PDO('sqlite:user.db');
+$sql = 'SELECT * FROM users';
+foreach ($db->query($sql) as $row) {
+  print_r($row); 
+}
+
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -50,6 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
 }
 
+//sanitize inputs
 function test_input($data) {
   $data = trim($data);
   $data = stripslashes($data);
@@ -60,25 +68,21 @@ function test_input($data) {
 
 
 
-<h2>Sign In</h2>
-
-<p><span class="error">* required field</span></p>
 
 <div class="wrapper">
-    <p style="text-align: left;">
-        <form  method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
+    <h2>Sign In</h2>
+    <form  method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
 
-            Username <input type="text" name="name" value="<?php echo $name;?>"><br>
-            <span class="error">           <?php echo $nameErr;?></span><br>
-            
+        Username <input type="text" name="name" value="<?php echo $name;?>"><br>
+        <span class="error"><?php echo $nameErr;?></span><br>
+        
 
-            Password <input type="password" name="password" value="<?php echo $password;?>"><br>
-            <span class="error">            <?php echo $emailErr;?></span><br>
-            
+        Password <input type="password" name="password" value="<?php echo $password;?>"><br>
+        <span class="error"><?php echo $passwordErr;?></span><br>
+        
 
-            <input type="submit" name="submit" value="Log in">  
-        </form>
-    </p>
+        <input type="submit" name="submit" value="Log in">  
+    </form>
 </div>
 
 
