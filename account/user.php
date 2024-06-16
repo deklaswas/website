@@ -129,7 +129,13 @@ function test_input($data) {
     <button type="button" onclick='paintColor = "0"'>Black</button>
     <button type="button" onclick='paintColor = "1"'>White</button><br>
     <button type="button" onclick='paintColor = "2"'>Red</button>
-    <button type="button" onclick='paintColor = "3"'>Blue</button>
+    <button type="button" onclick='paintColor = "3"'>Blue</button><br>
+    <button type="button" onclick='paintColor = "4"'>Lime</button>
+    <button type="button" onclick='paintColor = "5"'>Cyan</button><br>
+    <button type="button" onclick='paintColor = "6"'>Magenta</button>
+    <button type="button" onclick='paintColor = "7"'>Yellow</button><br>
+    <button type="button" onclick='paintColor = "8"'>Brown</button>
+    <button type="button" onclick='paintColor = "9"'>Green</button>
   </div>
 </div>
 
