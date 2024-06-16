@@ -134,6 +134,19 @@ function test_input($data) {
     avatar[ floor(event.offsetX/20) ][ floor(event.offsetY/20) ] = color;
   }
 
+  function getCursorPosition(canvas, event) {
+    const rect = canvas.getBoundingClientRect()
+    const x = event.clientX - rect.left
+    const y = event.clientY - rect.top
+    console.log("x: " + x + " y: " + y)
+  }
+
+  const canvas = document.querySelector('canvas')
+  canvas.addEventListener('mousedown', function(e) {
+      getCursorPosition(canvas, e)
+  })
+
+
   for (let i = 0; i < 8; i++) {
     for (let j = 0; j < 8; j++) {
       if (avatar[i][j] === "") {
