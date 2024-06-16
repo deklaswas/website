@@ -86,7 +86,7 @@ function test_input($data) {
 
 
 <div class="wrapper">
-    <h2>Sign In</h2>
+    <h2>Registration</h2>
     <form  method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
 
         Username <input type="text" name="name" value="<?php echo $name;?>"><br>
@@ -95,9 +95,10 @@ function test_input($data) {
 
         Password <input type="password" name="password" value="<?php echo $password;?>"><br>
         <span class="error"><?php echo $passwordErr;?></span><br>
+        <span class="disclaimer">yo</span><br>
 
 
-        <input type="submit" name="submit" value="Log in">  
+        <input type="submit" name="submit" value="Create Account">  
     </form>
 
 
