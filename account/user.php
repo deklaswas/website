@@ -100,7 +100,12 @@ function test_input($data) {
     </form>
 
   <script>
-  document.getElementById("demo").innerHTML = "Hello JavaScript!";
+    const canvas = document.getElementById("myCanvas");
+    const ctx = canvas.getContext("2d");
+
+    ctx.beginPath();
+    ctx.rect(20, 20, 150, 100);
+    ctx.stroke();
   </script>
 
 
