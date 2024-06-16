@@ -107,11 +107,14 @@ function test_input($data) {
   const c = document.getElementById("avatarCanvas");
   const ctx = c.getContext("2d");
 
-  ctx.fillText( <?php echo "hello";?> , 10, 50);
 
   ctx.beginPath();
   ctx.rect(20, 20, 150, 100);
   ctx.stroke();
+
+  ctx.font = "20px Georgia";
+  ctx.fillText( <?php echo "hello";?> , 10, 10);
+  ctx.fillText( "hello" , 10, 20);
 </script> 
 
 </body>
