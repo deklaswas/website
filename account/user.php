@@ -141,8 +141,7 @@ function test_input($data) {
     drawAvatar();
   }
 
-  const canvas = document.querySelector('canvas')
-  canvas.addEventListener('mousedown', function(e) {
+  c.addEventListener('mousedown', function(e) {
       getCursorPosition(canvas, e)
   })
 
