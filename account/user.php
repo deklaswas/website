@@ -130,7 +130,8 @@ function test_input($data) {
 <script>
   const c = document.getElementById("avatarCanvas");
   const ctx = c.getContext("2d");
-  var avatar = <?php echo json_encode($avatar);?>
+  var avatar = <?php echo json_encode($avatar);?> ;
+
   var paintColor = "0";
 
   function getCursorPosition(canvas, event) {
