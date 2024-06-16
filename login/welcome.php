@@ -5,7 +5,10 @@
     <style>
         .error {color: #FF0000;}
         .disclaimer {color: #7F7F7F;}
-        .wrapper {text-align: center;}
+        .wrapper {
+            margin-left:auto;
+            margin-right:auto;
+        }
         .box {text-align: left;}
     </style>
 </head>
