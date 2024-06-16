@@ -72,16 +72,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //$sql = "INSERT INTO MyGuests (firstname, lastname, email)
     //VALUES ('John', 'Doe', 'john@example.com')";
     $sql = "INSERT INTO users (name, password)
-    VALUES(' . $name . ', ' . $password . ')";
+    VALUES('SipTap', 'epicpassword')";
 
-    //if ($conn->query($sql) === TRUE) {
-    //  echo "New record created successfully";
-    //  header('Location: http://www.deklaswas.com/account/user.php');
-    //} else {
-    //  echo "Error: " . $sql . "<br>" . $conn->error;
-    //}
+    if ($conn->query($sql) === TRUE) {
+      echo "New record created successfully";
+    } else {
+      echo "Error: " . $sql . "<br>" . $conn->error;
+    }
 
-    $db->query($sql);
   }
 }
 
