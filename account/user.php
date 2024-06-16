@@ -124,8 +124,11 @@ function test_input($data) {
   height="160"
   style="border:1px solid grey">
 </canvas>
-<button type="button" onclick='paintColor = "0"'>Black</button>
-<button type="button" onclick='paintColor = "1"'>White</button>
+
+<div>
+  <button type="button" onclick='paintColor = "0"'>Black</button>
+  <button type="button" onclick='paintColor = "1"'>White</button>
+</div>
 
 <script>
   const c = document.getElementById("avatarCanvas");
