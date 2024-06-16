@@ -107,9 +107,12 @@ function test_input($data) {
   const c = document.getElementById("avatarCanvas");
   const ctx = c.getContext("2d");
 
+  for (let i = 0; i < 8; i++) {
+    for (let j = 0; j < 8; j++) {
+      ctx.fillRect(i*20, j*20, 20, 20);
+    }
+  }
 
-  ctx.fillRect(20, 20, 150, 100);
-  ctx.stroke();
 
   ctx.fillStyle = "red";
   ctx.font = "20px Georgia";
