@@ -14,6 +14,10 @@
             width: 50%;
             border-style: inset;
         }
+        .colbutton {
+            height:20px;
+            width:75px
+        }
     </style>
 </head>
 <body>  
@@ -126,7 +130,7 @@ function test_input($data) {
     style="border:1px solid grey; display: inline-block;">
   </canvas>
   <div style='display: inline-block;'>
-    <button style="height:15px;width:40px" type="button" onclick='paintColor = "0"'>Black</button>
+    <button class="colButton" type="button" onclick='paintColor = "0"'>Black</button>
     <button type="button" onclick='paintColor = "1"'>White</button><br>
     <button type="button" onclick='paintColor = "2"'>Red</button>
     <button type="button" onclick='paintColor = "3"'>Blue</button><br>
