@@ -41,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!preg_match("/^[a-zA-Z-' ]*$/",$name)) {
       $nameErr = "invalid username; only letters and whitespace";
     } else {
-        $sql = 'SELECT name FROM users';
+        $sql = 'SELECT * FROM users';
         foreach ($db->query($sql) as $row) {
             if ($name == $row["name"]) {
                 $nameErr = "username is taken"
