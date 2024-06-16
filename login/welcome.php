@@ -57,7 +57,7 @@ function test_input($data) {
 <p><span class="error">* required field</span></p>
 
 <div class="wrapper">
-    <div class="square">
+    <p style="text-align: left;">
         <form  method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
 
             Username <input type="text" name="name" value="<?php echo $name;?>">
@@ -70,7 +70,7 @@ function test_input($data) {
 
             <input type="submit" name="submit" value="Log in">  
         </form>
-    </div>
+    </p>
 </div>
 
 
