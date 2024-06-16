@@ -131,7 +131,7 @@ function test_input($data) {
     if (event.button == 0) color = "p";
     avatar[0][0] = "p";
 
-    avatar[ floor(event.offsetX/20) ][ floor(event.offsetY/20) ] = color;
+//    avatar[ Math.floor(event.offsetX/20) ][ Math.floor(event.offsetY/20) ] = color;
   }
 
   function getCursorPosition(canvas, event) {
@@ -139,6 +139,12 @@ function test_input($data) {
     const x = event.clientX - rect.left
     const y = event.clientY - rect.top
     console.log("x: " + x + " y: " + y)
+    
+    var color = "p";
+    if (event.button == 0) color = "p";
+    avatar[0][0] = "p";
+
+    avatar[ x/20 ][ y/20 ] = color;
   }
 
   const canvas = document.querySelector('canvas')
