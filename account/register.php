@@ -20,6 +20,7 @@
             padding: 50px;
             width: 50%;
             border-style: inset;
+            border-color: darkgray;
             text-align: right;
         }
     </style>
@@ -110,7 +111,7 @@ function test_input($data) {
 
         Password <input type="password" name="password" value="<?php echo $password;?>"><br>
         <span class="error"><?php echo $passwordErr;?></span><br>
-        <span class="disclaimer">Don't use a password you use for other websites</span><br>
+        <span class="disclaimer">Don't use a password you typically use for other websites... unless you want me to see it</span><br>
 
         <br>
 

@@ -99,7 +99,9 @@ function test_input($data) {
         <input type="submit" name="submit" value="Log in">  
     </form>
 
-
+  <script>
+  document.getElementById("demo").innerHTML = "Hello JavaScript!";
+  </script>
 
 
 </div>
