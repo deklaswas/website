@@ -166,8 +166,8 @@ function test_input($data) {
   }
 
   var eventMouse;
-  c.addEventListener('mouseover', function(e) { drawCanvas(c,e) })
-  c.addEventListener('mousedown', function(e) { if (mousePressed == -1) mousePressed = setInterval(drawCanvas,100) })
+  //c.addEventListener('mouseover', function(e) { drawCanvas(c,e) })
+  c.addEventListener('mousedown', function(e) { if (mousePressed == -1) mousePressed = setInterval(drawCanvas(c,e),100) })
   c.addEventListener('mouseup', function(e) { mousePressed = -1 })
 
   function colorGrab(c) {
