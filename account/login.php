@@ -1,3 +1,8 @@
+<?php
+// Start the session
+session_start();
+?>
+
 <!DOCTYPE HTML>  
 <html>
 
@@ -67,7 +72,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       if ($password != $row["password"]) {
         $passwordErr = "incorrect password";
       } else {
+
+
+      $_SESSION["username"] = $name;
       header('Location: http://www.deklaswas.com/account/user.php');
+
+
       }
     }
   }

@@ -1,3 +1,8 @@
+<?php
+// Start the session
+session_start();
+?>
+
 <!DOCTYPE HTML>  
 <html>
 
@@ -106,7 +111,7 @@ function test_input($data) {
 
 
 <div class="wrapper">
-    <h2>Sign In</h2>
+    <h2>Sign In <?php echo $_SESSION["username"] ?>  </h2>
     <form  method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
 
         Username <input type="text" name="name" value="<?php echo $name;?>"><br>
