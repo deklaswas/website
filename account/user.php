@@ -139,7 +139,10 @@ function test_input($data) {
     <button class="colbutton" type="button" onclick='paintColor = "6"'>Magenta</button>
     <button class="colbutton" type="button" onclick='paintColor = "7"'>Yellow</button><br>
     <button class="colbutton" type="button" onclick='paintColor = "8"'>Brown</button>
-    <button class="colbutton" type="button" onclick='paintColor = "9"'>Green</button>
+    <button class="colbutton" type="button" onclick='paintColor = "9"'>Green</button><br>
+    <br>
+    <button class="colbutton" type="button" onclick='paintColor = "9"'>Green</button><br>
+    <button class="colbutton" type="button" onclick='clearCanvas()'>Clear</button>
   </div>
 </div>
 
@@ -167,7 +170,21 @@ function test_input($data) {
     console.log(mousePressed);
   }
 
+  function clearCanvas() {
+    for (let i = 0; i < 8; i++) {
+      for (let j = 0; j < 8; j++) {
+        avatar[i][j] =paintColor;
+      }
+    }
+  }
+
   //setInterval( drawCanvas(), 100);
+  c.addEventListener('mouseon', function(e) {
+    eventMouse = e;
+    //if (mousePressed == -1)
+    mousePressed = setInterval(drawCanvas,100);
+    console.log(mousePressed);
+  })
 
   //mouse up- start drawing
   c.addEventListener('mousedown', function(e) {
