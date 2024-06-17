@@ -176,12 +176,14 @@ function test_input($data) {
         avatar[i][j] =paintColor;
       }
     }
+    drawAvatar();
   }
 
   //setInterval( drawCanvas(), 100);
   c.addEventListener('mouseon', function(e) {
     eventMouse = e;
     //if (mousePressed == -1)
+    drawCanvas()
     mousePressed = setInterval(drawCanvas,100);
     console.log(mousePressed);
   })
@@ -189,7 +191,6 @@ function test_input($data) {
   //mouse up- start drawing
   c.addEventListener('mousedown', function(e) {
     eventMouse = e;
-    //if (mousePressed == -1)
     mousePressed = setInterval(drawCanvas,100);
     console.log(mousePressed);
   })
