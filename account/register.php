@@ -77,7 +77,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       //$sql = "INSERT INTO MyGuests (firstname, lastname, email)
       //VALUES ('John', 'Doe', 'john@example.com')";
       $sql = "INSERT INTO users (name, password)
-      VALUES ('poopy', 'poopword')";
+      VALUES ('" . $username . "', '" . $password . "')";
       $db->exec($sql);
     } catch(PDOException $e) {
       echo $sql . "<br>" . $e->getMessage();
