@@ -70,6 +70,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
   }
 
+  //if no problems, create the account
   if ($passwordErr === "" && $nameErr === "") {
 
     
@@ -77,7 +78,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       //$sql = "INSERT INTO MyGuests (firstname, lastname, email)
       //VALUES ('John', 'Doe', 'john@example.com')";
       $sql = "INSERT INTO users (name, password)
-      VALUES ('" . $username . "', '" . $password . "')";
+      VALUES ('" . $name . "', '" . $password . "')";
       $db->exec($sql);
     } catch(PDOException $e) {
       echo $sql . "<br>" . $e->getMessage();
@@ -101,7 +102,7 @@ function test_input($data) {
 
 
 
-<div class="wrapper">
+  <div class="wrapper">
     <h2>Registration</h2>
     <form  method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
 
@@ -111,17 +112,13 @@ function test_input($data) {
 
         Password <input type="password" name="password" value="<?php echo $password;?>"><br>
         <span class="error"><?php echo $passwordErr;?></span><br>
-        <span class="disclaimer">Don't use a password you typically use for other websites... unless you want me to see it</span><br>
+        <span class="disclaimer">Please don't use a password you would typically use for other websites...<br>unless you want me to see it</span><br>
 
         <br>
 
         <input type="submit" name="submit" value="Create Account">  
     </form>
-
-
-
-
-</div>
+  </div>
 
 </body>
 </html>
