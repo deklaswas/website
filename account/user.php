@@ -157,14 +157,15 @@ function test_input($data) {
     const x = event.clientX - rect.left
     const y = event.clientY - rect.top
 
-    avatar[ Math.floor(x/20) ][ Math.floor(y/20) ] = paintColor;
-    drawAvatar();
+    if (mousePressed) {
+      avatar[ Math.floor(x/20) ][ Math.floor(y/20) ] = paintColor;
+      drawAvatar();
+    }
   }
 
   var eventMouse;
-  c.addEventListener('mousedown', function(e) { mousePressed = true; eventMouse = e; })
-  if (mousePressed) drawCanvas(c,eventMouse)
-  console.log(mousePressed)
+  c.addEventListener('mouseover', function(e) { drawCanvas(c,e) })
+  c.addEventListener('mousedown', function(e) { mousePressed = true })
   c.addEventListener('mouseup', function(e) { mousePressed = false })
 
   function colorGrab(c) {
