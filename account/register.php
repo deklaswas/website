@@ -28,45 +28,45 @@
 <body>  
 
 <?php
-
 // define variables and set to empty values
 $nameErr = $passwordErr = "";
 $name = $password = "";
 
 
 
-$db = new PDO('sqlite:sqluserbase.db');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  
+  $db = new PDO('sqlite:sqluserbase.db');
 
-  //make sure name is not empty
-  if (empty($_POST["name"])) {
+  
+  if (empty($_POST["name"])) {//make sure name is not empty
     $nameErr = "username is required";
-
-  // check if name only contains letters and whitespace
   } else {
     $name = test_input($_POST["name"]);
-    if (!preg_match("/^[a-zA-Z-' ]*$/",$name)) {
+    if (!preg_match("/^[a-zA-Z-' ]*$/",$name)) {// check if name only contains letters and whitespace
       $nameErr = "invalid username; only letters and whitespace";
+    } elseif (strlen($name) > 20) {// check if name is not too long
+      $nameErr = "20 characters or fewer";
     } else {
       $sql = 'SELECT * FROM users';
       foreach ($db->query($sql) as $row) {
-        if (strtolower($name) == strtolower($row["name"])) {
+        if (strtolower($name) == strtolower($row["name"])) {// finally check if name is taken
           $nameErr = "username already taken";
         }
       }
     }
   }
 
-  //make sure password is not empty
-  if (empty($_POST["password"])) {
+  
+  if (empty($_POST["password"])) {//make sure password is not empty
     $passwordErr = "password is required";
-
-    // check if password has acceptable characters
   } else {
     $password = test_input($_POST["password"]);
-    if (!preg_match("/^[a-zA-Z-' ]*$/",$password)) {
+    if (!preg_match("/^[a-zA-Z-' ]*$/",$password)) {// check if password has acceptable characters
         $passwordErr = "invalid username; only letters and whitespace";
+    } elseif (strlen($password) > 20) {//check if password is not too long
+      $passwordErr = "20 characters or fewer";
     }
   }
 
@@ -80,6 +80,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $sql = "INSERT INTO users (name, password)
       VALUES ('" . $name . "', '" . $password . "')";
       $db->exec($sql);
+      
+      header('Location: http://www.deklaswas.com/account/user.php');
+      die();
     } catch(PDOException $e) {
       echo $sql . "<br>" . $e->getMessage();
     }
