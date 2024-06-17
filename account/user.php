@@ -167,7 +167,7 @@ function test_input($data) {
     console.log(mousePressed);
   }
 
-  setInterval( function () { console.log("hi") }, 1000);
+  setInterval( drawCanvas(), 100);
 
   //mouse up- start drawing
   c.addEventListener('mousedown', function(e) {
