@@ -161,6 +161,7 @@ function test_input($data) {
       avatar[ Math.floor(x/20) ][ Math.floor(y/20) ] = paintColor;
       drawAvatar();
     }
+    console.log('poo');
   }
 
   var eventMouse;
