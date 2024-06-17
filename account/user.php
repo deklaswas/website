@@ -147,27 +147,28 @@ function test_input($data) {
   const c = document.getElementById("avatarCanvas");
   const ctx = c.getContext("2d");
   var avatar = <?php echo json_encode($avatar);?> ;
-  var mousePressed = false;
   var drawStyle = "pencil";
 
   var paintColor = "0";
+
+
+  var mousePressed = -1;
+
 
   function drawCanvas(canvas, event) {
     const rect = canvas.getBoundingClientRect()
     const x = event.clientX - rect.left
     const y = event.clientY - rect.top
 
-    if (mousePressed) {
-      avatar[ Math.floor(x/20) ][ Math.floor(y/20) ] = paintColor;
-      drawAvatar();
-    }
-    console.log('poo');
+    avatar[ Math.floor(x/20) ][ Math.floor(y/20) ] = paintColor;
+    drawAvatar();
+    
   }
 
   var eventMouse;
   c.addEventListener('mouseover', function(e) { drawCanvas(c,e) })
-  c.addEventListener('mousedown', function(e) { mousePressed = true })
-  c.addEventListener('mouseup', function(e) { mousePressed = false })
+  c.addEventListener('mousedown', function(e) { if (mousePressed == -1) mousePressed = setInterval(drawCanvas,100) })
+  c.addEventListener('mouseup', function(e) { mousePressed = -1 })
 
   function colorGrab(c) {
     switch (c) {
