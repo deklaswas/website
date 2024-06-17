@@ -167,12 +167,13 @@ function test_input($data) {
     console.log(mousePressed);
   }
 
-  setInterval( drawCanvas(), 100);
+  //setInterval( drawCanvas(), 100);
 
   //mouse up- start drawing
   c.addEventListener('mousedown', function(e) {
     eventMouse = e;
-    if (mousePressed == -1) mousePressed = setInterval(drawCanvas(c,e),100);
+    //if (mousePressed == -1)
+    mousePressed = setInterval(drawCanvas,100);
     console.log(mousePressed);
   })
   
