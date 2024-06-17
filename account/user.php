@@ -153,12 +153,13 @@ function test_input($data) {
 
 
   var mousePressed = -1;
+  var eventMouse;
 
 
-  function drawCanvas(canvas, event) {
-    const rect = canvas.getBoundingClientRect()
-    const x = event.clientX - rect.left
-    const y = event.clientY - rect.top
+  function drawCanvas() {
+    const rect = c.getBoundingClientRect()
+    const x = eventMouse.clientX - rect.left
+    const y = eventMouse.clientY - rect.top
 
     avatar[ Math.floor(x/20) ][ Math.floor(y/20) ] = paintColor;
     drawAvatar();
@@ -166,10 +167,18 @@ function test_input($data) {
     console.log(mousePressed);
   }
 
-  var eventMouse;
-  //c.addEventListener('mouseover', function(e) { drawCanvas(c,e) })
-  c.addEventListener('mousedown', function(e) { if (mousePressed == -1) mousePressed = setInterval(drawCanvas(c,e),100);console.log(mousePressed); })
-  c.addEventListener('mouseup', function(e) { mousePressed = -1; console.log(mousePressed); })
+  //mouse up- start drawing
+  c.addEventListener('mousedown', function(e) {
+    eventMouse = e;
+    if (mousePressed == -1) mousePressed = setInterval(drawCanvas(c,e),100);
+    console.log(mousePressed);
+  })
+  
+  //mouse up- stop drawing
+  c.addEventListener('mouseup', function(e) {
+    clearInterval(mousePressed);
+    mousePressed = -1;
+  })
 
   function colorGrab(c) {
     switch (c) {
