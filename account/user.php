@@ -163,6 +163,7 @@ function test_input($data) {
     avatar[ Math.floor(x/20) ][ Math.floor(y/20) ] = paintColor;
     drawAvatar();
     
+    console.log(mousePressed);
   }
 
   var eventMouse;
@@ -186,7 +187,6 @@ function test_input($data) {
   }
 
   function drawAvatar() {
-    console.log(avatar);
     for (let i = 0; i < 8; i++) {
       for (let j = 0; j < 8; j++) {
         ctx.fillStyle = colorGrab(avatar[i][j]);
