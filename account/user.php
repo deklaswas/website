@@ -164,6 +164,7 @@ function test_input($data) {
   var eventMouse;
   c.addEventListener('mousedown', function(e) { mousePressed = true; eventMouse = e; })
   if (mousePressed) drawCanvas(c,eventMouse)
+  console.log(mousePressed)
   c.addEventListener('mouseup', function(e) { mousePressed = false })
 
   function colorGrab(c) {
