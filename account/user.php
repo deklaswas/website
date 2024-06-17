@@ -150,7 +150,7 @@ function test_input($data) {
 
   var paintColor = "0";
 
-  function getCursorPosition(canvas, event) {
+  function drawCanvas(canvas, event) {
     const rect = canvas.getBoundingClientRect()
     const x = event.clientX - rect.left
     const y = event.clientY - rect.top
@@ -159,9 +159,8 @@ function test_input($data) {
     drawAvatar();
   }
 
-  c.addEventListener('mousedown', function(e) {
-      getCursorPosition(c, e)
-  })
+  c.addEventListener('mousedown', function(e) {drawCanvas(c, e)})
+  c.addEventListener('mouseup', function(e) {drawCanvas(c, e)})
 
   function colorGrab(c) {
     switch (c) {
