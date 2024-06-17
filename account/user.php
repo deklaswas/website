@@ -147,6 +147,8 @@ function test_input($data) {
   const c = document.getElementById("avatarCanvas");
   const ctx = c.getContext("2d");
   var avatar = <?php echo json_encode($avatar);?> ;
+  var mousePressed = false;
+  var drawStyle = "pencil";
 
   var paintColor = "0";
 
@@ -159,8 +161,9 @@ function test_input($data) {
     drawAvatar();
   }
 
-  c.addEventListener('mousedown', function(e) {drawCanvas(c, e)})
-  c.addEventListener('mouseup', function(e) {drawCanvas(c, e)})
+  c.addEventListener('mousedown', function(e) { mousePressed = true })
+  if (mousePressed) drawCanvas(c,e)
+  c.addEventListener('mouseup', function(e) { mousePressed = false })
 
   function colorGrab(c) {
     switch (c) {
