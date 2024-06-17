@@ -69,8 +69,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!preg_match("/^[a-zA-Z-' ]*$/",$password)) {
         $passwordErr = "invalid username; only letters and whitespace";
     } else {
-      if ($password !== $row["password"]) {
-        $passwordErr = "incorrect password (". $row["password"] ;
+      if ($password !== $userRow["password"]) {
+        $passwordErr = "incorrect password";// (". $userRow["password"] ;
       } else {
 
 
