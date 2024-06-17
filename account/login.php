@@ -76,7 +76,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
       $_SESSION["username"] = $name;
       header('Location: http://www.deklaswas.com/account/user.php');
-
+      die();
 
       }
     }

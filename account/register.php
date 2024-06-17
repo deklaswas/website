@@ -86,6 +86,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       VALUES ('" . $name . "', '" . $password . "')";
       $db->exec($sql);
       
+      $_SESSION["username"] = $name;
       header('Location: http://www.deklaswas.com/account/user.php');
       die();
     } catch(PDOException $e) {

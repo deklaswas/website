@@ -112,17 +112,15 @@ function test_input($data) {
 
 <div class="wrapper">
     <h2>Sign In <?php echo $_SESSION["username"] ?>  </h2>
-    <form  method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
-
-        Username <input type="text" name="name" value="<?php echo $name;?>"><br>
-        <span class="error"><?php echo $nameErr;?></span><br>
-
-
-        Password <input type="password" name="password" value="<?php echo $password;?>"><br>
-        <span class="error"><?php echo $passwordErr;?></span><br>
+    <canvas 
+      id="profileCanvas"
+      width="160"
+      height="160"
+      style="border:1px solid grey; display: inline-block;">
+    </canvas>
 
 
-        <input type="submit" name="submit" value="Log in">  
+  
     </form>
 </div>
 
@@ -146,15 +144,24 @@ function test_input($data) {
     <button class="colbutton" type="button" onclick='paintColor = "8"'>Brown</button>
     <button class="colbutton" type="button" onclick='paintColor = "9"'>Green</button><br>
     <br>
+    <button class="colbutton" type="button" onclick='paintColor = "9"'>Green</button>
     <button class="colbutton" type="button" onclick='paintColor = "9"'>Green</button><br>
     <button class="colbutton" type="button" onclick='clearCanvas()'>Clear</button>
+    <button class="colbutton" type="button" onclick='submitAvatar();'>Submit</button>
   </div>
 </div>
 
 <script>
+
+  //canvas for editor
   const c = document.getElementById("avatarCanvas");
   const ctx = c.getContext("2d");
+
+  const pc = document.getElementById("profileCanvas");
+  const pctx = c.getContext("2d");
+
   var avatar = <?php echo json_encode($avatar);?> ;
+  
   var drawStyle = "pencil";
 
   var paintColor = "0";
@@ -170,7 +177,7 @@ function test_input($data) {
     const y = eventMouse.clientY - rect.top
 
     avatar[ Math.floor(x/20) ][ Math.floor(y/20) ] = paintColor;
-    drawAvatar();
+    drawAvatar(ctx);
     
     console.log(mousePressed);
   }
@@ -181,7 +188,7 @@ function test_input($data) {
         avatar[i][j] =paintColor;
       }
     }
-    drawAvatar();
+    drawAvatar(ctx);
   }
 
   //setInterval( drawCanvas(), 100);
@@ -221,16 +228,22 @@ function test_input($data) {
     }
   }
 
-  function drawAvatar() {
+  function drawAvatar(context) {
     for (let i = 0; i < 8; i++) {
       for (let j = 0; j < 8; j++) {
-        ctx.fillStyle = colorGrab(avatar[i][j]);
-        ctx.fillRect(i*20, j*20, 20, 20);
+        context.fillStyle = colorGrab(avatar[i][j]);
+        context.fillRect(i*20, j*20, 20, 20);
       }
     }
   }
 
-  drawAvatar()
+  drawAvatar(ctx);
+  drawAvatar(pctx);
+
+  function submitAvatar() {
+    drawAvatar(pctx);
+
+  }
 
 
 </script> 
