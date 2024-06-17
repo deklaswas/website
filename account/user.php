@@ -163,13 +163,13 @@ function test_input($data) {
     avatar[ Math.floor(x/20) ][ Math.floor(y/20) ] = paintColor;
     drawAvatar();
     
-    console.log(mousePressed);
+    
   }
 
   var eventMouse;
   //c.addEventListener('mouseover', function(e) { drawCanvas(c,e) })
-  c.addEventListener('mousedown', function(e) { if (mousePressed == -1) mousePressed = setInterval(drawCanvas(c,e),100) })
-  c.addEventListener('mouseup', function(e) { mousePressed = -1 })
+  c.addEventListener('mousedown', function(e) { if (mousePressed == -1) mousePressed = setInterval(drawCanvas(c,e),100);console.log(mousePressed); })
+  c.addEventListener('mouseup', function(e) { mousePressed = -1; console.log(mousePressed); })
 
   function colorGrab(c) {
     switch (c) {
