@@ -145,6 +145,7 @@ function test_input($data) {
     <br>
     <button class="colbutton" type="button" onclick='clearCanvas()'>Clear</button>
     <button class="colbutton" type="button" onclick='clearCanvas()'>Clear</button>
+    <br>
 
 
   </div>
