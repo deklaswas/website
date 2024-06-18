@@ -57,7 +57,7 @@ $db = new PDO('sqlite:sqluserbase.db');
 $userRow = '';
 
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+//if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   //make sure name is not empty
   if (empty($_POST["name"])) {
@@ -93,7 +93,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
   }
 
-}
+//}
 
 //sanitize inputs
 function test_input($data) {
@@ -120,7 +120,7 @@ function test_input($data) {
     </canvas>
 </div>
 
-
+<br>
 <div class='parent'>
   <canvas 
     id="avatarCanvas"
