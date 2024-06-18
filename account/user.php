@@ -49,7 +49,7 @@ $avatarString = "";
 for ($i = 0; $i < count($avatar); $i++) {
   for ($j = 0; $j < count($avatar); $j++) {
     $avatar[$i][$j] = "0";
-    $avatarString += $avatar[$i][$j];
+    $avatarString = $avatarString . $avatar[$i][$j];
   }
 }
 
