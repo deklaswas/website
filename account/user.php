@@ -71,6 +71,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!preg_match("/^[0-9]*$/", test_input($_POST["avatar"]))) {
 
       $avatarString = test_input($_POST["avatar"]);
+
+      echo "<script>console.log('Debug Objects: " . $avatarString . "' );</script>";
+      
+
       try {
         $sql = 'UPDATE users SET avatar = '. $avatarString . 'WHERE name =' . $_SESSION["username"] . ";";
         $db->exec($sql);
@@ -98,7 +102,7 @@ function test_input($data) {
 
 
 <div class="wrapper">
-    <h2>Sign In <?php echo $_SESSION["username"] ?>  </h2>
+    <h2> <?php echo $_SESSION["username"] ?> </h2>
     <canvas 
       id="profileCanvas"
       width="80"
