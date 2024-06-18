@@ -185,8 +185,6 @@ function test_input($data) {
 
     avatar[ x ][ y ] = paintColor;
     drawAvatar(ctx,160);
-
-    textFieldAvatar.value = "New value";
     
     console.log(mousePressed);
   }
@@ -239,12 +237,16 @@ function test_input($data) {
 
   function drawAvatar(contextDraw,sizeo) {
     sizeo /= 8;
+    var valo = "";
     for (let i = 0; i < 8; i++) {
       for (let j = 0; j < 8; j++) {
         contextDraw.fillStyle = colorGrab(avatar[i][j]);
         contextDraw.fillRect(i*sizeo, j*sizeo, sizeo, sizeo);
+
+        valo += avatar[i][j];
       }
     }
+    textFieldAvatar.value = valo;
   }
 
   drawAvatar(ctx,160);
