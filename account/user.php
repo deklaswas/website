@@ -64,13 +64,12 @@ $db = new PDO('sqlite:sqluserbase.db');
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   //make sure avatar string is not empty
-  if (!empty($_POST["avatar"])) {
-    $nameErr = "username is required";
+  if (!empty($_POST["avatarString"])) {
+    $avatarString = test_input($_POST["avatarString"]);
 
     // check if name only contains numbers
-    if (!preg_match("/^[0-9]*$/", test_input($_POST["avatar"]))) {
+    if (!preg_match("/^[0-9]*$/", $avatarString)) {
 
-      $avatarString = test_input($_POST["avatar"]);
 
       echo "<script>console.log('Debug Objects: " . $avatarString . "' );</script>";
       
@@ -141,7 +140,7 @@ function test_input($data) {
 
     </div>
     <br>
-      <input id="avatarInput" type="text" name="avatar" maxlength="64" minlength="64" size="64" style="font-size:0.59em" value="<?php echo $avatarString;?>"> 
+      <input id="avatarInput" type="text" name="avatarString" maxlength="64" minlength="64" size="64" style="font-size:0.59em" value="<?php echo $avatarString;?>"> 
   </div>
 </form>
 
