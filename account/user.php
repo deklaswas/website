@@ -27,7 +27,7 @@ session_start();
 </head>
 <body>  
 
-<form?php
+<?php
 
 // define variables and set to empty values
 $name = $password = "";
