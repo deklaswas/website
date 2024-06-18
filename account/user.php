@@ -51,6 +51,16 @@ $avatar = array (
 
 $avatarString = "0000000000000000000000000000000000000000000000000000000000000000";
 
+try {
+  $sql = 'SELECT avatar WHERE name =' . $_SESSION["username"] . ";";
+  $avatarString = $db->query($sql);
+} catch(PDOException $e) {
+  echo $sql . "<br>" . $e->getMessage();
+}
+
+if ($avatarString = "") $avatarString = "0000000000000000000000000000000000000000000000000000000000000000";
+
+
 for ($i = 0; $i < count($avatar); $i++) {
   for ($j = 0; $j < count($avatar); $j++) {
     $avatar[$i][$j] = substr($avatarString, $i + $j*8,1);
