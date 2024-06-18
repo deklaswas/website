@@ -23,6 +23,9 @@ session_start();
             height:20px;
             width:100px;
         }
+        .parent {
+            border-style: inset;
+        }
     </style>
 </head>
 <body>  
@@ -127,34 +130,34 @@ function test_input($data) {
 
 
 <form  method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-<div class='parent'>
-  <canvas 
-    id="avatarCanvas"
-    width="160"
-    height="160"
-    style="border:1px solid grey; display: inline-block;">
-  </canvas>
-  <div style='display: inline-block; vertical-align: text-bottom;'>
-    <button class="colbutton" type="button" onclick='paintColor = "0"'>Black</button>
-    <button class="colbutton" type="button" onclick='paintColor = "1"'>White</button><br>
-    <button class="colbutton" type="button" onclick='paintColor = "2"'>Red</button>
-    <button class="colbutton" type="button" onclick='paintColor = "3"'>Blue</button><br>
-    <button class="colbutton" type="button" onclick='paintColor = "4"'>Lime</button>
-    <button class="colbutton" type="button" onclick='paintColor = "5"'>Cyan</button><br>
-    <button class="colbutton" type="button" onclick='paintColor = "6"'>Magenta</button>
-    <button class="colbutton" type="button" onclick='paintColor = "7"'>Yellow</button><br>
-    <button class="colbutton" type="button" onclick='paintColor = "8"'>Brown</button>
-    <button class="colbutton" type="button" onclick='paintColor = "9"'>Green</button><br>
+  <div class='parent'>
+    <canvas 
+      id="avatarCanvas"
+      width="160"
+      height="160"
+      style="border:1px solid grey; display: inline-block;">
+    </canvas>
+    <div style='display: inline-block; vertical-align: text-bottom;'>
+      <button class="colbutton" type="button" onclick='paintColor = "0"'>Black</button>
+      <button class="colbutton" type="button" onclick='paintColor = "1"'>White</button><br>
+      <button class="colbutton" type="button" onclick='paintColor = "2"'>Red</button>
+      <button class="colbutton" type="button" onclick='paintColor = "3"'>Blue</button><br>
+      <button class="colbutton" type="button" onclick='paintColor = "4"'>Lime</button>
+      <button class="colbutton" type="button" onclick='paintColor = "5"'>Cyan</button><br>
+      <button class="colbutton" type="button" onclick='paintColor = "6"'>Magenta</button>
+      <button class="colbutton" type="button" onclick='paintColor = "7"'>Yellow</button><br>
+      <button class="colbutton" type="button" onclick='paintColor = "8"'>Brown</button>
+      <button class="colbutton" type="button" onclick='paintColor = "9"'>Green</button><br>
+      <br>
+      <button class="colbutton" type="button" onclick='clearCanvas()'>Clear</button>
+      <button class="colbutton" type="button" onclick='clearCanvas()'>Clear</button><br>
+      <button class="colbutton" type="submit" onclick='submitAvatar();'>Submit</button>
+
+
+    </div>
     <br>
-    <button class="colbutton" type="button" onclick='clearCanvas()'>Clear</button>
-    <button class="colbutton" type="button" onclick='clearCanvas()'>Clear</button><br>
-    <button class="colbutton" type="submit" onclick='submitAvatar();'>Submit</button>
-
-
+      <input id="avatarInput" type="text" name="avatar" maxlength="64" minlength="64" size="64" style="font-size:0.59em" value="<?php echo $avatarString;?>"> 
   </div>
-  <br>
-    <input id="avatarInput" type="text" name="avatar" maxlength="64" minlength="64" size="64" style="font-size:0.58em" value="<?php echo $avatarString;?>"> 
-</div>
 </form>
 
 <script>
