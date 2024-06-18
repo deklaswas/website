@@ -44,9 +44,12 @@ $avatar = array (
   array("","","","","","","",""),
 );
 
+$avatarString = "";
+
 for ($i = 0; $i < count($avatar); $i++) {
   for ($j = 0; $j < count($avatar); $j++) {
     $avatar[$i][$j] = "0";
+    $avatarString += $avatar[$i][$j];
   }
 }
 
@@ -140,15 +143,14 @@ function test_input($data) {
     <button class="colbutton" type="button" onclick='paintColor = "8"'>Brown</button>
     <button class="colbutton" type="button" onclick='paintColor = "9"'>Green</button><br>
     <br>
-    <button class="colbutton" type="button" onclick='paintColor = "9"'>Green</button>
-    <button class="colbutton" type="button" onclick='paintColor = "9"'>Green</button><br>
+    <button class="colbutton" type="button" onclick='clearCanvas()'>Clear</button>
     <button class="colbutton" type="button" onclick='clearCanvas()'>Clear</button>
 
 
   </div>
 
   <form  method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-    <input type="text" name="name" value="<?php echo $name;?>"><br>
+    <input id="avatarInput" type="text" name="name" value="<?php echo $avatarString;?>">
     <button class="colbutton" type="button" onclick='submitAvatar();'>Submit</button>
   </form>
   
@@ -163,6 +165,8 @@ function test_input($data) {
   const pc = document.getElementById("profileCanvas");
   const pctx = pc.getContext("2d");
 
+  var textFieldAvatar = document.getElementById("avatarInput");
+
   var avatar = <?php echo json_encode($avatar);?> ;
   
   var drawStyle = "pencil";
@@ -176,11 +180,13 @@ function test_input($data) {
 
   function drawCanvas() {
     const rect = c.getBoundingClientRect()
-    const x = eventMouse.clientX - rect.left
-    const y = eventMouse.clientY - rect.top
+    const x = Math.floor((eventMouse.clientX - rect.left)/20)
+    const y = Math.floor((eventMouse.clientY - rect.top)/20)
 
-    avatar[ Math.floor(x/20) ][ Math.floor(y/20) ] = paintColor;
+    avatar[ x ][ y ] = paintColor;
     drawAvatar(ctx,160);
+
+    textFieldAvatar.value = "New value";
     
     console.log(mousePressed);
   }
