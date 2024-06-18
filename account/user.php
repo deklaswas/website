@@ -25,6 +25,7 @@ session_start();
         }
         .parent {
             border-style: inset;
+            padding: 50px;
         }
     </style>
 </head>
@@ -214,6 +215,7 @@ function test_input($data) {
   //mouse up- start drawing
   c.addEventListener('mousedown', function(e) {
     eventMouse = e;
+    drawCanvas();
     mousePressed = setInterval(drawCanvas,100);
     console.log(mousePressed);
   })
