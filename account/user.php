@@ -131,7 +131,7 @@ function test_input($data) {
     height="160"
     style="border:1px solid grey; display: inline-block;">
   </canvas>
-  <div style='display: inline-block;'>
+  <div style='display: inline-block; vertical-align: text-top;'>
     <button class="colbutton" type="button" onclick='paintColor = "0"'>Black</button>
     <button class="colbutton" type="button" onclick='paintColor = "1"'>White</button><br>
     <button class="colbutton" type="button" onclick='paintColor = "2"'>Red</button>
