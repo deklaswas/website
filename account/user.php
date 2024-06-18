@@ -150,7 +150,7 @@ function test_input($data) {
   </div>
 
   <form  method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-    <input id="avatarInput" type="text" name="avatar" maxlength="64" minlength="64" size="64" style="font-size:0.875em" value="<?php echo $avatarString;?>">
+    <input id="avatarInput" type="text" name="avatar" maxlength="64" minlength="64" size="64" style="font-size:0.675em" value="<?php echo $avatarString;?>">
     <button class="colbutton" type="button" onclick='submitAvatar();'>Submit</button>
   </form>
   
