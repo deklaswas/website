@@ -31,6 +31,7 @@ session_start();
 </head>
 <body>  
 
+
 <?php
 
 // define variables and set to empty values
@@ -48,12 +49,11 @@ $avatar = array (
   array("","","","","","","",""),
 );
 
-$avatarString = "";
+$avatarString = "0000000000000000000000000000000000000000000000000000000000000000";
 
 for ($i = 0; $i < count($avatar); $i++) {
   for ($j = 0; $j < count($avatar); $j++) {
-    $avatar[$i][$j] = "0";
-    $avatarString = $avatarString . $avatar[$i][$j];
+    $avatar[$i][$j] = substr($avatarString, $i + $j*8,1);
   }
 }
 
@@ -61,46 +61,26 @@ for ($i = 0; $i < count($avatar); $i++) {
 
 $db = new PDO('sqlite:sqluserbase.db');
 
-$userRow = '';
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-
-//if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
-  //make sure name is not empty
-  if (empty($_POST["name"])) {
+  //make sure avatar string is not empty
+  if (!empty($_POST["avatar"])) {
     $nameErr = "username is required";
 
-  // check if name only contains letters and whitespace
-  } else {
-    $name = test_input($_POST["name"]);
-    if (!preg_match("/^[a-zA-Z-' ]*$/",$name)) {
-      $nameErr = "invalid username; only letters and whitespace";
-    } else {
-        $sql = 'SELECT * FROM users';
-        foreach ($db->query($sql) as $row) {
-            if ($name == $row["name"]) {
-                $userRow = $row;
-                $nameErr = "identified";
-            }
-        }
+    // check if name only contains numbers
+    if (!preg_match("/^[0-9]*$/", test_input($_POST["avatar"]))) {
 
+      $avatarString = test_input($_POST["avatar"]);
+      try {
+        $sql = 'UPDATE users SET avatar = '. $avatarString . 'WHERE name =' . $_SESSION["username"] . ";";
+        $db->exec($sql);
+      } catch(PDOException $e) {
+        echo $sql . "<br>" . $e->getMessage();
+      }
     }
   }
+}
 
-  //make sure password is not empty
-  if (empty($_POST["password"])) {
-    $passwordErr = "password is required";
-
-
-  } else {
-    $password = test_input($_POST["password"]);
-    // check if e-mail address is well-formed
-    if (!preg_match("/^[a-zA-Z-' ]*$/",$password)) {
-        $passwordErr = "invalid username; only letters and whitespace";
-    }
-  }
-
-//}
 
 //sanitize inputs
 function test_input($data) {
