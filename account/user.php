@@ -144,11 +144,14 @@ function test_input($data) {
     <button class="colbutton" type="button" onclick='paintColor = "9"'>Green</button><br>
     <button class="colbutton" type="button" onclick='clearCanvas()'>Clear</button>
 
-    <form  method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
-    <button class="colbutton" type="button" onclick='submitAvatar();'>Submit</button>
-    </form>
 
   </div>
+
+  <form  method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+    <input type="text" name="name" value="<?php echo $name;?>"><br>
+    <button class="colbutton" type="button" onclick='submitAvatar();'>Submit</button>
+  </form>
+  
 </div>
 
 <script>
