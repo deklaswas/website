@@ -51,12 +51,12 @@ $avatar = array (
 
 $avatarString = "0000000000000000000000000000000000000000000000000000000000000000";
 
-try {
-  $sql = 'SELECT avatar WHERE name =' . $_SESSION["username"] . ";";
-  $avatarString = $db->query($sql);
-} catch(PDOException $e) {
-  echo $sql . "<br>" . $e->getMessage();
-}
+//try {
+//  $sql = 'SELECT avatar WHERE name =' . $_SESSION["username"] . ";";
+//  $avatarString = $db->query($sql);
+//} catch(PDOException $e) {
+//  echo $sql . "<br>" . $e->getMessage();
+//}
 
 if ($avatarString = "") $avatarString = "0000000000000000000000000000000000000000000000000000000000000000";
 
