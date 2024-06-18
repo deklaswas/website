@@ -27,7 +27,7 @@ session_start();
 </head>
 <body>  
 
-<?php
+<form?php
 
 // define variables and set to empty values
 $name = $password = "";
@@ -118,10 +118,6 @@ function test_input($data) {
       height="80"
       style="border:1px solid grey; display: inline-block;">
     </canvas>
-
-
-  
-    </form>
 </div>
 
 
@@ -147,7 +143,11 @@ function test_input($data) {
     <button class="colbutton" type="button" onclick='paintColor = "9"'>Green</button>
     <button class="colbutton" type="button" onclick='paintColor = "9"'>Green</button><br>
     <button class="colbutton" type="button" onclick='clearCanvas()'>Clear</button>
+
+    <form  method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
     <button class="colbutton" type="button" onclick='submitAvatar();'>Submit</button>
+    </form>
+
   </div>
 </div>
 
@@ -243,6 +243,15 @@ function test_input($data) {
 
   function submitAvatar() {
     drawAvatar(pctx,80);
+
+    //turn avatar into string
+    var avatarString = "";
+    for (let i = 0; i < 8; i++) {
+      for (let j = 0; j < 8; j++) {
+        avatarString += avatar[i][j];
+      }
+    }
+
 
   }
 
