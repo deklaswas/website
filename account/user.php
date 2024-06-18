@@ -152,6 +152,7 @@ function test_input($data) {
 
 
   </div>
+  <br>
     <input id="avatarInput" type="text" name="avatar" maxlength="64" minlength="64" size="64" style="font-size:0.58em" value="<?php echo $avatarString;?>"> 
 </div>
 </form>
