@@ -2,7 +2,7 @@
 // Start the session
 session_start();
 
-if ($_SESSION["username"] = '') {
+if ($_SESSION["username"] = '' || session_status() != PHP_SESSION_ACTIVE) {
   header('Location: http://www.deklaswas.com/account/login.php');
   die();
 }
