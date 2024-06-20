@@ -125,7 +125,7 @@ function test_input($data) {
 
 
 <div class="wrapper">
-    <h2 id = "nameColor"> <?php echo $_SESSION["username"] ?> </h2>
+    <h2 id = "nameColor" style="margin-bottom: 10px"> <?php echo $_SESSION["username"] ?> </h2>
     <h3 id = "roleColor"> User </h3>
     <canvas 
       id="profileCanvas"
@@ -271,7 +271,7 @@ function test_input($data) {
         contextDraw.fillStyle = colorGrab(avatar[i][j]);
         contextDraw.fillRect(i*sizeo, j*sizeo, sizeo, sizeo);
 
-        valo += avatar[i][j];
+        valo += avatar[j][i];
       }
     }
     textFieldAvatar.value = valo;
