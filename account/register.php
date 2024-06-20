@@ -42,12 +42,10 @@ $db = new PDO('sqlite:sqluserbase.db');
 try {
   $sql = "SELECT * FROM users WHERE name = 'deklaswas';";
   $stringTest = $db->query($sql);
-  $thing = $stringTest->fetchAll();
-  print_r($result);
-  //foreach ($db->query($sql) as $row) {
-  //    print_r($row);
-  //    echo '<br/>';
-  //}
+  foreach ($db->query($sql) as $row) {
+      print_r($row["avatar"]);
+      echo '<br/>';
+  }
 
   
 
