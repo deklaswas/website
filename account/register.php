@@ -41,8 +41,12 @@ $name = $password = "";
 $db = new PDO('sqlite:sqluserbase.db');
 try {
   $sql = "SELECT * FROM users WHERE name = 'deklaswas';";
-  $stringTest = $db->exec($sql);
+  $stringTest = $db->query($sql);
   print_r($stringTest);
+  //foreach ($db->query($sql) as $row) {
+  //    print_r($row);
+  //    echo '<br/>';
+  //}
 } catch(PDOException $e) {
   echo $sql . "<br>" . $e->getMessage();
 }
