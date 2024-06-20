@@ -131,7 +131,7 @@ function test_input($data) {
       id="profileCanvas"
       width="80"
       height="80"
-      style="border:1px solid grey; display: inline-block;">
+      style="border:1px solid grey; display: inline-block; float: right;">
     </canvas>
 </div>
 
