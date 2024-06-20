@@ -62,9 +62,9 @@ $avatarString = "000000000000000000000000000000000000000000000000000000000000000
 try {
   $sql = "SELECT avatar FROM users WHERE name = '" . $_SESSION["username"] . "';";
 //  $testString = $db->query($sql);
-//  echo $testString;
+  echo "ded";//$testString
 } catch(PDOException $e) {
-//  echo $sql . "<br>" . $e->getMessage();
+  echo $sql . "<br>" . $e->getMessage();
 }
 
 
