@@ -38,28 +38,6 @@ $nameErr = $passwordErr = "";
 $name = $password = "";
 
 
-$db = new PDO('sqlite:sqluserbase.db');
-try {
-  $sql = "SELECT * FROM users WHERE name = 'deklaswas';";
-  $stringTest = $db->query($sql);
-  $row = $stringTest->fetch(PDO::FETCH_ASSOC);
-  print_r($row);
-
-  //foreach ($db->query($sql) as $row) {
-  //    print_r($row["avatar"]);
-  //    echo '<br/>';
-  //}
-
-  //$stmt->fetch(PDO::FETCH_ASSOC);
-
-  
-
-} catch(PDOException $e) {
-  echo $sql . "<br>" . $e->getMessage();
-}
-
-
-
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   

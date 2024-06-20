@@ -59,15 +59,17 @@ $avatar = array (
 
 $db = new PDO('sqlite:sqluserbase.db');
 
-$avatarString = "0000000000000000000000000000000000000000000000000000000000000000";
+$avatarString = "";
+
 try {
-  //$sql = "SELECT avatar FROM users WHERE name = '" . $_SESSION["username"] . "';";
-  $sql = "SELECT avatar FROM users WHERE name = 'deklaswas';";
-  $avatarString = $db->query($sql);
-  echo $avatarString;//
+  $sql = "SELECT * FROM users WHERE name = '" . $_SESSION["username"] . "';";
+  $stringTest = $db->query($sql);
+  $row = $stringTest->fetch(PDO::FETCH_ASSOC);
+  $avatarString =  $row["avatar"];
 } catch(PDOException $e) {
   echo $sql . "<br>" . $e->getMessage();
 }
+
 
 
 for ($i = 0; $i < count($avatar); $i++) {
