@@ -151,7 +151,7 @@ function test_input($data) {
 
 
 <div class="wrapper">
-    <h2 id = "nameColor"> <?php echo $_SESSION["username"] ?> </h2>
+    <h2 id = "nameColor" style = "color:green;"> <?php echo $_SESSION["username"] ?> </h2>
     <h2> <?php echo $_SESSION["newsession"] ?> </h2>
     <h2> <?php echo $avatarString ?> </h2>
     <canvas 
