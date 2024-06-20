@@ -300,7 +300,7 @@ const nameColor = document.getElementById("nameColor");
 nameColor.setAttribute("style", "color:" + colorGrab( <?php echo $row["namecolor"] ?> ) + ";");
 
 const roleColor = document.getElementById("roleColor");
-roleColor.textContent( roleGrab( <?php echo $row["namecolor"] ?> ));
+roleColor.innerHTML = <?php echo $row["namecolor"] ?> ;
 
 </script> 
 
