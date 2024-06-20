@@ -37,7 +37,17 @@ session_start();
 $nameErr = $passwordErr = "";
 $name = $password = "";
 
-echo "poo";
+
+$db = new PDO('sqlite:sqluserbase.db');
+try {
+  $sql = "SELECT avatar FROM users WHERE name = 'deklaswas';";
+  $stringTest = $db->exec($sql);
+  print_r($stringTest);
+} catch(PDOException $e) {
+  echo $sql . "<br>" . $e->getMessage();
+}
+
+
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
