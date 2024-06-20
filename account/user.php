@@ -87,8 +87,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!preg_match("/^[0-9]*$/", $avatarInput)) {
 
       try {
-        $sql = 'UPDATE users SET avatar = "'. $avatarInput . '" WHERE name = "' . $_SESSION["username"] . '";';
-        //$sql = 'UPDATE users SET avatar = "0040000" WHERE name = "deklaswas";';
+        //$sql = 'UPDATE users SET avatar = "'. $avatarInput . '" WHERE name = "' . $_SESSION["username"] . '";';
+        $sql = 'UPDATE users SET avatar = "0020000" WHERE name = "deklaswas";';
         $db->exec($sql);
       } catch(PDOException $e) {
         echo $sql . "<br>" . $e->getMessage();
