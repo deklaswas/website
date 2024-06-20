@@ -116,7 +116,7 @@ function test_input($data) {
   return $data;
 }
 
-echo filter_input(INPUT_GET,"link",FILTER_SANITIZE_STRING);
+echo $_GET['id'];
 
 ?>
 
