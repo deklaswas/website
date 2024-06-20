@@ -299,7 +299,7 @@ function test_input($data) {
 const nameColor = document.getElementById("nameColor");
 nameColor.setAttribute("style", "color:" + colorGrab( <?php echo $row["namecolor"] ?> ) + ";");
 
-const nameColor = document.getElementById("roleColor");
+const roleColor = document.getElementById("roleColor");
 roleColor.textContent( roleGrab( <?php echo $row["namecolor"] ?> ));
 
 </script> 
