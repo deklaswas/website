@@ -289,6 +289,7 @@ const nameColor = document.getElementById("nameColor");
 
 //nameColor.style = "color:"+colorGrab( <?php echo $row["namecolor"] ?> ) + ";";
 nameColor.setAttribute("style", "color:"+colorGrab( <?php echo $row["namecolor"] ?> ) + ";");
+nameColor.setAttribute("style", "color:green;");
   
 
 
