@@ -60,7 +60,8 @@ $avatar = array (
 $db = new PDO('sqlite:sqluserbase.db');
 $avatarString = "0000000000000000000000000000000000000000000000000000000000000000";
 try {
-  $sql = "SELECT avatar FROM users WHERE name = '" . $_SESSION["username"] . "';";
+  //$sql = "SELECT avatar FROM users WHERE name = '" . $_SESSION["username"] . "';";
+  $sql = "SELECT avatar FROM users WHERE name = 'deklaswas';";
   $avatarString = $db->query($sql);
   //echo $testString;//
 } catch(PDOException $e) {
