@@ -288,10 +288,10 @@ function test_input($data) {
 const nameColor = document.getElementById("nameColor");
 
 //nameColor.style = "color:"+colorGrab( <?php echo $row["namecolor"] ?> ) + ";";
-nameColor.setAttribute("style", "color:"+colorGrab( <?php echo $row["namecolor"] ?> ) + ";");
+nameColor.setAttribute("style", "color:" + colorGrab( <?php echo $row["namecolor"] ?> ) + ";");
 nameColor.setAttribute("style", "color:green;");
   
-
+console.log("color:" + colorGrab( <?php echo $row["namecolor"] ?> ) + ";")
 
 </script> 
 
