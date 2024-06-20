@@ -58,7 +58,7 @@ $avatar = array (
 );
 
 $db = new PDO('sqlite:sqluserbase.db');
-$avatarString = "0000000000000000000000000000000000000000000000000000000000000000";
+$avatarString = "";
 
 try {
   $sql = "SELECT avatar FROM users WHERE name = '" . $_SESSION["username"] . "';";
@@ -67,8 +67,7 @@ try {
   echo $sql . "<br>" . $e->getMessage();
 }
 
-if ($avatarString = "") $avatarString = "0000000000000000000000000000000000000000000000000000000000000000";
-
+echo "<script>console.log('Debug Objects: " . $avatarString . "' );</script>";
 
 for ($i = 0; $i < count($avatar); $i++) {
   for ($j = 0; $j < count($avatar); $j++) {
@@ -121,7 +120,8 @@ function test_input($data) {
 <div class="wrapper">
     <h2> <?php echo $_SESSION["username"] ?> </h2>
     <h2> <?php echo $_SESSION["newsession"] ?> </h2>
-    <h2> <?php echo $avatarString ?> </h2>
+    <h2> poo <?php echo $avatarString ?> </h2>
+    <h2> poo </h2>
     <canvas 
       id="profileCanvas"
       width="80"
