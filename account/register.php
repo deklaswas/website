@@ -37,7 +37,7 @@ session_start();
 $nameErr = $passwordErr = "";
 $name = $password = "";
 
-
+echo "poo";
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
