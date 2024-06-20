@@ -94,14 +94,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
 }
 
-$avatarString = "0000000000000000000000000000000000000000000000000000000000000000";
+//$avatarString = "0000000000000000000000000000000000000000000000000000000000000000";
 
-try {
-  $sql = "SELECT avatar FROM users WHERE name = '" . $_SESSION["username"] . "';";
-  $avatarString = $db->query($sql);
-} catch(PDOException $e) {
-  echo $sql . "<br>" . $e->getMessage();
-}
+//try {
+//  $sql = "SELECT avatar FROM users WHERE name = '" . $_SESSION["username"] . "';";
+//  $avatarString = $db->query($sql);
+//} catch(PDOException $e) {
+//  echo $sql . "<br>" . $e->getMessage();
+//}
 
 //if ($avatarString = "") $avatarString = "0000000000000000000000000000000000000000000000000000000000000000";
 
