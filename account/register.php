@@ -42,10 +42,15 @@ $db = new PDO('sqlite:sqluserbase.db');
 try {
   $sql = "SELECT * FROM users WHERE name = 'deklaswas';";
   $stringTest = $db->query($sql);
-  foreach ($db->query($sql) as $row) {
-      print_r($row["avatar"]);
-      echo '<br/>';
-  }
+  $row = $stringTest->fetch(PDO::FETCH_ASSOC);
+  print_r($row);
+
+  //foreach ($db->query($sql) as $row) {
+  //    print_r($row["avatar"]);
+  //    echo '<br/>';
+  //}
+
+  //$stmt->fetch(PDO::FETCH_ASSOC);
 
   
 
