@@ -81,8 +81,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     try {
       //$sql = "INSERT INTO MyGuests (firstname, lastname, email)
       //VALUES ('John', 'Doe', 'john@example.com')";
-      $sql = "INSERT INTO users (name, password)
-      VALUES ('" . $name . "', '" . $password . "')";
+      $sql = "INSERT INTO users (name, password, namecolor)
+      VALUES ('" . $name . "', '" . $password . "', 0)";
       $db->exec($sql);
       
       $_SESSION["username"] = $name;
