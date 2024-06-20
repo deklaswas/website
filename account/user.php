@@ -3,7 +3,10 @@
 session_start();
 
 
-$_SESSION["newsession"]="test";
+if ($_GET['id'] == null) {
+  
+}
+
 
 ?>
 
@@ -116,7 +119,6 @@ function test_input($data) {
   return $data;
 }
 
-echo $_GET['id'];
 
 ?>
 

@@ -48,13 +48,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!preg_match("/^[a-zA-Z-' ]*$/",$name)) {
       $nameErr = "invalid username; only letters and whitespace";
     } else {
-        $sql = 'SELECT * FROM users';
-        foreach ($db->query($sql) as $row) {
-            if ($name == $row["name"]) {
-                $userRow = $row;
-                $nameErr = "identified";
-            }
-        }
+        $sql = "SELECT * FROM users WHERE name = '" . $name . "';";
+        $stringTest = $db->query($sql);
+        $userRow = $stringTest->fetch(PDO::FETCH_ASSOC);
 
     }
   }
