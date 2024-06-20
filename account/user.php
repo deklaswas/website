@@ -84,7 +84,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $avatarInput = test_input($_POST["avatarString"]);
 
     // check if name only contains numbers
-    //if (!preg_match("[0-9]+", $avatarInput)) {
+    if (!preg_match("[:digit:]", $avatarInput)) {
 
       try {
         //$sql = 'UPDATE users SET avatar = "'. $avatarInput . '" WHERE name = "' . $_SESSION["username"] . '";';
@@ -93,7 +93,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       } catch(PDOException $e) {
         echo $sql . "<br>" . $e->getMessage();
       }
-    //}
+    }
   }
 }
 
