@@ -236,7 +236,7 @@ function test_input($data) {
   })
 
   function colorGrab(c) {
-    switch ( Number(c) ) {
+    switch ( String(c) ) {
       case "0": return "black";     // user
       case "1": return "white";     //
       case "2": return "red";       // playtester
@@ -280,8 +280,6 @@ function test_input($data) {
 
 
   }
-
-
 
 
 
