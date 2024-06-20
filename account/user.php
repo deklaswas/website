@@ -125,14 +125,14 @@ function test_input($data) {
 
 
 <div class="wrapper">
-    <h2 id = "nameColor" style="line-height: 0;"> <?php echo $_SESSION["username"] ?> </h2>
-    <h3 id = "roleColor" style="line-height: 0;"> User </h3>
     <canvas 
       id="profileCanvas"
       width="80"
       height="80"
       style="border:1px solid grey; display: inline-block; float: left; margin-right: 20px">
     </canvas>
+    <h2 id = "nameColor" style="line-height: 0;"> <?php echo $_SESSION["username"] ?> </h2>
+    <h3 id = "roleColor" style="line-height: 0;"> User </h3>
 </div>
 
 <br>
@@ -297,7 +297,7 @@ function test_input($data) {
 
 
 const nameColor = document.getElementById("nameColor");
-nameColor.setAttribute("style", "color:" + colorGrab( <?php echo $row["namecolor"] ?> ) + ";");
+nameColor.setAttribute("style", nameColor.getAttribute("style") + "; color:" + colorGrab( <?php echo $row["namecolor"] ?> ) + ";");
 
 const roleColor = document.getElementById("roleColor");
 roleColor.innerHTML = roleGrab(<?php echo $row["namecolor"] ?>) ;
