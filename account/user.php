@@ -122,36 +122,10 @@ function test_input($data) {
 ?>
 
 
-<script>
-
-  const nameColor = document.getElementById("nameColor");
-
-  function colorGrab(c) {
-      switch (c) {
-        case "0": return "black";     // user
-        case "1": return "white";     //
-        case "2": return "red";       // playtester
-        case "3": return "blue";      // verified
-        case "4": return "lime";      //
-        case "5": return "cyan";      //
-        case "6": return "magenta";   // moderator
-        case "7": return "yellow";    //
-        case "8": return "sienna";    // poopy
-        case "9": return "green";     // owner
-      }
-    }
-
-  //nameColor.style = "color:"+colorGrab( <?php echo $row["namecolor"] ?> ) + ";";
-  nameColor.setAttribute("style", "color:"+colorGrab( <?php echo $row["namecolor"] ?> ) + ";");
-  nameColor.setAttribute("style", "color:green;");
-  
-
-</script>
-
 
 
 <div class="wrapper">
-    <h2 id = "nameColor" style = "color:green;"> <?php echo $_SESSION["username"] ?> </h2>
+    <h2 id = "nameColor"> <?php echo $_SESSION["username"] ?> </h2>
     <h2> <?php echo $_SESSION["newsession"] ?> </h2>
     <h2> <?php echo $avatarString ?> </h2>
     <canvas 
@@ -306,6 +280,16 @@ function test_input($data) {
 
 
   }
+
+
+
+
+
+const nameColor = document.getElementById("nameColor");
+
+//nameColor.style = "color:"+colorGrab( <?php echo $row["namecolor"] ?> ) + ";";
+nameColor.setAttribute("style", "color:"+colorGrab( <?php echo $row["namecolor"] ?> ) + ";");
+  
 
 
 </script> 
