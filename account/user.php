@@ -92,7 +92,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
       try {
         //$sql = 'UPDATE users SET avatar = "'. $avatarString . '" WHERE name = "' . $_SESSION["username"] . '";';
-        $sql = 'UPDATE users SET avatar = "0030000" WHERE name = "deklaswas";';
+        $sql = 'UPDATE users SET avatar = "0040000" WHERE name = "deklaswas";';
         $db->exec($sql);
       } catch(PDOException $e) {
         echo $sql . "<br>" . $e->getMessage();
