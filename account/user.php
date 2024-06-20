@@ -70,15 +70,11 @@ try {
   echo $sql . "<br>" . $e->getMessage();
 }
 
-
-
 for ($i = 0; $i < count($avatar); $i++) {
   for ($j = 0; $j < count($avatar); $j++) {
     $avatar[$i][$j] = substr($avatarString, $i + $j*8,1);
   }
 }
-
-
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -95,7 +91,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       
 
       try {
-        $sql = 'UPDATE users SET avatar = '. $avatarString . 'WHERE name =' . $_SESSION["username"] . ";";
+        $sql = 'UPDATE users SET avatar = "'. $avatarString . '" WHERE name = "' . $_SESSION["username"] . '";';
         $db->exec($sql);
       } catch(PDOException $e) {
         echo $sql . "<br>" . $e->getMessage();
