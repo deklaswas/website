@@ -80,11 +80,11 @@ for ($i = 0; $i < count($avatar); $i++) {
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   //make sure avatar string is not empty
-  if (!empty($_POST["avatarString"])) {
-    $avatarString = test_input($_POST["avatarString"]);
+  //if (!empty($_POST["avatarString"])) {
+  //  $avatarString = test_input($_POST["avatarString"]);
 
     // check if name only contains numbers
-    if (!preg_match("/^[0-9]*$/", $avatarString)) {
+    //if (!preg_match("/^[0-9]*$/", $avatarString)) {
 
 
       //echo "<script> console.log('Debug Objects: " . $avatarString . "' );</script>";
@@ -97,8 +97,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       } catch(PDOException $e) {
         echo $sql . "<br>" . $e->getMessage();
       }
-    }
-  }
+    //}
+  //}
 }
 
 //$avatarString = "0000000000000000000000000000000000000000000000000000000000000000";
