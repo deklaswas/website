@@ -40,7 +40,7 @@ $name = $password = "";
 
 $db = new PDO('sqlite:sqluserbase.db');
 try {
-  $sql = "SELECT password FROM users WHERE name = 'deklaswas';";
+  $sql = "SELECT * FROM users WHERE name = 'deklaswas';";
   $stringTest = $db->exec($sql);
   print_r($stringTest);
 } catch(PDOException $e) {
