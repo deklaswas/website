@@ -2,10 +2,8 @@
 // Start the session
 session_start();
 
-//if ($_SESSION["username"] = '' || session_status() != PHP_SESSION_ACTIVE) {
-//  header('Location: http://www.deklaswas.com/account/login.php');
-//  die();
-//}
+
+echo $_GET['link'];
 
 $_SESSION["newsession"]="test";
 
@@ -23,7 +21,8 @@ $_SESSION["newsession"]="test";
         .disclaimer {color: #7F7F7F;}
         .wrapper {
             margin: auto;
-            padding: 50px;
+            padding: 30px;
+            padding-bottom: 53px;
             width: 50%;
             border-style: inset;
         }
