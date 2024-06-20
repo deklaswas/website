@@ -126,8 +126,7 @@ function test_input($data) {
 
 <div class="wrapper">
     <h2 id = "nameColor"> <?php echo $_SESSION["username"] ?> </h2>
-    <h2> <?php echo $_SESSION["newsession"] ?> </h2>
-    <h2> <?php echo $avatarString ?> </h2>
+    <h3 id = "roleColor"> User </h3>
     <canvas 
       id="profileCanvas"
       width="80"
@@ -249,6 +248,20 @@ function test_input($data) {
       case "9": return "green";     // owner
     }
   }
+  function roleGrab(c) {
+    switch ( String(c) ) {
+      case "0": return "User";        // user
+      case "1": return "white";       //
+      case "2": return "Playtester";  // playtester
+      case "3": return "Verified";    // verified
+      case "4": return "lime";        //
+      case "5": return "cyan";        //
+      case "6": return "Moderator";   // moderator
+      case "7": return "yellow";      //
+      case "8": return "Poopy";       // poopy
+      case "9": return "Owner";       // owner
+    }
+  }
 
   function drawAvatar(contextDraw,sizeo) {
     sizeo /= 8;
@@ -284,11 +297,9 @@ function test_input($data) {
 
 
 const nameColor = document.getElementById("nameColor");
-
-//nameColor.style = "color:"+colorGrab( <?php echo $row["namecolor"] ?> ) + ";";
 nameColor.setAttribute("style", "color:" + colorGrab( <?php echo $row["namecolor"] ?> ) + ";");
-  
-console.log("color:" + colorGrab( <?php echo $row["namecolor"] ?> ) + ";");
+
+document.getElementById("roleColor").textContent( roleGrab( <?php echo $row["namecolor"] ?> ));
 
 </script> 
 
