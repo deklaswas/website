@@ -2,10 +2,10 @@
 // Start the session
 session_start();
 
-if ($_SESSION["username"] = '' || session_status() != PHP_SESSION_ACTIVE) {
-  header('Location: http://www.deklaswas.com/account/login.php');
-  die();
-}
+//if ($_SESSION["username"] = '' || session_status() != PHP_SESSION_ACTIVE) {
+//  header('Location: http://www.deklaswas.com/account/login.php');
+//  die();
+//}
 
 ?>
 
@@ -35,7 +35,7 @@ if ($_SESSION["username"] = '' || session_status() != PHP_SESSION_ACTIVE) {
         }
     </style>
 </head>
-<body>  
+<body>
 
 
 <?php
