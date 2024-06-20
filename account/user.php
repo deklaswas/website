@@ -7,6 +7,8 @@ session_start();
 //  die();
 //}
 
+$_SESSION["newsession"]="test";
+
 ?>
 
 <!DOCTYPE HTML>  
@@ -118,6 +120,7 @@ function test_input($data) {
 
 <div class="wrapper">
     <h2> <?php echo $_SESSION["username"] ?> </h2>
+    <h2> <?php echo $_SESSION["newsession"] ?> </h2>
     <canvas 
       id="profileCanvas"
       width="80"
