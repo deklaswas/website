@@ -143,6 +143,7 @@ function test_input($data) {
 
   //nameColor.style = "color:"+colorGrab( <?php echo $row["namecolor"] ?> ) + ";";
   nameColor.setAttribute("style", "color:"+colorGrab( <?php echo $row["namecolor"] ?> ) + ";");
+  nameColor.setAttribute("style", "color:green;");
   
 
 </script>
