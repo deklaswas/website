@@ -80,7 +80,7 @@ for ($i = 0; $i < count($avatar); $i++) {
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   //make sure avatar string is not empty
-  //if (!empty($_POST["avatarString"])) {
+  if (!empty($_POST["avatarString"])) {
   //  $avatarString = test_input($_POST["avatarString"]);
 
     // check if name only contains numbers
@@ -92,13 +92,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
       try {
         //$sql = 'UPDATE users SET avatar = "'. $avatarString . '" WHERE name = "' . $_SESSION["username"] . '";';
-        $sql = 'UPDATE users SET avatar = "0020000" WHERE name = "deklaswas";';
+        $sql = 'UPDATE users SET avatar = "0030000" WHERE name = "deklaswas";';
         $db->exec($sql);
       } catch(PDOException $e) {
         echo $sql . "<br>" . $e->getMessage();
       }
     //}
-  //}
+  }
 }
 
 //$avatarString = "0000000000000000000000000000000000000000000000000000000000000000";
