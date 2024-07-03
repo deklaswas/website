@@ -79,7 +79,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
       $_SESSION["username"] = $name;
       $_SESSION["id"] = $userRow["rowid"];
-      header('Location: http://www.deklaswas.com/account/user.php');
+      header('Location: http://www.deklaswas.com/account/myaccount.php');
       die();
 
       }

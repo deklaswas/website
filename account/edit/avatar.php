@@ -1,13 +1,6 @@
 <?php
 // Start the session
 session_start();
-
-
-if ($_GET['id'] == null) {
-  
-}
-
-
 ?>
 
 <!DOCTYPE HTML>  
@@ -126,6 +119,8 @@ function test_input($data) {
 
 
 <div class="wrapper">
+    <h1>My Account</h1>
+
     <canvas 
       id="profileCanvas"
       width="80"
