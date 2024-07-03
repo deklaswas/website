@@ -160,7 +160,6 @@ function test_input($data) {
         valo += avatar[j][i];
       }
     }
-    textFieldAvatar.value = valo;
   }
 
   drawAvatar(pctx,80);
