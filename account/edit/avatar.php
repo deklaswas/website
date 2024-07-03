@@ -50,7 +50,7 @@ $avatar = array (
   array("","","","","","","",""),
 );
 
-$db = new PDO('sqlite:sqluserbase.db');
+$db = new PDO('sqlite:../sqluserbase.db');
 
 $avatarString = "";
 $row;
