@@ -33,7 +33,7 @@ session_start();
 <body>
 
 
-<a?php
+<?php
 
 // define variables and set to empty values
 $name = $password = "";
