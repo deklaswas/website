@@ -137,16 +137,16 @@ function test_input($data) {
   }
   function roleGrab(c) {
     switch ( String(c) ) {
+      case "8": return "Poopy";       // poopy
       case "0": return "User";        // user
-      case "1": return "white";       //
+      case "3": return "Certified";   // certified
       case "2": return "Playtester";  // playtester
-      case "3": return "Verified";    // verified
+      case "6": return "Moderator";   // moderator
+      case "9": return "Owner";       // owner
+      case "1": return "white";       //
       case "4": return "lime";        //
       case "5": return "cyan";        //
-      case "6": return "Moderator";   // moderator
       case "7": return "yellow";      //
-      case "8": return "Poopy";       // poopy
-      case "9": return "Owner";       // owner
     }
   }
 

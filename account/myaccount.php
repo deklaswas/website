@@ -1,15 +1,6 @@
 <?php
 // Start the session
 session_start();
-
-$userid = -1;
-if ($_GET['id'] == null) {
-  
-} else {
-  $userid = $_GET['id'];
-}
-
-
 ?>
 
 <!DOCTYPE HTML>  
