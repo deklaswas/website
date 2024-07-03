@@ -65,7 +65,7 @@ $avatarString = "";
 $row;
 
 try {
-  $sql = "SELECT * FROM users WHERE rowid = " . $userid . ";";
+  $sql = "SELECT * FROM users WHERE name = '" . $_SESSION["username"] . "';";
   $stringTest = $db->query($sql);
   $row = $stringTest->fetch(PDO::FETCH_ASSOC);
   $avatarString =  $row["avatar"];
@@ -80,6 +80,26 @@ for ($i = 0; $i < count($avatar); $i++) {
 }
 
 
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+  //make sure avatar string is not empty
+  if (!empty($_POST["avatarString"])) {
+    $avatarInput = test_input($_POST["avatarString"]);
+    $avatarString = test_input($_POST["avatarString"]);
+
+    // check if name only contains numbers
+    //if (!preg_match('/^[0-9]*$/', $avatarInput)) {
+
+      try {
+        $sql = 'UPDATE users SET avatar = "'. $avatarInput . '" WHERE name = "' . $_SESSION["username"] . '";';
+        //$sql = 'UPDATE users SET avatar = "0000000" WHERE name = "deklaswas";';
+        $db->exec($sql);
+      } catch(PDOException $e) {
+        echo $sql . "<br>" . $e->getMessage();
+      }
+    //}
+  }
+}
 
 //$avatarString = "0000000000000000000000000000000000000000000000000000000000000000";
 
@@ -114,21 +134,64 @@ function test_input($data) {
       height="80"
       style="border:1px solid grey; display: inline-block; float: left; margin-right: 20px">
     </canvas>
-    <h2 id = "nameColor" style="line-height: 0;"> <?php echo $row["username"] ?> </h2>
+    <h2 id = "nameColor" style="line-height: 0;"> <?php echo $_SESSION["username"] ?> </h2>
     <h3 id = "roleColor" style="line-height: 0;"> User </h3>
 </div>
 
 <br>
 
 
+<form  method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+  <div class='parent'>
+    <canvas 
+      id="avatarCanvas"
+      width="160"
+      height="160"
+      style="border:1px solid grey; display: inline-block;">
+    </canvas>
+    <div style='display: inline-block; vertical-align: text-bottom;'>
+      <button class="colbutton" type="button" onclick='paintColor = "0"'>Black</button>
+      <button class="colbutton" type="button" onclick='paintColor = "1"'>White</button><br>
+      <button class="colbutton" type="button" onclick='paintColor = "2"'>Red</button>
+      <button class="colbutton" type="button" onclick='paintColor = "3"'>Blue</button><br>
+      <button class="colbutton" type="button" onclick='paintColor = "4"'>Lime</button>
+      <button class="colbutton" type="button" onclick='paintColor = "5"'>Cyan</button><br>
+      <button class="colbutton" type="button" onclick='paintColor = "6"'>Magenta</button>
+      <button class="colbutton" type="button" onclick='paintColor = "7"'>Yellow</button><br>
+      <button class="colbutton" type="button" onclick='paintColor = "8"'>Brown</button>
+      <button class="colbutton" type="button" onclick='paintColor = "9"'>Green</button><br>
+      <br>
+      <button class="colbutton" type="button" onclick='clearCanvas()'>Clear</button>
+      <button class="colbutton" type="button" onclick='clearCanvas()'>Clear</button><br>
+      <button class="colbutton" type="submit" onclick='submitAvatar();'>Submit</button>
+
+
+    </div>
+    <br>
+      <input id="avatarInput" type="text" name="avatarString" maxlength="64" minlength="64" size="64" style="font-size:0.59em" value="<?php echo $avatarString;?>"> 
+  </div>
+</form>
 
 <script>
 
-  //canvas for avatar
+  //canvas for editor
+  const c = document.getElementById("avatarCanvas");
+  const ctx = c.getContext("2d");
+
   const pc = document.getElementById("profileCanvas");
   const pctx = pc.getContext("2d");
 
+  var textFieldAvatar = document.getElementById("avatarInput");
+
   var avatar = <?php echo json_encode($avatar);?> ;
+  
+  var drawStyle = "pencil";
+
+  var paintColor = "0";
+
+
+  var mousePressed = -1;
+  var eventMouse;
 
 
   function drawCanvas() {

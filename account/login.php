@@ -49,9 +49,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $nameErr = "invalid username; only letters and whitespace";
     } else {
         $sql = "SELECT * FROM users WHERE name = '" . $name . "';";
-        $stringTest = $db->query($sql);
-        $userRow = $stringTest->fetch(PDO::FETCH_ASSOC);
-
+        $sqlQuery = $db->query($sql);
+        $userRow = $sqlQuery->fetch(PDO::FETCH_ASSOC);
     }
   }
 
@@ -71,6 +70,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
       $_SESSION["username"] = $name;
+      $_SESSION["id"] = $userRow["rowid"];
       header('Location: http://www.deklaswas.com/account/user.php');
       die();
 
