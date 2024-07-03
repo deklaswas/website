@@ -15,6 +15,7 @@ session_start();
         .disclaimer {
           color: #7F7F7F;
           font-style: italic;
+          text-align: right;
         }
         .wrapper {
             margin: auto;
