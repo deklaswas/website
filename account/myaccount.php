@@ -53,13 +53,18 @@ $avatar = array (
 $db = new PDO('sqlite:sqluserbase.db');
 
 $avatarString = "";
-$row;
+$row; $idNum;
 
 try {
   $sql = "SELECT * FROM users WHERE name = '" . $_SESSION["username"] . "';";
   $stringTest = $db->query($sql);
   $row = $stringTest->fetch(PDO::FETCH_ASSOC);
   $avatarString =  $row["avatar"];
+
+  $sql = "SELECT rowid FROM users WHERE name = '" . $_SESSION["username"] . "';";
+  $stringTest = $db->query($sql);
+  $idNum = $stringTest->fetch(PDO::FETCH_ASSOC);
+
 } catch(PDOException $e) {
   echo $sql . "<br>" . $e->getMessage();
 }
@@ -134,7 +139,8 @@ function test_input($data) {
     <br>
     <br>
 
-    <a href="https://www.deklaswas.com/account/edit/avatar.php"> Click here to edit avatar </a>
+    <a href = "https://www.deklaswas.com/account/edit/avatar.php" > Click here to edit avatar </a>
+    <a id="accountLink"> Link to your user page </a>
 
 </div>
 
@@ -199,6 +205,9 @@ function test_input($data) {
 
   const roleColor = document.getElementById("roleColor");
   roleColor.innerHTML = roleGrab(<?php echo $row["namecolor"] ?>) ;
+
+  const accountLink = document.getElementById("accountLink");
+  accountLink.setAttribute("href", "https://www.deklaswas.com/account/user.php/?id=" + <?php echo json_encode($idNum);?> );
 
 </script> 
 
