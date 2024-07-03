@@ -33,7 +33,7 @@ session_start();
 <body>
 
 
-<?php
+<a?php
 
 // define variables and set to empty values
 $name = $password = "";
@@ -129,6 +129,13 @@ function test_input($data) {
     </canvas>
     <h2 id = "nameColor" style="line-height: 0;"> <?php echo $_SESSION["username"] ?> </h2>
     <h3 id = "roleColor" style="line-height: 0;"> User </h3>
+
+    <br>
+    <br>
+    <br>
+
+    <a href="https://www.deklaswas.com/edit/avatar.php"> Click here to edit avatar </a>
+
 </div>
 
 <script>
