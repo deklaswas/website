@@ -128,5 +128,7 @@ function test_input($data) {
     </form>
   </div>
 
+  <a class="disclaimer" href="https://www.deklaswas.com/login.php">Already registered? Login</a>
+
 </body>
 </html>
