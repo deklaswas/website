@@ -28,6 +28,14 @@ session_start();
             border-color: darkgray;
             text-align: right;
         }
+        .otherside {
+            margin: auto;
+            padding: 50px;
+            width: 50%;
+            text-align: left;
+            color: #7F7F7F;
+            font-style: italic;
+        }
     </style>
 </head>
 <body>  
@@ -128,8 +136,8 @@ function test_input($data) {
     </form>
   </div>
 
-  <a  style = "margin:auto; padding:50px; width:50%;"
-      class="disclaimer"
+  <br>
+  <a  class="otherside"
       href="https://www.deklaswas.com/login.php"
   > Already registered? Login</a>
 
