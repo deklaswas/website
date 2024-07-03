@@ -134,7 +134,7 @@ function test_input($data) {
     <br>
     <br>
 
-    <a href="https://www.deklaswas.com/edit/avatar.php"> Click here to edit avatar </a>
+    <a href="https://www.deklaswas.com/account/edit/avatar.php"> Click here to edit avatar </a>
 
 </div>
 
