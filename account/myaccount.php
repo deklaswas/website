@@ -209,6 +209,8 @@ function test_input($data) {
   const accountLink = document.getElementById("accountLink");
   accountLink.setAttribute("href", "https://www.deklaswas.com/account/user.php/?id=" + <?php echo json_encode($idNum);?> );
 
+  console.log(<?php echo json_encode($idNum);?>);
+
 </script> 
 
 </body>
