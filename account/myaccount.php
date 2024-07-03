@@ -63,7 +63,7 @@ try {
 
   $sql = "SELECT rowid FROM users WHERE name = '" . $_SESSION["username"] . "';";
   $stringTest = $db->query($sql);
-  $idNum = $stringTest->fetch(PDO::FETCH_ASSOC);
+  $idNum = $stringTest->fetch(PDO::FETCH_ASSOC)["rowid"] ;
 
 } catch(PDOException $e) {
   echo $sql . "<br>" . $e->getMessage();
@@ -209,7 +209,7 @@ function test_input($data) {
   const accountLink = document.getElementById("accountLink");
   accountLink.setAttribute("href", "https://www.deklaswas.com/account/user.php/?id=" + <?php echo json_encode($idNum);?> );
 
-  console.log(<?php echo json_encode($idNum);?>);
+  console.log(<?php echo json_encode($row);?>);
 
 </script> 
 
