@@ -133,7 +133,6 @@ function test_input($data) {
       style="border:1px solid grey; display: inline-block; float: left; margin-right: 20px">
     </canvas>
     <h2 id = "nameColor" style="line-height: 0;"> <?php echo $_SESSION["username"] ?> </h2>
-    <br>
     <h3 id = "roleColor" style="line-height: 0;"> User </h3>
 
     <br>
@@ -141,6 +140,7 @@ function test_input($data) {
     <br>
 
     <a href = "https://www.deklaswas.com/account/edit/avatar.php" > Click here to edit avatar </a>
+    <br>
     <a id="accountLink"> Link to your user page </a>
 
 </div>
