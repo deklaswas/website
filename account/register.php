@@ -128,7 +128,7 @@ function test_input($data) {
     </form>
   </div>
 
-  <a  style = "margin: auto; padding: 50px;"
+  <a  style = "margin:auto; padding:50px; width:50%;"
       class="disclaimer"
       href="https://www.deklaswas.com/login.php"
   > Already registered? Login</a>
