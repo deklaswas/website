@@ -32,9 +32,6 @@ session_start();
             margin: auto;
             padding: 50px;
             width: 50%;
-            text-align: left;
-            color: #7F7F7F;
-            font-style: italic;
         }
     </style>
 </head>
@@ -137,7 +134,8 @@ function test_input($data) {
   </div>
 
   <br>
-  <div class="wrapper">
+
+  <div class="otherside">
     <a  class="disclaimer"
         href="https://www.deklaswas.com/login.php"
     > Already registered? Login</a>
