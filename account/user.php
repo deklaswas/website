@@ -61,15 +61,17 @@ $avatar = array (
 
 $db = new PDO('sqlite:sqluserbase.db');
 
-$avatarString = "";
 $row;
+$avatarString = "";
+$nameString = "";
 
 try {
-  //$sql = "SELECT * FROM users WHERE rowid = " . $userid . ";";
-  $sql = "SELECT * FROM users WHERE rowid = 1;";
+  $sql = "SELECT * FROM users WHERE rowid = " . $userid . ";";
+  //$sql = "SELECT * FROM users WHERE rowid = 1;";
   $stringTest = $db->query($sql);
   $row = $stringTest->fetch(PDO::FETCH_ASSOC);
   $avatarString =  $row["avatar"];
+  $nameString =  $row["name"];
 } catch(PDOException $e) {
   echo $sql . "<br>" . $e->getMessage();
 }
@@ -104,7 +106,7 @@ function test_input($data) {
       height="80"
       style="border:1px solid grey; display: inline-block; float: left; margin-right: 20px">
     </canvas>
-    <h2 id = "nameColor" style="line-height: 0;"> <?php echo $row["username"] ?> </h2>
+    <h2 id = "nameColor" style="line-height: 0;"> <?php echo $nameString ?> </h2>
     <h3 id = "roleColor" style="line-height: 0;"> User </h3>
 </div>
 
