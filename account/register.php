@@ -133,8 +133,6 @@ function test_input($data) {
     </form>
   </div>
 
-  <br>
-
   <div class="otherside">
     <a  class="disclaimer"
         href="https://www.deklaswas.com/login.php"
