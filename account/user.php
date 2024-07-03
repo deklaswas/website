@@ -108,8 +108,6 @@ function test_input($data) {
     <h3 id = "roleColor" style="line-height: 0;"> User </h3>
 </div>
 
-<br>
-
 
 
 <script>
@@ -118,51 +116,8 @@ function test_input($data) {
   const pc = document.getElementById("profileCanvas");
   const pctx = pc.getContext("2d");
 
+  //get avatar from php
   var avatar = <?php echo json_encode($avatar);?> ;
-
-
-  function drawCanvas() {
-    const rect = c.getBoundingClientRect()
-    const x = Math.floor((eventMouse.clientX - rect.left)/20)
-    const y = Math.floor((eventMouse.clientY - rect.top)/20)
-
-    avatar[ x ][ y ] = paintColor;
-    drawAvatar(ctx,160);
-    
-    console.log(mousePressed);
-  }
-
-  function clearCanvas() {
-    for (let i = 0; i < 8; i++) {
-      for (let j = 0; j < 8; j++) {
-        avatar[i][j] =paintColor;
-      }
-    }
-    drawAvatar(ctx,160);
-  }
-
-  //setInterval( drawCanvas(), 100);
-  c.addEventListener('mouseon', function(e) {
-    eventMouse = e;
-    //if (mousePressed == -1)
-    drawCanvas()
-    mousePressed = setInterval(drawCanvas,100);
-    console.log(mousePressed);
-  })
-
-  //mouse up- start drawing
-  c.addEventListener('mousedown', function(e) {
-    eventMouse = e;
-    drawCanvas();
-    mousePressed = setInterval(drawCanvas,100);
-    console.log(mousePressed);
-  })
-  
-  //mouse up- stop drawing
-  c.addEventListener('mouseup', function(e) {
-    clearInterval(mousePressed);
-    mousePressed = -1;
-  })
 
   function colorGrab(c) {
     switch ( String(c) ) {
@@ -193,6 +148,7 @@ function test_input($data) {
     }
   }
 
+  //drawing the canvas itself
   function drawAvatar(contextDraw,sizeo) {
     sizeo /= 8;
     var valo = "";
@@ -207,30 +163,15 @@ function test_input($data) {
     textFieldAvatar.value = valo;
   }
 
-  drawAvatar(ctx,160);
   drawAvatar(pctx,80);
 
-  function submitAvatar() {
-    drawAvatar(pctx,80);
-
-    //turn avatar into string
-    var avatarString = "";
-    for (let i = 0; i < 8; i++) {
-      for (let j = 0; j < 8; j++) {
-        avatarString += avatar[j][i];
-      }
-    }
 
 
-  }
+  const nameColor = document.getElementById("nameColor");
+  nameColor.setAttribute("style", nameColor.getAttribute("style") + "; color:" + colorGrab( <?php echo $row["namecolor"] ?> ) + ";");
 
-
-
-const nameColor = document.getElementById("nameColor");
-nameColor.setAttribute("style", nameColor.getAttribute("style") + "; color:" + colorGrab( <?php echo $row["namecolor"] ?> ) + ";");
-
-const roleColor = document.getElementById("roleColor");
-roleColor.innerHTML = roleGrab(<?php echo $row["namecolor"] ?>) ;
+  const roleColor = document.getElementById("roleColor");
+  roleColor.innerHTML = roleGrab(<?php echo $row["namecolor"] ?>) ;
 
 </script> 
 
