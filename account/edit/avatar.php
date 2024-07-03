@@ -8,11 +8,6 @@ session_start();
 
 <head>
     <style>
-        .error {
-            color: #FF0000;
-            font-size: 0.875em;
-        }
-        .disclaimer {color: #7F7F7F;}
         .wrapper {
             margin: auto;
             padding: 30px;
@@ -85,6 +80,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $sql = 'UPDATE users SET avatar = "'. $avatarInput . '" WHERE name = "' . $_SESSION["username"] . '";';
         //$sql = 'UPDATE users SET avatar = "0000000" WHERE name = "deklaswas";';
         $db->exec($sql);
+
+        header('Location: http://www.deklaswas.com/account/myaccount.php');
+        die();
+        
       } catch(PDOException $e) {
         echo $sql . "<br>" . $e->getMessage();
       }
