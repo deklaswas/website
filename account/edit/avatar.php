@@ -118,22 +118,6 @@ function test_input($data) {
 
 
 
-<div class="wrapper">
-    <h1>My Account</h1>
-
-    <canvas 
-      id="profileCanvas"
-      width="80"
-      height="80"
-      style="border:1px solid grey; display: inline-block; float: left; margin-right: 20px">
-    </canvas>
-    <h2 id = "nameColor" style="line-height: 0;"> <?php echo $_SESSION["username"] ?> </h2>
-    <h3 id = "roleColor" style="line-height: 0;"> User </h3>
-</div>
-
-<br>
-
-
 <form  method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
   <div class='parent'>
     <canvas 
@@ -170,9 +154,6 @@ function test_input($data) {
   //canvas for editor
   const c = document.getElementById("avatarCanvas");
   const ctx = c.getContext("2d");
-
-  const pc = document.getElementById("profileCanvas");
-  const pctx = pc.getContext("2d");
 
   var textFieldAvatar = document.getElementById("avatarInput");
 
@@ -244,20 +225,6 @@ function test_input($data) {
       case "9": return "green";     // owner
     }
   }
-  function roleGrab(c) {
-    switch ( String(c) ) {
-      case "0": return "User";        // user
-      case "1": return "white";       //
-      case "2": return "Playtester";  // playtester
-      case "3": return "Verified";    // verified
-      case "4": return "lime";        //
-      case "5": return "cyan";        //
-      case "6": return "Moderator";   // moderator
-      case "7": return "yellow";      //
-      case "8": return "Poopy";       // poopy
-      case "9": return "Owner";       // owner
-    }
-  }
 
   function drawAvatar(contextDraw,sizeo) {
     sizeo /= 8;
@@ -274,7 +241,6 @@ function test_input($data) {
   }
 
   drawAvatar(ctx,160);
-  drawAvatar(pctx,80);
 
   function submitAvatar() {
     drawAvatar(pctx,80);
@@ -290,13 +256,6 @@ function test_input($data) {
 
   }
 
-
-
-const nameColor = document.getElementById("nameColor");
-nameColor.setAttribute("style", nameColor.getAttribute("style") + "; color:" + colorGrab( <?php echo $row["namecolor"] ?> ) + ";");
-
-const roleColor = document.getElementById("roleColor");
-roleColor.innerHTML = roleGrab(<?php echo $row["namecolor"] ?>) ;
 
 </script> 
 
