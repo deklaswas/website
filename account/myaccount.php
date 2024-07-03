@@ -63,7 +63,7 @@ try {
 
   $sql = "SELECT rowid FROM users WHERE name = '" . $_SESSION["username"] . "';";
   $stringTest = $db->query($sql);
-  $idNum = $stringTest->fetch(PDO::FETCH_ASSOC)["rowid"] ;
+  $idNum = $stringTest->fetch(PDO::FETCH_ASSOC)["rowid"];
 
 } catch(PDOException $e) {
   echo $sql . "<br>" . $e->getMessage();
@@ -133,6 +133,7 @@ function test_input($data) {
       style="border:1px solid grey; display: inline-block; float: left; margin-right: 20px">
     </canvas>
     <h2 id = "nameColor" style="line-height: 0;"> <?php echo $_SESSION["username"] ?> </h2>
+    <br>
     <h3 id = "roleColor" style="line-height: 0;"> User </h3>
 
     <br>
@@ -208,8 +209,6 @@ function test_input($data) {
 
   const accountLink = document.getElementById("accountLink");
   accountLink.setAttribute("href", "https://www.deklaswas.com/account/user.php/?id=" + <?php echo json_encode($idNum);?> );
-
-  console.log(<?php echo json_encode($row);?>);
 
 </script> 
 
