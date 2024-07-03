@@ -65,7 +65,8 @@ $avatarString = "";
 $row;
 
 try {
-  $sql = "SELECT * FROM users WHERE rowid = " . $userid . ";";
+  //$sql = "SELECT * FROM users WHERE rowid = " . $userid . ";";
+  $sql = "SELECT * FROM users WHERE rowid = 1;";
   $stringTest = $db->query($sql);
   $row = $stringTest->fetch(PDO::FETCH_ASSOC);
   $avatarString =  $row["avatar"];
@@ -80,17 +81,6 @@ for ($i = 0; $i < count($avatar); $i++) {
 }
 
 
-
-//$avatarString = "0000000000000000000000000000000000000000000000000000000000000000";
-
-//try {
-//  $sql = "SELECT avatar FROM users WHERE name = '" . $_SESSION["username"] . "';";
-//  $avatarString = $db->query($sql);
-//} catch(PDOException $e) {
-//  echo $sql . "<br>" . $e->getMessage();
-//}
-
-//if ($avatarString = "") $avatarString = "0000000000000000000000000000000000000000000000000000000000000000";
 
 
 //sanitize inputs
