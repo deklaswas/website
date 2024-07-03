@@ -30,7 +30,6 @@ session_start();
         }
         .otherside {
             margin: auto;
-            padding: 50px;
             width: 50%;
         }
     </style>
@@ -135,7 +134,7 @@ function test_input($data) {
 
   <div class="otherside">
     <a  class="disclaimer"
-        href="https://www.deklaswas.com/login.php"
+        href="https://www.deklaswas.com/account/login.php"
     > Already registered? Login</a>
   </div>
 

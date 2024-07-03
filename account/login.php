@@ -12,12 +12,19 @@ session_start();
             color: #FF0000;
             font-size: 0.875em;
         }
-        .disclaimer {color: #7F7F7F;}
+        .disclaimer {
+          color: #7F7F7F;
+          font-style: italic;
+        }
         .wrapper {
             margin: auto;
             padding: 50px;
             width: 50%;
             border-style: inset;
+        }
+        .otherside {
+            margin: auto;
+            width: 50%;
         }
     </style>
 </head>
@@ -109,10 +116,12 @@ function test_input($data) {
 
         <input type="submit" name="submit" value="Log in">  
     </form>
+</div>
 
-
-
-
+<div class="otherside">
+  <a  class="disclaimer"
+      href="https://www.deklaswas.com/account/register.php"
+  > Need an account? Register</a>
 </div>
 
 </body>
