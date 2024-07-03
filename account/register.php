@@ -137,7 +137,7 @@ function test_input($data) {
   </div>
 
   <br>
-  <a  class="otherside"
+  <a  class="wrapper"
       href="https://www.deklaswas.com/login.php"
   > Already registered? Login</a>
 
