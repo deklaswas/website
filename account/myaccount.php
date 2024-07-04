@@ -1,6 +1,12 @@
 <?php
 // Start the session
 session_start();
+
+if ($_SESSION["username"] = "") {
+  header('Location: http://www.deklaswas.com/account/login.php');
+  die();
+}
+
 ?>
 
 <!DOCTYPE HTML>  
