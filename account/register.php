@@ -88,7 +88,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       //time()
       $sql = "INSERT INTO users (name, password, namecolor, time, avatar)
       VALUES ('" . $name . "', '" . $password . "', 0, " . time() . ",
-      0000000000000000000000000000000000000000000000000000000000000000)";
+      '0000000000000000000000000000000000000000000000000000000000000000')";
       $db->exec($sql);
       
       $_SESSION["username"] = $name;
