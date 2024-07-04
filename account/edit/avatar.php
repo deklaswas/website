@@ -28,7 +28,7 @@ session_start();
 <body>
 
 
-<?php
+<h1?php
 
 // define variables and set to empty values
 $name = $password = "";
@@ -83,7 +83,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         header('Location: http://www.deklaswas.com/account/myaccount.php');
         die();
-        
+
       } catch(PDOException $e) {
         echo $sql . "<br>" . $e->getMessage();
       }
@@ -91,16 +91,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
 }
 
-//$avatarString = "0000000000000000000000000000000000000000000000000000000000000000";
-
-//try {
-//  $sql = "SELECT avatar FROM users WHERE name = '" . $_SESSION["username"] . "';";
-//  $avatarString = $db->query($sql);
-//} catch(PDOException $e) {
-//  echo $sql . "<br>" . $e->getMessage();
-//}
-
-//if ($avatarString = "") $avatarString = "0000000000000000000000000000000000000000000000000000000000000000";
 
 
 //sanitize inputs
@@ -115,7 +105,15 @@ function test_input($data) {
 ?>
 
 
+<h1>Avatar Editor</h1>
+<p>
+  Welcome to the avatar editor! Here is a brief guide on how to use it: 
+  - Click one of the 10 color buttons to pick your color.
+  - Click any pixel on the canvas to paint that pixel.
+  - Clicking "Clear" will paint the entire canvas with your selected color.
+  - Clicking "Submit" will put in the 
 
+</p>
 
 <form  method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
   <div class='parent'>

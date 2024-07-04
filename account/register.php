@@ -52,8 +52,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nameErr = "username is required";
   } else {
     $name = test_input($_POST["name"]);
-    if (!preg_match("/^[a-zA-Z-' ]*$/",$name)) {// check if name only contains letters and whitespace
-      $nameErr = "invalid username; only letters and whitespace";
+    if (!preg_match("/^[A-Za-z0-9_-]*$/",$name)) {// check if name only contains letters and whitespace
+      $nameErr = "invalid username; only letters, numbers, and underscores";
     } elseif (strlen($name) > 20) {// check if name is not too long
       $nameErr = "20 characters or fewer";
     } else {
@@ -71,8 +71,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $passwordErr = "password is required";
   } else {
     $password = test_input($_POST["password"]);
-    if (!preg_match("/^[a-zA-Z-' ]*$/",$password)) {// check if password has acceptable characters
-        $passwordErr = "invalid username; only letters and whitespace";
+    if (!preg_match("/^[A-Za-z0-9_-]*$/",$password)) {// check if password has acceptable characters
+        $passwordErr = "invalid password; only letters, numbers, and underscores";
     } elseif (strlen($password) > 20) {//check if password is not too long
       $passwordErr = "20 characters or fewer";
     }
