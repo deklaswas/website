@@ -53,8 +53,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   // check if name only contains letters and whitespace
   } else {
     $name = test_input($_POST["name"]);
-    if (!preg_match("/^[a-zA-Z-' ]*$/",$name)) {
-      $nameErr = "invalid username; only letters and whitespace";
+    if (!preg_match("/^[A-Za-z0-9_-]*$/",$name)) {
+      $nameErr = "invalid username; only letters, numbers, and underscores";
     } else {
         $sql = "SELECT * FROM users WHERE name = '" . $name . "';";
         $sqlQuery = $db->query($sql);
@@ -69,23 +69,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // check if password has acceptable characters
   } else {
     $password = test_input($_POST["password"]);
-    if (!preg_match("/^[a-zA-Z-' ]*$/",$password)) {
-        $passwordErr = "invalid username; only letters and whitespace";
+    if (!preg_match("/^[A-Za-z0-9_-]*$/",$password)) {
+        $passwordErr = "invalid password; only letters, numbers, and underscores";
     } else {
       if ($password !== $userRow["password"]) {
-        $passwordErr = "incorrect password";// (". $userRow["password"] ;
+        $passwordErr = "incorrect password";
       } else {
-
-
-      $_SESSION["username"] = $name;
-      $_SESSION["id"] = $userRow["rowid"];
-      header('Location: http://www.deklaswas.com/account/myaccount.php');
-      die();
-
+        $_SESSION["username"] = $name;
+        $_SESSION["id"] = $userRow["rowid"];
+        header('Location: http://www.deklaswas.com/account/myaccount.php');
+        die();
       }
     }
   }
-
 }
 
 //sanitize inputs
