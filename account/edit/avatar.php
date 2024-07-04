@@ -28,7 +28,7 @@ session_start();
 <body>
 
 
-<h1?php
+<?php
 
 // define variables and set to empty values
 $name = $password = "";
@@ -108,10 +108,12 @@ function test_input($data) {
 <h1>Avatar Editor</h1>
 <p>
   Welcome to the avatar editor! Here is a brief guide on how to use it: 
+  <ul>
   - Click one of the 10 color buttons to pick your color.
   - Click any pixel on the canvas to paint that pixel.
   - Clicking "Clear" will paint the entire canvas with your selected color.
   - Clicking "Submit" will put in the 
+  </ul>
 
 </p>
 
