@@ -4,11 +4,14 @@ session_start();
 
 $userid = -1;
 if ($_GET['id'] == null) {
-  
+  header('Location: http://www.deklaswas.com/account/login.php');
+  die();
+} elseif ( !ctype_digit($_GET['id']) ) {
+  header('Location: http://www.deklaswas.com/account/login.php');
+  die();
 } else {
   $userid = $_GET['id'];
 }
-$userid = 0;
 
 
 ?>
