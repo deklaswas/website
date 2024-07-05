@@ -12,6 +12,9 @@ $sql = 'SELECT * FROM users';
 foreach ($db->query($sql) as $row) {
     print_r($row);
     echo '<br/>';
+    print_r( password_hash($row['password'], PASSWORD_DEFAULT ));
+    echo '<br/>';
+    echo '<br/>';
 }
 
 
