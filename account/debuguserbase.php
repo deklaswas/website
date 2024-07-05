@@ -13,6 +13,11 @@ foreach ($db->query($sql) as $row) {
     print_r($row);
     echo '<br/>';
     //should be 13 but that was too slow
+    
+    if (password_needs_rehash( $row['password'], PASSWORD_BCRYPT, ["cost" => 11] )) echo 'poop!';
+    echo '<br/>';
+    echo '<br/>';
+    
     //$hasho = password_hash($row['password'], PASSWORD_BCRYPT, ["cost" => 11]);
     //print_r( $hasho );
     //echo '<br/>';
