@@ -19,8 +19,8 @@ foreach ($db->query($sql) as $row) {
 //
         $hasho = password_hash($row['password'], PASSWORD_BCRYPT, ["cost" => 11]);
         echo $hasho;
-  //      $sql = "UPDATE users SET password = '" . $hasho . "' WHERE password = '" . $row['password'] . "";
-//
+        $sql = 'UPDATE users SET password = "' . $hasho . '" WHERE password = "' . $row['password'] . '";';
+        $db->exec($sql);
     }
     echo '<br/>';
     echo '<br/>';
