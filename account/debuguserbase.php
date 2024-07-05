@@ -14,13 +14,13 @@ foreach ($db->query($sql) as $row) {
     echo '<br/>';
     //should be 13 but that was too slow
     
-    if (password_needs_rehash( $row['password'], PASSWORD_BCRYPT, ["cost" => 11] )) {
-        echo 'poop!';
-
-        $hasho = password_hash($row['password'], PASSWORD_BCRYPT, ["cost" => 11]);
-        $sql = "UPDATE users SET password = '" . $hasho . "' WHERE password = '" . $row['password'] . "";
-
-    }
+   // if (password_needs_rehash( $row['password'], PASSWORD_BCRYPT, ["cost" => 11] )) {
+ //       echo 'poop!';
+//
+    //    $hasho = password_hash($row['password'], PASSWORD_BCRYPT, ["cost" => 11]);
+  //      $sql = "UPDATE users SET password = '" . $hasho . "' WHERE password = '" . $row['password'] . "";
+//
+    //}
     echo '<br/>';
     echo '<br/>';
     
