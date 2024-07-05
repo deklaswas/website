@@ -22,6 +22,7 @@ foreach ($db->query($sql) as $row) {
     }
     echo '<br/>';
     echo '<br/>';
+    break;
 }
 
 
