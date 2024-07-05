@@ -50,11 +50,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (empty($_POST["name"])) {
     $nameErr = "username is required";
 
-  // check if name only contains letters and whitespace
+  // check if name only contains letters and numbers
   } else {
     $name = test_input($_POST["name"]);
     if (!preg_match("/^[A-Za-z0-9_-]*$/",$name)) {
-      $nameErr = "invalid username; only letters, numbers, and underscores";
+      $nameErr = "invalid username; only letters, numbers, underscores, hyphens";
     } else {
         $sql = "SELECT * FROM users WHERE name = '" . $name . "';";
         $sqlQuery = $db->query($sql);
@@ -72,11 +72,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!preg_match("/^[A-Za-z0-9_-]*$/",$password)) {
         $passwordErr = "invalid password; only letters, numbers, and underscores";
     } else {
+      //  password_verify($password, $userRow["password"])
       if ($password !== $userRow["password"]) {
         $passwordErr = "incorrect password";
       } else {
+        //successful login
         $_SESSION["username"] = $name;
         $_SESSION["id"] = $userRow["rowid"];
+        $_SESSION["avatar"] = $userRow["avatar"];
         header('Location: http://www.deklaswas.com/account/myaccount.php');
         die();
       }

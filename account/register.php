@@ -86,6 +86,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       //$sql = "INSERT INTO MyGuests (firstname, lastname, email)
       //VALUES ('John', 'Doe', 'john@example.com')";
       //time()
+
+      $password = password_hash($password, PASSWORD_BCRYPT, ["cost" => 11]);
+      
       $sql = "INSERT INTO users (name, password, namecolor, time, avatar)
       VALUES ('" . $name . "', '" . $password . "', 0, " . time() . ",
       '0000000000000000000000000000000000000000000000000000000000000000')";
