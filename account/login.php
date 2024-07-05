@@ -73,7 +73,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $passwordErr = "invalid password; only letters, numbers, and underscores";
     } else {
       //  password_verify($password, $userRow["password"])
-      if ($password !== $userRow["password"]) {
+      if ( password_verify($password, $userRow["password"]) == false  ) {
         $passwordErr = "incorrect password";
       } else {
         //successful login
