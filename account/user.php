@@ -8,6 +8,7 @@ if ($_GET['id'] == null) {
 } else {
   $userid = $_GET['id'];
 }
+$userid = 0;
 
 
 ?>
