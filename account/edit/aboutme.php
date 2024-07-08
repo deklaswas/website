@@ -34,36 +34,21 @@ session_start();
 $name = $password = "";
 
 //avatar array
-$avatar = array (
-  array("","","","","","","",""),
-  array("","","","","","","",""),
-  array("","","","","","","",""),
-  array("","","","","","","",""),
-  array("","","","","","","",""),
-  array("","","","","","","",""),
-  array("","","","","","","",""),
-  array("","","","","","","",""),
-);
+$aboutme = "";
 
 $db = new PDO('sqlite:../sqluserbase.db');
 
-$avatarString = "";
 $row;
 
 try {
   $sql = "SELECT * FROM users WHERE name = '" . $_SESSION["username"] . "';";
   $stringTest = $db->query($sql);
   $row = $stringTest->fetch(PDO::FETCH_ASSOC);
-  $avatarString =  $row["avatar"];
+  $aboutme =  $row["aboutme"];
 } catch(PDOException $e) {
   echo $sql . "<br>" . $e->getMessage();
 }
 
-for ($i = 0; $i < count($avatar); $i++) {
-  for ($j = 0; $j < count($avatar); $j++) {
-    $avatar[$i][$j] = substr($avatarString, $i + $j*8,1);
-  }
-}
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -105,14 +90,13 @@ function test_input($data) {
 ?>
 
 
-<h1>Avatar Editor</h1>
+<h1>Status Editor</h1>
 <p>
-  Welcome to the avatar editor! Here is a brief guide on how to use it: 
+  Welcome to the status editor! Here are some brief rules: 
   <ul>
-    <li>- Click one of the 10 color buttons to select a color.</li>
-    <li>- Click any pixel on the canvas to paint that pixel.</li>
+    <li>- Only letters, numbers, dashes, and whitespaces will be submitted.</li>
+    <li>- 100 characters or less.</li>
     <li>- Clicking "Clear" will paint the entire canvas with your selected color.</li>
-    <li>- Clicking "Submit" will set the canvas as your new avatar.</li>
   </ul>
 
 </p>

@@ -13,7 +13,6 @@ if ($_GET['id'] == null) {
   $userid = $_GET['id'];
 }
 
-
 ?>
 
 <!DOCTYPE HTML>  
@@ -76,6 +75,11 @@ try {
   $row = $stringTest->fetch(PDO::FETCH_ASSOC);
   $avatarString =  $row["avatar"];
   $nameString =  $row["name"];
+  
+  if (!is_string($nameString)) {
+    $nameString = "User does not exist!";
+  }
+
 } catch(PDOException $e) {
   echo $sql . "<br>" . $e->getMessage();
 }
