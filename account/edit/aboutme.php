@@ -50,16 +50,14 @@ try {
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   //make sure avatar string is not empty
-  if (!empty($_POST["avatarString"])) {
-    $avatarInput = test_input($_POST["avatarString"]);
-    $avatarString = test_input($_POST["avatarString"]);
+  if (!empty($_POST["status"])) {
+    $aboutme = test_input($_POST["status"]);
 
     // check if name only contains numbers
     //if (!preg_match('/^[0-9]*$/', $avatarInput)) {
 
       try {
-        $sql = 'UPDATE users SET avatar = "'. $avatarInput . '" WHERE name = "' . $_SESSION["username"] . '";';
-        //$sql = 'UPDATE users SET avatar = "0000000" WHERE name = "deklaswas";';
+        $sql = 'UPDATE users SET aboutme = "'. $aboutme . '" WHERE name = "' . $_SESSION["username"] . '";';
         $db->exec($sql);
 
         header('Location: http://www.deklaswas.com/account/myaccount.php');
@@ -72,8 +70,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
 }
 
-
-
 //sanitize inputs
 function test_input($data) {
   $data = trim($data);
@@ -81,7 +77,6 @@ function test_input($data) {
   $data = htmlspecialchars($data);
   return $data;
 }
-
 
 ?>
 
@@ -99,11 +94,8 @@ function test_input($data) {
 
 <form  method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
   <div class='parent'>
-    
-      
-      <textarea name="status" rows="5" cols="40"> <?php echo $aboutme;?> </textarea>
-
-      <input id="avatarInput" type="text" name="avatarString" maxlength="64" minlength="64" size="64" style="font-size:0.59em" value="<?php echo $avatarString;?>"> 
+    <textarea name="status" rows="5" cols="40" maxlength="64"> <?php echo $aboutme;?> </textarea>
+    <button type="submit">Submit</button>
   </div>
 </form>
 
