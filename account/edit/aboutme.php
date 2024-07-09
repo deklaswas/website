@@ -92,14 +92,14 @@ function test_input($data) {
   <ul>
     <li>- Only letters, numbers, dashes, and whitespaces will be submitted.</li>
     <li>- 100 characters or less.</li>
-    <li>- No hateful writing please!</li>
+    <li>- No hateful words please!</li>
   </ul>
 
 </p>
 
 <form  method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
   <div class='parent'>
-    <textarea name="status" rows="5" cols="40" maxlength="64"> <?php echo $aboutme;?> </textarea>
+    <textarea name="status" rows="5" cols="40" maxlength="100"><?php echo $aboutme;?></textarea> <br>
     <button type="submit">Submit</button>
   </div>
 </form>

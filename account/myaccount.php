@@ -139,6 +139,7 @@ function test_input($data) {
     </canvas>
     <h2 id = "nameColor" style="line-height: 0;"> <?php echo $_SESSION["username"] ?> </h2>
     <h3 id = "roleColor" style="line-height: 0;"> User </h3>
+    <p id = "status" > <?php echo $row["aboutme"]; ?> </p>
 
     <br>
     <br>
