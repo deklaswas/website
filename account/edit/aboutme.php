@@ -55,7 +55,7 @@ try {
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   //make sure avatar string is not empty
-  if (!empty($_POST["status"])) {
+  //if (!empty($_POST["status"])) {
     //$aboutme = preg_replace("/[^a-z0-9 .\-]+/", "", test_input($_POST["status"]));
     $aboutme = test_input($_POST["status"]);
 
@@ -70,7 +70,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } catch(PDOException $e) {
       echo $sql . "<br>" . $e->getMessage();
     }
-  }
+  //}
 }
 
 //sanitize inputs
