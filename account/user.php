@@ -93,15 +93,6 @@ for ($i = 0; $i < count($avatar); $i++) {
 
 
 
-//sanitize inputs
-function test_input($data) {
-  $data = trim($data);
-  $data = stripslashes($data);
-  $data = htmlspecialchars($data);
-  return $data;
-}
-
-
 ?>
 
 
@@ -115,7 +106,10 @@ function test_input($data) {
       style="border:1px solid grey; display: inline-block; float: left; margin-right: 20px">
     </canvas>
     <h2 id = "nameColor" style="line-height: 0;"> <?php echo $nameString ?> </h2>
-    <h3 id = "roleColor" style="line-height: 0;">  </h3>
+    <h3 id = "roleColor" style="line-height: 0;"> User </h3>
+    <p id = "status" > <?php echo $row["aboutme"]; ?> </p>
+    
+    <p id = "status" > <?php echo $row["aboutme"]; ?> </p>
 </div>
 
 
