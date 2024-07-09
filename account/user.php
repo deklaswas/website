@@ -108,8 +108,6 @@ for ($i = 0; $i < count($avatar); $i++) {
     <h2 id = "nameColor" style="line-height: 0;"> <?php echo $nameString ?> </h2>
     <h3 id = "roleColor" style="line-height: 0;"> User </h3>
     <p id = "status" > <?php echo $row["aboutme"]; ?> </p>
-    
-    <p id = "status" > <?php echo $row["aboutme"]; ?> </p>
 </div>
 
 
