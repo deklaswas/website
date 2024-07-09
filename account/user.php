@@ -115,7 +115,7 @@ function test_input($data) {
       style="border:1px solid grey; display: inline-block; float: left; margin-right: 20px">
     </canvas>
     <h2 id = "nameColor" style="line-height: 0;"> <?php echo $nameString ?> </h2>
-    <h3 id = "roleColor" style="line-height: 0;"> User </h3>
+    <h3 id = "roleColor" style="line-height: 0;">  </h3>
 </div>
 
 
@@ -174,13 +174,13 @@ function test_input($data) {
 
   drawAvatar(pctx,80);
 
+  if ( <?php echo $nameString?> != "User does not exist!") {
+    const nameColor = document.getElementById("nameColor");
+    nameColor.setAttribute("style", nameColor.getAttribute("style") + "; color:" + colorGrab( <?php echo $row["namecolor"] ?> ) + ";");
 
-
-  const nameColor = document.getElementById("nameColor");
-  nameColor.setAttribute("style", nameColor.getAttribute("style") + "; color:" + colorGrab( <?php echo $row["namecolor"] ?> ) + ";");
-
-  const roleColor = document.getElementById("roleColor");
-  roleColor.innerHTML = roleGrab(<?php echo $row["namecolor"] ?>) ;
+    const roleColor = document.getElementById("roleColor");
+    roleColor.innerHTML = roleGrab(<?php echo $row["namecolor"] ?>) ;
+  }
 
 </script> 
 
