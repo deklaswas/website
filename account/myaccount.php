@@ -144,8 +144,8 @@ function test_input($data) {
     <br>
     <br>
 
-    <a href = "https://www.deklaswas.com/account/edit/avatar.php" > Click here to edit avatar </a>
-    <a href = "https://www.deklaswas.com/account/edit/aboutme.php" > Click here to edit status </a>
+    <a href = "https://www.deklaswas.com/account/edit/avatar.php" > Click here to edit avatar </a><br>
+    <a href = "https://www.deklaswas.com/account/edit/aboutme.php" > Click here to edit status </a><br>
     <br>
     <a id="accountLink"> Link to your user page </a>
 
