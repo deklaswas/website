@@ -56,7 +56,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   //make sure avatar string is not empty
   if (!empty($_POST["status"])) {
-    $aboutme = test_input($_POST["status"]);
+    $aboutme = preg_replace("/^[a-z0-9 .?!\-]+$/i", "", test_input($_POST["status"]));
+    //$result = preg_replace("/[^a-zA-Z0-9]+/", "", $s);
 
     // check if name only contains numbers
     //if (!preg_match('/^[0-9]*$/', $avatarInput)) {

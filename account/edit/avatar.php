@@ -78,7 +78,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $avatarInput = test_input($_POST["avatarString"]);
     $avatarString = test_input($_POST["avatarString"]);
 
-    // check if name only contains numbers
+    // check if avatarstring only contains numbers
     //if (!preg_match('/^[0-9]*$/', $avatarInput)) {
 
       try {
