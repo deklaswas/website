@@ -56,23 +56,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   //make sure avatar string is not empty
   if (!empty($_POST["status"])) {
-    $aboutme = preg_replace("/[^a-z0-9 .\-]+/", "", test_input($_POST["status"]));
-    //$result = preg_replace("/[^a-zA-Z0-9]+/", "", $s);
+    //$aboutme = preg_replace("/[^a-z0-9 .\-]+/", "", test_input($_POST["status"]));
+    $aboutme = test_input($_POST["status"]);
 
-    // check if name only contains numbers
-    //if (!preg_match('/^[0-9]*$/', $avatarInput)) {
 
-      try {
-        $sql = 'UPDATE users SET aboutme = "'. $aboutme . '" WHERE name = "' . $_SESSION["username"] . '";';
-        $db->exec($sql);
+    try {
+      $sql = 'UPDATE users SET aboutme = "'. $aboutme . '" WHERE name = "' . $_SESSION["username"] . '";';
+      $db->exec($sql);
 
-        header('Location: http://www.deklaswas.com/account/myaccount.php');
-        die();
+      header('Location: http://www.deklaswas.com/account/myaccount.php');
+      die();
 
-      } catch(PDOException $e) {
-        echo $sql . "<br>" . $e->getMessage();
-      }
-    //}
+    } catch(PDOException $e) {
+      echo $sql . "<br>" . $e->getMessage();
+    }
   }
 }
 
@@ -91,7 +88,6 @@ function test_input($data) {
 <p>
   Welcome to the status editor! Here are some brief rules: 
   <ul>
-    <li>- Only letters, numbers, dashes, and whitespaces will be submitted.</li>
     <li>- 100 characters or less.</li>
     <li>- No hateful words please!</li>
   </ul>
