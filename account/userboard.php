@@ -32,10 +32,12 @@ echo '<div class="wrapper">';
 
 $userTable = new SplDoublyLinkedList;
 $num = 0;
+$rowid = 0;
 
 try {
   $sql = "SELECT * FROM users;";
   foreach ($db->query($sql) as $row) {
+    $rowid++;
     $nameString = $row["name"];
     $avatarString =  $row["avatar"];
     $colorString =  $row["rolecolor"];
@@ -47,7 +49,7 @@ try {
     //$userTable->add($num, [$nameString, $avatarString, $colorString]);
 
     echo '
-    <a href="https://www.deklaswas.com/account/user.php/?id=1">
+    <a href="https://www.deklaswas.com/account/user.php/?id="' . $rowid . '>
      <canvas 
        id="profileCanvas' . $nameString . '"
        width="80"
