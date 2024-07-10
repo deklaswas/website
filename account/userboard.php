@@ -57,6 +57,8 @@ $row;
 $avatarString = "";
 $nameString = "";
 
+echo '<div class="wrapper">';
+
 try {
   $sql = "SELECT * FROM users;";
   foreach ($db->query($sql) as $row) {
@@ -80,6 +82,8 @@ try {
   echo $sql . "<br>" . $e->getMessage();
 }
 
+echo '</div>';
+
 for ($i = 0; $i < count($avatar); $i++) {
   for ($j = 0; $j < count($avatar); $j++) {
     $avatar[$i][$j] = substr($avatarString, $i + $j*8,1);
@@ -91,8 +95,6 @@ for ($i = 0; $i < count($avatar); $i++) {
 
 
 
-<div class="wrapper">
-</div>
 
 
 
