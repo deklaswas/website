@@ -47,8 +47,8 @@ try {
       continue;
     }
 
-    $num++;
-    $userTable->add($num, [$nameString, $avatarString, $colorString]);
+    //$num++;
+    //$userTable->add($num, [$nameString, $avatarString, $colorString]);
 
     echo $nameString;
   }
@@ -58,11 +58,6 @@ try {
 
 echo '</div>';
 
-for ($i = 0; $i < count($avatar); $i++) {
-  for ($j = 0; $j < count($avatar); $j++) {
-    $avatar[$i][$j] = substr($avatarString, $i + $j*8,1);
-  }
-}
 
 
 ?>
