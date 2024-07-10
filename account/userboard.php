@@ -41,21 +41,6 @@ if ($_GET['id'] == null) {
             border-style: inset;
             padding: 50px;
         }
-        .triangle-right {
-          width: 0;
-          height: 0;
-          border-top: 25px solid transparent;
-          border-left: 50px solid #555;
-          border-bottom: 25px solid transparent;
-        }
-        
-        .triangle-left {
-          width: 0;
-          height: 0;
-          border-top: 25px solid transparent;
-          border-left: 50px solid #555;
-          border-bottom: 25px solid transparent;
-        }
     </style>
 </head>
 <body>
@@ -126,8 +111,6 @@ for ($i = 0; $i < count($avatar); $i++) {
     <p id = "status"> <?php echo $row["aboutme"]; ?></p>
 </div>
 
-<!-- triangle links to go to neighboring accounts -->
-<a href= <?php echo "https://www.deklaswas.com/account/user.php/?id=" . ($userid+1); ?>  > <div class="triangle-right"></div> </a>
 
 
 <script>
