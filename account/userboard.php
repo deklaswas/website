@@ -70,7 +70,7 @@ try {
       id="profileCanvas' . $nameString . '"
       width="80"
       height="80"
-      style="border:1px solid grey; display: inline-block; margin-right: 18px"
+      style="border:1px solid gray; display: inline-block; margin-right: 18px"
       title=" ' . $nameString . ' ">
     </canvas>
     ';
@@ -97,10 +97,6 @@ for ($i = 0; $i < count($avatar); $i++) {
 
 
 <script>
-
-  
-//$userTable->add($num, [$nameString, $avatarString, $colorString]);
-
   const sizeList = <?php echo $userTable->count(); ?>
 
   function colorGrab(c) {
@@ -138,13 +134,13 @@ for ($i = 0; $i < count($avatar); $i++) {
     const pc = document.getElementById("profileCanvas" + profileData[0]  );
     const pctx = pc.getContext("2d");
 
-    drawAvatar(pctx,profileData[1]);
+    //drawAvatar(pctx,profileData[1]);
     
-    const nameColor = document.getElementById("nameColor");
-    nameColor.setAttribute("style", nameColor.getAttribute("style") + "; color:" + colorGrab( <?php echo $row["namecolor"] ?> ) + ";");
+    //const nameColor = document.getElementById("nameColor");
+    //nameColor.setAttribute("style", nameColor.getAttribute("style") + "; color:" + colorGrab( <?php echo $row["namecolor"] ?> ) + ";");
 
-    const roleColor = document.getElementById("roleColor");
-    roleColor.innerHTML = roleGrab(<?php echo $row["namecolor"] ?>) ;
+    //const roleColor = document.getElementById("roleColor");
+    //roleColor.innerHTML = roleGrab(<?php echo $row["namecolor"] ?>) ;
   }
 
 </script> 
