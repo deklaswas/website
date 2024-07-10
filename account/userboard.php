@@ -1,18 +1,6 @@
 <?php
 // Start the session
 session_start();
-
-$userid = -1;
-if ($_GET['id'] == null) {
-  header('Location: http://www.deklaswas.com/account/login.php');
-  die();
-} elseif ( !ctype_digit($_GET['id']) ) {
-  header('Location: http://www.deklaswas.com/account/login.php');
-  die();
-} else {
-  $userid = $_GET['id'];
-}
-
 ?>
 
 <!DOCTYPE HTML>  
@@ -70,16 +58,17 @@ $avatarString = "";
 $nameString = "";
 
 try {
-  $sql = "SELECT * FROM users WHERE rowid = " . $userid . ";";
-  //$sql = "SELECT * FROM users WHERE rowid = 1;";
-  $stringTest = $db->query($sql);
-  $row = $stringTest->fetch(PDO::FETCH_ASSOC);
-  $avatarString =  $row["avatar"];
-  $nameString =  $row["name"];
-  
-  if (!is_string($nameString)) {
-    $nameString = "User does not exist!";
+  $sql = "SELECT * FROM users;";
+  foreach ($db->query($sql) as $row) {
+    $nameString = $row["name"];
+    $avatarString =  $row["avatar"];
+    if (!is_string($nameString)) {
+      continue;
+    }
+    
+    echo $nameString;
   }
+  
 
 } catch(PDOException $e) {
   echo $sql . "<br>" . $e->getMessage();
