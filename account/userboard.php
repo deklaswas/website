@@ -50,7 +50,15 @@ try {
     //$num++;
     //$userTable->add($num, [$nameString, $avatarString, $colorString]);
 
-    echo $nameString;
+    echo '
+    <canvas 
+      id="profileCanvas' . $nameString . '"
+      width="80"
+      height="80"
+      style="border:1px solid gray; display: inline-block; margin-right: 18px"
+      title=" ' . $nameString . ' ">
+    </canvas>
+    ';
   }
 } catch(PDOException $e) {
   echo $sql . "<br>" . $e->getMessage();
