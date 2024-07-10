@@ -8,21 +8,12 @@ session_start();
 
 <head>
     <style>
-        .error {
-            color: #FF0000;
-            font-size: 0.875em;
-        }
-        .disclaimer {color: #7F7F7F;}
         .wrapper {
             margin: auto;
             padding: 30px;
             
             width: 50%;
             border-style: inset;
-        }
-        .colbutton {
-            height:20px;
-            width:100px;
         }
         .parent {
             border-style: inset;
@@ -58,6 +49,9 @@ $nameString = "";
 
 echo '<div class="wrapper">';
 
+$userTable = new SplDoublyLinkedList;
+$num = 0;
+
 try {
   $sql = "SELECT * FROM users;";
   foreach ($db->query($sql) as $row) {
@@ -68,12 +62,15 @@ try {
       continue;
     }
 
+    $num++;
+    $userTable->add($num, [$nameString, $avatarString, $colorString]);
+
     echo '
     <canvas 
       id="profileCanvas' . $nameString . '"
       width="80"
       height="80"
-      style="border:1px solid ' . $colorString . '; display: inline-block; float: left; margin-right: 19px"
+      style="border:1px solid grey; display: inline-block; margin-right: 18px"
       title=" ' . $nameString . ' ">
     </canvas>
     ';
@@ -90,6 +87,7 @@ for ($i = 0; $i < count($avatar); $i++) {
   }
 }
 
+
 ?>
 
 
@@ -100,12 +98,10 @@ for ($i = 0; $i < count($avatar); $i++) {
 
 <script>
 
-  //canvas for avatar
-  const pc = document.getElementById("profileCanvas");
-  const pctx = pc.getContext("2d");
+  
+//$userTable->add($num, [$nameString, $avatarString, $colorString]);
 
-  //get avatar from php
-  var avatar = <?php echo json_encode($avatar);?> ;
+  const sizeList = <?php echo $userTable->count(); ?>
 
   function colorGrab(c) {
     switch ( String(c) ) {
@@ -123,25 +119,33 @@ for ($i = 0; $i < count($avatar); $i++) {
   }
 
   //drawing the canvas itself
-  function drawAvatar(contextDraw,sizeo) {
-    sizeo /= 8;
+  function drawAvatar(contextDraw,avatar) {
+    sizeo = 10;
     var valo = "";
     for (let i = 0; i < 8; i++) {
       for (let j = 0; j < 8; j++) {
-        contextDraw.fillStyle = colorGrab(avatar[i][j]);
+        contextDraw.fillStyle = colorGrab(avatar[i + j*8]);
         contextDraw.fillRect(i*sizeo, j*sizeo, sizeo, sizeo);
-
-        valo += avatar[j][i];
       }
     }
   }
 
-  drawAvatar(pctx,80);
+  for (var i = 0; i < sizeList; i++) {
+    //get data for profile
+    var profileData = <?php json_encode( $userTable->current() ) ?>
+
+    //canvas for avatar
+    const pc = document.getElementById("profileCanvas" + profileData[0]  );
+    const pctx = pc.getContext("2d");
+
+    drawAvatar(pctx,profileData[1]);
+    
     const nameColor = document.getElementById("nameColor");
     nameColor.setAttribute("style", nameColor.getAttribute("style") + "; color:" + colorGrab( <?php echo $row["namecolor"] ?> ) + ";");
 
     const roleColor = document.getElementById("roleColor");
     roleColor.innerHTML = roleGrab(<?php echo $row["namecolor"] ?>) ;
+  }
 
 </script> 
 
