@@ -94,56 +94,5 @@ for ($i = 0; $i < count($avatar); $i++) {
 
 
 
-
-
-<script>
-  const sizeList = <?php echo $userTable->count(); ?>
-
-  function colorGrab(c) {
-    switch ( String(c) ) {
-      case "0": return "black";     // user
-      case "1": return "white";     //
-      case "2": return "red";       // playtester
-      case "3": return "blue";      // verified
-      case "4": return "lime";      //
-      case "5": return "cyan";      //
-      case "6": return "magenta";   // moderator
-      case "7": return "yellow";    //
-      case "8": return "sienna";    // poopy
-      case "9": return "green";     // owner
-    }
-  }
-
-  //drawing the canvas itself
-  function drawAvatar(contextDraw,avatar) {
-    sizeo = 10;
-    var valo = "";
-    for (let i = 0; i < 8; i++) {
-      for (let j = 0; j < 8; j++) {
-        contextDraw.fillStyle = colorGrab(avatar[i + j*8]);
-        contextDraw.fillRect(i*sizeo, j*sizeo, sizeo, sizeo);
-      }
-    }
-  }
-
-  for (var i = 0; i < sizeList; i++) {
-    //get data for profile
-    var profileData = <?php json_encode( $userTable->current() ) ?>
-
-    //canvas for avatar
-    const pc = document.getElementById("profileCanvas" + profileData[0]  );
-    const pctx = pc.getContext("2d");
-
-    //drawAvatar(pctx,profileData[1]);
-    
-    //const nameColor = document.getElementById("nameColor");
-    //nameColor.setAttribute("style", nameColor.getAttribute("style") + "; color:" + colorGrab( <?php echo $row["namecolor"] ?> ) + ";");
-
-    //const roleColor = document.getElementById("roleColor");
-    //roleColor.innerHTML = roleGrab(<?php echo $row["namecolor"] ?>) ;
-  }
-
-</script> 
-
 </body>
 </html>
