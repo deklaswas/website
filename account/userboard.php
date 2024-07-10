@@ -47,7 +47,7 @@ try {
     $userTable->add($num, [$nameString, $avatarString, $colorString]);
 
     echo '
-    <a href = "htpps://www.deklaswas.com/account/user.php/?id=' . $row["rowid"] . '>
+    <a href = "htpps://www.deklaswas.com/account/user.php/?id=' . $row["name"] . '>
      <canvas 
        id="profileCanvas' . $nameString . '"
        width="80"
