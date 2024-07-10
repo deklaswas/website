@@ -49,7 +49,7 @@ try {
     //$userTable->add($num, [$nameString, $avatarString, $colorString]);
 
     echo '
-    <a href="https://www.deklaswas.com/account/user.php/?id="' . $rowid . '>
+    <a href="https://www.deklaswas.com/account/user.php/?id=' . $rowid . '">
      <canvas 
        id="profileCanvas' . $nameString . '"
        width="80"
