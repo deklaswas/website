@@ -28,7 +28,7 @@ if ($_GET['id'] == null) {
         .wrapper {
             margin: auto;
             padding: 30px;
-            padding-bottom: 53px;
+            
             width: 50%;
             height: 150px;
             border-style: inset;
