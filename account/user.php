@@ -30,6 +30,7 @@ if ($_GET['id'] == null) {
             padding: 30px;
             padding-bottom: 53px;
             width: 50%;
+            height: 150px
             border-style: inset;
         }
         .colbutton {
@@ -166,13 +167,13 @@ for ($i = 0; $i < count($avatar); $i++) {
 
   drawAvatar(pctx,80);
 
-  if ( <?php echo $nameString?> != "User does not exist!") {
+  //if ( <?php echo $nameString?> != "User does not exist!") {
     const nameColor = document.getElementById("nameColor");
     nameColor.setAttribute("style", nameColor.getAttribute("style") + "; color:" + colorGrab( <?php echo $row["namecolor"] ?> ) + ";");
 
     const roleColor = document.getElementById("roleColor");
     roleColor.innerHTML = roleGrab(<?php echo $row["namecolor"] ?>) ;
-  }
+  //}
 
 </script> 
 
