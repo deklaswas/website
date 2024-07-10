@@ -47,7 +47,6 @@ try {
     $userTable->add($num, [$nameString, $avatarString, $colorString]);
 
     echo '
-    <a href = "htpps://www.deklaswas.com/account/user.php/?id=' . $row["name"] . '>
      <canvas 
        id="profileCanvas' . $nameString . '"
        width="80"
@@ -55,7 +54,6 @@ try {
        style="border:1px solid gray; display: inline-block; margin-right: 18px"
        title=" ' . $nameString . ' ">
      </canvas>
-    </a>
     ';
   }
 } catch(PDOException $e) {
