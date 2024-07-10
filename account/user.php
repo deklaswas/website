@@ -30,7 +30,7 @@ if ($_GET['id'] == null) {
             padding: 30px;
             
             width: 50%;
-            height: 100px;
+            height: 82px;
             border-style: inset;
         }
         .colbutton {
