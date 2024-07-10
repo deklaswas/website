@@ -45,7 +45,7 @@ if ($_GET['id'] == null) {
           width: 0;
           height: 0;
           border-top: 25px solid transparent;
-          border-left: 50px solid #555;
+          border-left: 80px solid #555;
           border-bottom: 25px solid transparent;
           float: right;
         }
@@ -54,9 +54,9 @@ if ($_GET['id'] == null) {
           width: 0;
           height: 0;
           border-top: 25px solid transparent;
-          border-right: 50px solid #555;
+          border-right: 80px solid #555;
           border-bottom: 25px solid transparent;
-          float: left;
+          float: right;
         }
     </style>
 </head>
