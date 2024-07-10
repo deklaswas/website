@@ -28,10 +28,6 @@ session_start();
 
 $db = new PDO('sqlite:sqluserbase.db');
 
-$row;
-$avatarString = "";
-$nameString = "";
-
 echo '<div class="wrapper">';
 
 $userTable = new SplDoublyLinkedList;
@@ -47,17 +43,19 @@ try {
       continue;
     }
 
-    //$num++;
-    //$userTable->add($num, [$nameString, $avatarString, $colorString]);
+    $num++;
+    $userTable->add($num, [$nameString, $avatarString, $colorString]);
 
     echo '
-    <canvas 
-      id="profileCanvas' . $nameString . '"
-      width="80"
-      height="80"
-      style="border:1px solid gray; display: inline-block; margin-right: 18px"
-      title=" ' . $nameString . ' ">
-    </canvas>
+    <a href = "htpps://www.deklaswas.com/account/user.php/?id=' . $row["rowid"] . '>
+     <canvas 
+       id="profileCanvas' . $nameString . '"
+       width="80"
+       height="80"
+       style="border:1px solid gray; display: inline-block; margin-right: 18px"
+       title=" ' . $nameString . ' ">
+     </canvas>
+    </a>
     ';
   }
 } catch(PDOException $e) {
