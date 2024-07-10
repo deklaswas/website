@@ -56,6 +56,7 @@ if ($_GET['id'] == null) {
           border-top: 25px solid transparent;
           border-left: 50px solid #555;
           border-bottom: 25px solid transparent;
+          float: left;
         }
     </style>
 </head>
@@ -114,7 +115,10 @@ for ($i = 0; $i < count($avatar); $i++) {
 
 
 
+<!-- triangle links to go to neighboring accounts -->
+<a href= <?php echo "https://www.deklaswas.com/account/user.php/?id=" . ($userid-1); ?>  > <div class="triangle-left"></div> </a>
 
+<!-- profile display -->
 <div class="wrapper">
     <canvas 
       id="profileCanvas"
