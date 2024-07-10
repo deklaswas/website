@@ -18,7 +18,6 @@ session_start();
             padding: 30px;
             
             width: 50%;
-            height: 82px;
             border-style: inset;
         }
         .colbutton {
@@ -64,17 +63,18 @@ try {
   foreach ($db->query($sql) as $row) {
     $nameString = $row["name"];
     $avatarString =  $row["avatar"];
+    $colorString =  $row["rolecolor"];
     if (!is_string($nameString)) {
       continue;
     }
 
     echo '
     <canvas 
-      id="profileCanvas"
+      id="profileCanvas' . $nameString . '"
       width="80"
       height="80"
-      style="border:1px solid grey; display: inline-block; float: left; margin-right: 20px"
-      title="pingas">
+      style="border:1px solid ' . $colorString . '; display: inline-block; float: left; margin-right: 19px"
+      title=" ' . $nameString . ' ">
     </canvas>
     ';
   }
