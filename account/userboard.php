@@ -26,21 +26,6 @@ session_start();
 
 <?php
 
-// define variables and set to empty values
-$name = $password = "";
-
-//avatar array
-$avatar = array (
-  array("","","","","","","",""),
-  array("","","","","","","",""),
-  array("","","","","","","",""),
-  array("","","","","","","",""),
-  array("","","","","","","",""),
-  array("","","","","","","",""),
-  array("","","","","","","",""),
-  array("","","","","","","",""),
-);
-
 $db = new PDO('sqlite:sqluserbase.db');
 
 $row;
