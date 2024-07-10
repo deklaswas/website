@@ -47,6 +47,7 @@ if ($_GET['id'] == null) {
           border-top: 25px solid transparent;
           border-left: 50px solid #555;
           border-bottom: 25px solid transparent;
+          float: right;
         }
         
         .triangle-left {
