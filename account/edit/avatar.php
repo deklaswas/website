@@ -219,6 +219,15 @@ function test_input($data) {
     mousePressed = -1;
   })
 
+  
+  document.ondrag = function (event) {
+    console.log("Element is being dragged")
+        };
+ 
+        document.onclick = function (event) {
+          console.log("Element is being clicked")
+        };
+
   function colorGrab(c) {
     switch ( String(c) ) {
       case "0": return "black";     // user
