@@ -30,7 +30,7 @@ $db = new PDO('sqlite:sqluserbase.db');
 
 echo '<div class="wrapper">';
 
-$userTable = new SplDoublyLinkedList();
+$userTable = [];
 $rowid = -1;
 
 try {
@@ -49,7 +49,7 @@ try {
         "avatar" => $avatarString,
         "color" => $colorString
     );
-    $userTable->push( $profileData );
+    $userTable[$rowid] = $profileData;
 
     echo '
     <a href="https://www.deklaswas.com/account/user.php/?id=' . $rowid . '">
