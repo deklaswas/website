@@ -143,7 +143,7 @@ function test_input($data) {
       <button class="colbutton" type="button" onclick='paintColor = "9"'>Green</button><br>
       <br>
       <button class="colbutton" type="button" onclick='clearCanvas()'>Clear</button>
-      <button class="colbutton" type="button" onclick='clearCanvas()'>Clear</button><br>
+      <button class="colbutton" type="button" onclick='swapCanvas()'>Swap</button><br>
       <button class="colbutton" type="submit" onclick='submitAvatar();'>Submit</button>
 
 
@@ -189,6 +189,10 @@ function test_input($data) {
         avatar[i][j] =paintColor;
       }
     }
+    drawAvatar(ctx,160);
+  }
+
+  function swapCanvas() {
     drawAvatar(ctx,160);
   }
 
