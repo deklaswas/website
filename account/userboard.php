@@ -76,8 +76,8 @@ echo '</div>';
 
 <script>
 
-  var userTable = JSON.parse( "<?php echo json_encode($userTable); ?>" )
-  console.log(userTable);
+  var userTable = JSON.parse( '<?php echo json_encode($userTable); ?>' )
+  console.log(userTable[0]["name"]);
 
   //turn number into color
   function colorGrab(c) {
