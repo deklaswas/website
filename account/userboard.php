@@ -69,7 +69,6 @@ try {
 echo '</div>';
 
 //echo var_dump($userTable);
-echo json_encode($userTable);
  
 ?>
 
@@ -78,8 +77,8 @@ echo json_encode($userTable);
 <script>
   const sizeList = <?php echo $userTable->count(); ?>
 
-  //var userTable = JSON.parse( <?php echo $userTable->serialize(); ?> )
-  //console.log(userTable);
+  var userTable = JSON.parse( <?php echo json_encode($userTable); ?> )
+  console.log(userTable);
 
   //turn number into color
   function colorGrab(c) {
