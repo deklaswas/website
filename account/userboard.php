@@ -108,8 +108,6 @@ echo "<script>console.log('Debug Objects: " . $userTable->top()["name"] . "' );<
     //get data for profile like this because json encode isnt fucking working properly
     var profileAvatar = <?php echo $userTable->top()["avatar"]?>
 
-    console.log(profileData);
-
     //canvas for avatar
     const pc = document.getElementById("profileCanvas" + <?php echo $userTable->top()["name"]?>  );
     const pctx = pc.getContext("2d");
@@ -117,9 +115,6 @@ echo "<script>console.log('Debug Objects: " . $userTable->top()["name"] . "' );<
     drawAvatar(pctx,profileAvatar);
 
     pctx.setAttribute("style", nameColor.getAttribute("style") + colorGrab(<?php echo $userTable->top()["rolecolor"]?>) + ";");
-
-    //const roleColor = document.getElementById("roleColor");
-    //roleColor.innerHTML = roleGrab(<?php echo $row["namecolor"] ?>) ;
   }
 
 </script>
