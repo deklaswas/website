@@ -179,8 +179,6 @@ function test_input($data) {
 
     avatar[ x ][ y ] = paintColor;
     drawAvatar(ctx,160);
-    
-    console.log(mousePressed);
   }
 
   function clearCanvas() {
