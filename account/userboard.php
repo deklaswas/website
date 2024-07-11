@@ -46,7 +46,12 @@ try {
     }
 
     $num++;
-    //$userTable->add($num, array( "name" => $nameString, "avatar" => $avatarString, "color" => $colorString) );
+    $profileData = array(
+        "name" => $nameString,
+        "avatar" => $avatarString,
+        "color" => $colorString
+    );
+    $userTable->add($num, $profileData );
 
     echo '
     <a href="https://www.deklaswas.com/account/user.php/?id=' . $rowid . '">
