@@ -69,7 +69,7 @@ try {
 echo '</div>';
 
 //echo var_dump($userTable);
-echo $userTable->serialize();
+echo json_encode($userTable);
  
 ?>
 
