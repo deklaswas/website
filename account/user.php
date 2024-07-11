@@ -71,7 +71,6 @@ export function colorGrab(c) {
           border-top: 25px solid transparent;
           border-left: 30px solid #555;
           border-bottom: 25px solid transparent;
-          float: right;
         }
         
         .triangle-left {
