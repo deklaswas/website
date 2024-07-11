@@ -75,7 +75,7 @@ echo '</div>';
   var userTable = JSON.parse( txt )
 
   //turn number into color
-  export  function colorGrab(c) {
+  function colorGrab(c) {
     switch ( String(c) ) {
       case "0": return "black";     // user
       case "1": return "white";     //

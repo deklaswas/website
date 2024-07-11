@@ -149,7 +149,7 @@ for ($i = 0; $i < count($avatar); $i++) {
 
   //get avatar from php
   var avatar = <?php echo json_encode($avatar);?> ;
-  export  function colorGrab(c) {
+  function colorGrab(c) {
     switch ( String(c) ) {
       case "0": return "black";     // user
       case "1": return "white";     //
