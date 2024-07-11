@@ -47,7 +47,7 @@ try {
     $profileData = array(
         "name" => $nameString,
         "avatar" => $avatarString,
-        "color" => $colorString
+        "color" => $colorString,
     );
     $userTable[$rowid] = $profileData;
 
@@ -75,8 +75,8 @@ echo '</div>';
 
 
 <script>
-
-  var userTable = JSON.parse( '<?php echo json_encode($userTable); ?>' )
+  const txt = '<?php echo json_encode($userTable); ?>'
+  var userTable = JSON.parse( txt )
   console.log(userTable[0]["name"]);
 
   //turn number into color
