@@ -53,7 +53,7 @@ try {
     $userTable[$rowid] = $profileData;
 
     echo '
-    <a href="https://www.deklaswas.com/account/user.php/?id=' . $rowid . '">
+    <a href="https://www.deklaswas.com/account/user.php/?id=' . $rowid . '" style="text-decoration:none">
      <canvas 
        id="profileCanvas' . $nameString . '"
        width="80"
@@ -117,7 +117,7 @@ echo '</div>';
 
     drawAvatar(pctx,profileAvatar);
 
-    pc.setAttribute("style", pc.getAttribute("style") + colorGrab( userTable[i].rolecolor ) + ";");
+    pc.setAttribute("style", pc.getAttribute("style") + colorGrab( userTable[i].color ) + ";");
   }
 
 </script>
