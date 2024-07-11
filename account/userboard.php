@@ -109,7 +109,7 @@ echo "<script>console.log('Debug Objects: " . $userTable->top()["name"] . "' );<
     var profileAvatar = <?php echo $userTable->top()["avatar"]?>
 
     //canvas for avatar
-    const pc = document.getElementById("profileCanvas" + <?php echo $userTable->top()["name"]?>  );
+    const pc = document.getElementById("profileCanvas" + "<?php echo $userTable->top()["name"]?>"  );
     const pctx = pc.getContext("2d");
 
     drawAvatar(pctx,profileAvatar);
