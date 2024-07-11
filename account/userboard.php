@@ -72,6 +72,9 @@ echo '</div>';
 
 <script>
   console.log("poop");
+  const txt = '<?php echo json_encode($userTable); ?>'
+  var userTable = JSON.parse( txt )
+  console.log(typeof userTable);
 </script>
 
 
