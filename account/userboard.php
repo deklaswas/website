@@ -24,9 +24,6 @@ session_start();
 </head>
 <body>
 
-<script>
-  console.log("poop");
-</script>
 
 <?php
 
@@ -71,11 +68,11 @@ try {
 }
 
 echo '</div>';
-
-//echo var_dump($userTable);
- 
 ?>
 
+<script>
+  console.log("poop");
+</script>
 
 
 <script>
