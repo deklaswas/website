@@ -119,7 +119,7 @@ function test_input($data) {
     <li>- Clicking "Clear" will paint the entire canvas with your selected color.</li>
     <li>- Clicking "Submit" will set the canvas as your new avatar.</li>
   </ul>
-
+  The text on the bottom is a numerical representation of your avatar that can be edited directly. Copy it to easily share your avatar with other people! 
 </p>
 
 <form  method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
