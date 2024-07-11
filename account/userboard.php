@@ -75,7 +75,7 @@ echo '</div>';
   var userTable = JSON.parse( txt )
 
   //turn number into color
-  function colorGrab(c) {
+  export  function colorGrab(c) {
     switch ( String(c) ) {
       case "0": return "black";     // user
       case "1": return "white";     //
@@ -87,8 +87,10 @@ echo '</div>';
       case "7": return "yellow";    //
       case "8": return "sienna";    // poopy
       case "9": return "green";     // owner
+
+      case "?": return colorGrab(Math.floor(Math.random()*10).toString()); // wildcard
     }
-  }
+};
 
   //drawing the canvas itself
   function drawAvatar(contextDraw,avatar) {
