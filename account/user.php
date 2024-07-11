@@ -52,7 +52,6 @@ export function colorGrab(c) {
             display: inline-block; 
             padding: 30px;
             
-            width: 50%;
             height: 82px;
             border-style: inset;
         }
