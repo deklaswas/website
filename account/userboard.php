@@ -71,11 +71,11 @@ echo '</div>';
 ?>
 
 <script>
+  //turn number into color
+  import coloGrab from "user.php";
   const txt = '<?php echo json_encode($userTable); ?>'
   var userTable = JSON.parse( txt )
 
-  //turn number into color
-  import coloGrab from "user.php";
 
   //drawing the canvas itself
   function drawAvatar(contextDraw,avatar) {
