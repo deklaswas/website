@@ -32,7 +32,7 @@ echo '<div class="wrapper">';
 
 $userTable = new SplDoublyLinkedList;
 $num = 0;
-$rowid = 0;
+$rowid = -1;
 
 try {
   $sql = "SELECT * FROM users;";
@@ -45,8 +45,8 @@ try {
       continue;
     }
 
-    //$num++;
-    //$userTable->add($num, [$nameString, $avatarString, $colorString]);
+    $num++;
+    $userTable->add($num, [$nameString, $avatarString, $colorString]);
 
     echo '
     <a href="https://www.deklaswas.com/account/user.php/?id=' . $rowid . '">
@@ -64,9 +64,6 @@ try {
 }
 
 echo '</div>';
-
-
-
 ?>
 
 
