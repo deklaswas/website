@@ -58,7 +58,7 @@ try {
        id="profileCanvas' . $nameString . '"
        width="80"
        height="80"
-       style="display: inline-block; margin: 8px; border:2px solid "
+       style="display: inline-block; margin: 9px; border:2px solid "
        title=" ' . $nameString . ' ">
      </canvas>
     </a>';
@@ -71,11 +71,8 @@ echo '</div>';
 ?>
 
 <script>
-  console.log("poop");
   const txt = '<?php echo json_encode($userTable); ?>'
   var userTable = JSON.parse( txt )
-  console.log(typeof userTable);
-  console.log(userTable[1].name);
 
   //turn number into color
   function colorGrab(c) {
@@ -105,17 +102,12 @@ echo '</div>';
     }
   }
 
-
-
   for (var i = 0; i < userTable.length ; i++) {
-    //get data for profile like this because json encode isnt fucking working properly
-    var profileAvatar = userTable[i].avatar
-
     //canvas for avatar
     const pc = document.getElementById("profileCanvas" + userTable[i].name  );
     const pctx = pc.getContext("2d");
 
-    drawAvatar(pctx,profileAvatar);
+    drawAvatar(pctx,userTable[i].avatar);
 
     pc.setAttribute("style", pc.getAttribute("style") + colorGrab( userTable[i].color ) + ";");
   }

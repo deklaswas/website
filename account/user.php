@@ -2,6 +2,9 @@
 // Start the session
 session_start();
 
+//get library
+require '/var/www/mylibrary.php';
+
 $userid = -1;
 if ($_GET['id'] == null) {
   header('Location: http://www.deklaswas.com/account/login.php');
@@ -156,6 +159,8 @@ for ($i = 0; $i < count($avatar); $i++) {
       case "7": return "yellow";    //
       case "8": return "sienna";    // poopy
       case "9": return "green";     // owner
+
+      case "?": return colorGrab(Math.floor(Math.random()*10).toString()); // wildcard
     }
   }
   function roleGrab(c) {
