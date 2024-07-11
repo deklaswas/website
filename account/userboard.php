@@ -105,6 +105,7 @@ echo '</div>';
   for (var i = 0; i < sizeList; i++) {
     //get data for profile
     var profileData = <?php json_encode( $userTable->current() ) ?>
+    console.log(profileData);
 
     //canvas for avatar
     const pc = document.getElementById("profileCanvas" + profileData["name"]  );
