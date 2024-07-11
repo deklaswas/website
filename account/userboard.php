@@ -106,7 +106,7 @@ echo "<script>console.log('Debug Objects: " . $userTable->top()["name"] . "' );<
 
   for (var i = 0; i < sizeList; i++) {
     //get data for profile like this because json encode isnt fucking working properly
-    var profileAvatar = <?php echo $userTable->top()["avatar"]?>
+    var profileAvatar = <?php echo $userTable->pop()["avatar"]?>
 
     //canvas for avatar
     const pc = document.getElementById("profileCanvas" + "<?php echo $userTable->top()["name"]?>"  );
