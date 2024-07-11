@@ -98,7 +98,7 @@ echo "<script>console.log('Debug Objects: " . $userTable->top()["name"] . "' );<
     var valo = "";
     for (let i = 0; i < 8; i++) {
       for (let j = 0; j < 8; j++) {
-        contextDraw.fillStyle = colorGrab(avatar[i + j8]);
+        contextDraw.fillStyle = colorGrab(avatar[i + j*8]);
         contextDraw.fillRect(isizeo, j*sizeo, sizeo, sizeo);
       }
     }
