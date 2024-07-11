@@ -68,7 +68,7 @@ try {
 
 echo '</div>';
 
-echo "<script>console.log('Debug Objects: " . $userTable->top() . "' );</script>";
+echo "<script>console.log('Debug Objects: " . $userTable->top()["name"] . "' );</script>";
 ?>
 
 
