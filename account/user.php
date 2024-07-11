@@ -137,7 +137,7 @@ for ($i = 0; $i < count($avatar); $i++) {
 ?>
 
 
-<div style="margin: auto;">
+<div style="margin: auto; width: 60%;">
   <!-- triangle links to go to neighboring accounts -->
   <a href= <?php echo "https://www.deklaswas.com/account/user.php/?id=" . ($userid-1); ?>  > <div class="triangle-left"></div> </a>
 
