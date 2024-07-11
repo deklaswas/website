@@ -18,6 +18,10 @@ if ($_GET['id'] == null) {
 
 ?>
 
+<script>
+import { colorGrab } from '../../mylibrary.js';
+</script>
+
 <!DOCTYPE HTML>  
 <html>
 
@@ -140,7 +144,6 @@ for ($i = 0; $i < count($avatar); $i++) {
 
 <script>
 
-import { colorGrab } from '../../mylibrary.js';
 
   //canvas for avatar
   const pc = document.getElementById("profileCanvas");
