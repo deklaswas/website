@@ -49,8 +49,7 @@ export function colorGrab(c) {
         }
         .disclaimer {color: #7F7F7F;}
         .wrapper {
-          display: inline-block; 
-            margin: auto;
+            display: inline-block; 
             padding: 30px;
             
             width: 50%;
@@ -69,9 +68,9 @@ export function colorGrab(c) {
           display: inline-block; 
           width: 0;
           height: 0;
-          border-top: 25px solid transparent;
+          border-top: 40px solid transparent;
           border-left: 30px solid #555;
-          border-bottom: 25px solid transparent;
+          border-bottom: 40px solid transparent;
         }
         
         .triangle-left {
@@ -138,26 +137,26 @@ for ($i = 0; $i < count($avatar); $i++) {
 ?>
 
 
+<div style="margin: auto;">
+  <!-- triangle links to go to neighboring accounts -->
+  <a href= <?php echo "https://www.deklaswas.com/account/user.php/?id=" . ($userid-1); ?>  > <div class="triangle-left"></div> </a>
 
-<!-- triangle links to go to neighboring accounts -->
-<a href= <?php echo "https://www.deklaswas.com/account/user.php/?id=" . ($userid-1); ?>  > <div class="triangle-left"></div> </a>
+  <!-- profile display -->
+  <div class="wrapper">
+      <canvas 
+        id="profileCanvas"
+        width="80"
+        height="80"
+        style="border:1px solid grey; display: inline-block; float: left; margin-right: 20px">
+      </canvas>
+      <h2 id = "nameColor" style="line-height: 0;"> <?php echo $nameString ?> </h2>
+      <h3 id = "roleColor" style="line-height: 0;"> User </h3>
+      <p id = "status"> <?php echo $row["aboutme"]; ?></p>
+  </div>
 
-<!-- profile display -->
-<div class="wrapper">
-    <canvas 
-      id="profileCanvas"
-      width="80"
-      height="80"
-      style="border:1px solid grey; display: inline-block; float: left; margin-right: 20px">
-    </canvas>
-    <h2 id = "nameColor" style="line-height: 0;"> <?php echo $nameString ?> </h2>
-    <h3 id = "roleColor" style="line-height: 0;"> User </h3>
-    <p id = "status"> <?php echo $row["aboutme"]; ?></p>
+  <!-- triangle links to go to neighboring accounts -->
+  <a href= <?php echo "https://www.deklaswas.com/account/user.php/?id=" . ($userid+1); ?>  > <div class="triangle-right"></div> </a>
 </div>
-
-<!-- triangle links to go to neighboring accounts -->
-<a href= <?php echo "https://www.deklaswas.com/account/user.php/?id=" . ($userid+1); ?>  > <div class="triangle-right"></div> </a>
-
 
 <script>
 
