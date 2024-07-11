@@ -57,7 +57,7 @@ try {
        id="profileCanvas' . $nameString . '"
        width="80"
        height="80"
-       style="border:1px solid gray; display: inline-block; margin-right: 18px"
+       style="display: inline-block; margin-right: 18px; border:1px solid "
        title=" ' . $nameString . ' ">
      </canvas>
     </a>';
@@ -105,18 +105,18 @@ echo "<script>console.log('Debug Objects: " . $userTable->top()["name"] . "' );<
   }
 
   for (var i = 0; i < sizeList; i++) {
-    //get data for profile
-    var profileData = <?php json_encode($userTable->top());?>
+    //get data for profile like this because json encode isnt fucking working properly
+    var profileAvatar = <?php echo $userTable->top()["avatar"]?>
+
     console.log(profileData);
 
     //canvas for avatar
-    const pc = document.getElementById("profileCanvas" + profileData["name"]  );
+    const pc = document.getElementById("profileCanvas" + <?php echo $userTable->top()["name"]?>  );
     const pctx = pc.getContext("2d");
 
-    drawAvatar(pctx,profileData["avatar"]);
+    drawAvatar(pctx,profileAvatar);
 
-    //const nameColor = document.getElementById("nameColor");
-    //nameColor.setAttribute("style", nameColor.getAttribute("style") + "; color:" + colorGrab( <?php echo $row["namecolor"] ?> ) + ";");
+    pctx.setAttribute("style", nameColor.getAttribute("style") + colorGrab(<?php echo $userTable->top()["rolecolor"]?>) + ";");
 
     //const roleColor = document.getElementById("roleColor");
     //roleColor.innerHTML = roleGrab(<?php echo $row["namecolor"] ?>) ;
