@@ -75,7 +75,6 @@ echo '</div>';
 
 
 <script>
-  const sizeList = <?php echo $userTable->count(); ?>
 
   var userTable = JSON.parse( <?php echo json_encode($userTable); ?> )
   console.log(userTable);
