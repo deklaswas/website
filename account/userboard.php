@@ -70,9 +70,10 @@ try {
 echo '</div>';
 ?>
 
-<script>
+<script type="module">
   //turn number into color
-  import coloGrab from "user.php";
+  import coloGrab from "./user.php";
+
   const txt = '<?php echo json_encode($userTable); ?>'
   var userTable = JSON.parse( txt )
 
