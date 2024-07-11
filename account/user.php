@@ -3,7 +3,7 @@
 session_start();
 
 //get library
-require '/var/www/mylibrary.php';
+//require '/var/www/mylibrary.php';
 
 $userid = -1;
 if ($_GET['id'] == null) {
@@ -160,7 +160,7 @@ for ($i = 0; $i < count($avatar); $i++) {
       case "8": return "sienna";    // poopy
       case "9": return "green";     // owner
 
-      case "?": return colorGrab(Math.floor(Math.random()*10).toString()); // wildcard
+      //case "?": return colorGrab(Math.floor(Math.random()*10).toString()); // wildcard
     }
   }
   function roleGrab(c) {
