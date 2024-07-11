@@ -107,7 +107,7 @@ echo '</div>';
     var profileData = <?php json_encode( $userTable->current() ) ?>
 
     //canvas for avatar
-    const pc = document.getElementById("profileCanvas" + profileData[0]  );
+    const pc = document.getElementById("profileCanvas" + profileData["name"]  );
     const pctx = pc.getContext("2d");
 
     drawAvatar(pctx,profileData["avatar"]);
