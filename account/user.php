@@ -49,6 +49,7 @@ export function colorGrab(c) {
         }
         .disclaimer {color: #7F7F7F;}
         .wrapper {
+          display: inline-block; 
             margin: auto;
             padding: 30px;
             
@@ -65,7 +66,7 @@ export function colorGrab(c) {
             padding: 50px;
         }
         .triangle-right {
-          margin: auto;
+          display: inline-block; 
           width: 0;
           height: 0;
           border-top: 25px solid transparent;
@@ -74,6 +75,7 @@ export function colorGrab(c) {
         }
         
         .triangle-left {
+          display: inline-block; 
           width: 0;
           height: 0;
           border-top: 40px solid transparent;
