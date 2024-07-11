@@ -40,7 +40,7 @@ try {
     $rowid++;
     $nameString = $row["name"];
     $avatarString =  $row["avatar"];
-    $colorString =  $row["rolecolor"];
+    $colorString =  $row["namecolor"];
     if (!is_string($nameString)) {
       continue;
     }
