@@ -58,7 +58,7 @@ try {
        id="profileCanvas' . $nameString . '"
        width="80"
        height="80"
-       style="display: inline-block; margin: 9px; border:2px solid "
+       style="display: inline-block; margin: 8px; border:2px solid "
        title=" ' . $nameString . ' ">
      </canvas>
     </a>';
