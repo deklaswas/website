@@ -51,7 +51,7 @@ try {
         "avatar" => $avatarString,
         "color" => $colorString
     );
-    $userTable->push( 1 );
+    $userTable->push( $profileData );
 
     echo '
     <a href="https://www.deklaswas.com/account/user.php/?id=' . $rowid . '">
