@@ -202,7 +202,7 @@ function test_input($data) {
     //if (mousePressed == -1)
     drawCanvas()
     mousePressed = setInterval(drawCanvas,100);
-    console.log(mousePressed);
+    //console.log(mousePressed);
   })
 
   //mouse up- start drawing
@@ -210,23 +210,19 @@ function test_input($data) {
     eventMouse = e;
     drawCanvas();
     mousePressed = setInterval(drawCanvas,100);
-    console.log(mousePressed);
+    //console.log(mousePressed);
+    
+    console.log("down")
   })
   
   //mouse up- stop drawing
   c.addEventListener('mouseup', function(e) {
     clearInterval(mousePressed);
     mousePressed = -1;
+
+    console.log("up")
   })
 
-  
-  document.ondrag = function (event) {
-    console.log("Element is being dragged")
-        };
- 
-        document.onclick = function (event) {
-          console.log("Element is being clicked")
-        };
 
   function colorGrab(c) {
     switch ( String(c) ) {
