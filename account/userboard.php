@@ -106,7 +106,7 @@ echo "<script>console.log('Debug Objects: " . $userTable->top()["name"] . "' );<
 
   for (var i = 0; i < sizeList; i++) {
     //get data for profile
-    var profileData = <?php json_encode( $userTable->top() ); ?>
+    var profileData = <?php json_encode( $userTable->top()["name"] ); ?>
     console.log(profileData);
 
     //canvas for avatar
