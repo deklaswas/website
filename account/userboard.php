@@ -30,7 +30,7 @@ $db = new PDO('sqlite:sqluserbase.db');
 
 echo '<div class="wrapper">';
 
-$userTable = new SplDoublyLinkedList;
+$userTable = new SplDoublyLinkedList();
 $num = 0;
 $rowid = -1;
 
