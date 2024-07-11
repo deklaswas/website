@@ -75,16 +75,7 @@ echo '</div>';
   const txt = '<?php echo json_encode($userTable); ?>'
   var userTable = JSON.parse( txt )
   console.log(typeof userTable);
-</script>
-
-
-<script>
-  console.log("poop");
-  const txt = '<?php echo json_encode($userTable); ?>'
-  var userTable = JSON.parse( txt )
-  console.log(typeof userTable);
   console.log(userTable[1].name);
-  console.log("poop");
 
   //turn number into color
   function colorGrab(c) {
@@ -118,15 +109,15 @@ echo '</div>';
 
   for (var i = 0; i < sizeList; i++) {
     //get data for profile like this because json encode isnt fucking working properly
-    var profileAvatar = <?php echo $userTable->pop()["avatar"]?>
+    var profileAvatar = userTable[i].avatar
 
     //canvas for avatar
-    const pc = document.getElementById("profileCanvas" + "<?php echo $userTable->top()["name"]?>"  );
+    const pc = document.getElementById("profileCanvas" + userTable[i].name  );
     const pctx = pc.getContext("2d");
 
     drawAvatar(pctx,profileAvatar);
 
-    pc.setAttribute("style", pc.getAttribute("style") + colorGrab(<?php echo $userTable->top()["rolecolor"]?>) + ";");
+    pc.setAttribute("style", pc.getAttribute("style") + colorGrab( userTable[i].rolecolor ) + ";");
   }
 
 </script>
