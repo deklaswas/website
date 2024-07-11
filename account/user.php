@@ -52,7 +52,7 @@ export function colorGrab(c) {
             display: inline-block; 
             padding: 30px;
             
-            width: 50%;
+            width: 83%;
             height: 82px;
             border-style: inset;
         }
@@ -137,7 +137,7 @@ for ($i = 0; $i < count($avatar); $i++) {
 ?>
 
 
-<div style="margin: auto;">
+<div style="margin: auto; width: 60%;">
   <!-- triangle links to go to neighboring accounts -->
   <a href= <?php echo "https://www.deklaswas.com/account/user.php/?id=" . ($userid-1); ?>  > <div class="triangle-left"></div> </a>
 
@@ -159,8 +159,6 @@ for ($i = 0; $i < count($avatar); $i++) {
 </div>
 
 <script>
-
-
   //canvas for avatar
   const pc = document.getElementById("profileCanvas");
   const pctx = pc.getContext("2d");
@@ -182,7 +180,7 @@ for ($i = 0; $i < count($avatar); $i++) {
 
       case "?": return colorGrab(Math.floor(Math.random()*10).toString()); // wildcard
     }
-};
+  };
 
   function roleGrab(c) {
     switch ( String(c) ) {
