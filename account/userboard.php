@@ -114,7 +114,7 @@ echo "<script>console.log('Debug Objects: " . $userTable->top()["name"] . "' );<
 
     drawAvatar(pctx,profileAvatar);
 
-    pctx.setAttribute("style", pctx.getAttribute("style") + colorGrab(<?php echo $userTable->top()["rolecolor"]?>) + ";");
+    ctx.setAttribute("style", ctx.getAttribute("style") + colorGrab(<?php echo $userTable->top()["rolecolor"]?>) + ";");
   }
 
 </script>
