@@ -21,6 +21,7 @@ session_start();
             padding: 50px;
         }
     </style>
+    <base href=".">
 </head>
 <body>
 
@@ -72,7 +73,7 @@ echo '</div>';
 
 <script type="module">
   //turn number into color
-  import coloGrab from "./user.php";
+  import coloGrab from "user.php";
 
   const txt = '<?php echo json_encode($userTable); ?>'
   var userTable = JSON.parse( txt )
