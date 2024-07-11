@@ -107,7 +107,7 @@ echo '</div>';
 
 
 
-  for (var i = 0; i < sizeList; i++) {
+  for (var i = 0; i < userTable.length ; i++) {
     //get data for profile like this because json encode isnt fucking working properly
     var profileAvatar = userTable[i].avatar
 
