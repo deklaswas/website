@@ -6,6 +6,7 @@ session_start();
 <!DOCTYPE HTML>  
 <html>
 
+
 <head>
     <style>
         .wrapper {
@@ -23,6 +24,9 @@ session_start();
 </head>
 <body>
 
+<script>
+  console.log("poop");
+</script>
 
 <?php
 
