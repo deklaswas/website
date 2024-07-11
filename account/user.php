@@ -81,7 +81,6 @@ export function colorGrab(c) {
           border-top: 40px solid transparent;
           border-right: 30px solid #555;
           border-bottom: 40px solid transparent;
-          float: left;
         }
     </style>
 </head>
