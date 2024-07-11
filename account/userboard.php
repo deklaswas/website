@@ -68,7 +68,8 @@ try {
 
 echo '</div>';
 
-echo var_dump($userTable);
+//echo var_dump($userTable);
+echo $userTable->serialize();
 ?>
 
 
