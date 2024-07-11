@@ -158,10 +158,10 @@ for ($i = 0; $i < count($avatar); $i++) {
   <a href= <?php echo "https://www.deklaswas.com/account/user.php/?id=" . ($userid+1); ?>  > <div class="triangle-right"></div> </a>
 </div>
 
-<p style="align: center;">
-  <a href="www.deklaswas.com/accounts/userboard.php">Go to userboard</a>
+<p style="text-align: center;">
+  <a href="https://www.deklaswas.com/account/userboard.php">Go to userboard</a>
   |
-  <a href="www.deklaswas.com/accounts/myaccount.php">Go to my account</a>
+  <a href="https://www.deklaswas.com/account/myaccount.php">Go to my account</a>
 </p>
 
 <script>
