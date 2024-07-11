@@ -78,6 +78,7 @@ echo '</div>';
   const txt = '<?php echo json_encode($userTable); ?>'
   var userTable = JSON.parse( txt )
   console.log(userTable[1].name);
+  console.log("poop");
 
   //turn number into color
   function colorGrab(c) {
