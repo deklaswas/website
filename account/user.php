@@ -18,10 +18,6 @@ if ($_GET['id'] == null) {
 
 ?>
 
-<script>
-import { colorGrab } from '../../mylibrary.js';
-</script>
-
 <!DOCTYPE HTML>  
 <html>
 
@@ -142,8 +138,9 @@ for ($i = 0; $i < count($avatar); $i++) {
 <a href= <?php echo "https://www.deklaswas.com/account/user.php/?id=" . ($userid+1); ?>  > <div class="triangle-right"></div> </a>
 
 
-<script>
+<script type="module">
 
+import { colorGrab } from '../../mylibrary.js';
 
   //canvas for avatar
   const pc = document.getElementById("profileCanvas");
