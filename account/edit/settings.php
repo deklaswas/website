@@ -52,10 +52,10 @@ try {
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $invert = test_input($_POST["invert"]);
-    if ( !is_string($invert)) $invert = 0; else $invert = 1;
+    if ( !is_string($invert)) $invert = "0"; else $invert = "1";
 
     try {
-      $sql = 'UPDATE users SET invert = '. $invert . ' WHERE name = "' . $_SESSION["username"] . '";';
+      $sql = 'UPDATE users SET invert = "'. $invert . '" WHERE name = "' . $_SESSION["username"] . '";';
       $db->exec($sql);
 
       header('Location: http://www.deklaswas.com/account/myaccount.php');
@@ -64,7 +64,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } catch(PDOException $e) {
       echo $sql . "<br>" . $e->getMessage();
     }
-  //}
 }
 
 ?>
