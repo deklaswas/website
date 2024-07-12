@@ -177,8 +177,8 @@ function test_input($data) {
 
   
   function mouseCoords(event) {
-        let mouseX = event.clientX;
-        let mouseY = event.clientY;
+        mouseX = event.clientX;
+        mouseY = event.clientY;
   }
 
   function drawCanvas() {
