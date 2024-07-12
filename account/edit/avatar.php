@@ -203,15 +203,13 @@ function test_input($data) {
     console.log("hold")
   }
 
-  //setInterval( drawCanvas(), 100);
-
   //mouse down- start drawing
   c.addEventListener('mousedown', function(e) {
     eventMouse = e;
     drawCanvas();
     
     console.log("down")
-    if (mousePressed == -1) mousePressed = setInterval( drawCanvas, 100);
+    if (mousePressed == -1) mousePressed = setInterval( drawCanvas, 50);
   })
   
   //mouse up- stop drawing
