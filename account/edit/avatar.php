@@ -128,7 +128,9 @@ function test_input($data) {
       id="avatarCanvas"
       width="160"
       height="160"
-      style="border:1px solid grey; display: inline-block;">
+      style="border:1px solid grey; display: inline-block;"
+      onmousemove="mouseCoords(event)"
+      >
     </canvas>
     <div style='display: inline-block; vertical-align: text-bottom;'>
       <button class="colbutton" type="button" onclick='paintColor = "0"'>Black</button>
@@ -170,12 +172,19 @@ function test_input($data) {
 
   var mousePressed = -1;
   var eventMouse;
+  var mouseX = 0;
+  var mouseY = 0;
 
+  
+  function coordinate(event) {
+        let mouseX = event.clientX;
+        let mouseY = event.clientY;
+  }
 
   function drawCanvas() {
     const rect = c.getBoundingClientRect()
-    const x = Math.floor((eventMouse.clientX - rect.left)/20)
-    const y = Math.floor((eventMouse.clientY - rect.top)/20)
+    const x = Math.floor((mouseX - rect.left)/20)
+    const y = Math.floor((mouseY - rect.top)/20)
 
     avatar[ x ][ y ] = paintColor;
     drawAvatar(ctx,160);
@@ -202,7 +211,7 @@ function test_input($data) {
     drawCanvas();
     
     console.log("down")
-    if (mousePressed == -1) mousePressed = setInterval( test, 100);
+    if (mousePressed == -1) mousePressed = setInterval( drawCanvas, 100);
   })
   
   //mouse up- stop drawing
