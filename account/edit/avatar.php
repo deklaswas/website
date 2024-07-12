@@ -186,7 +186,7 @@ function test_input($data) {
     const x = mouseX
     const y = mouseY
 
-    if (mouseX < 0 || mousey < 0 || mousex >= 8 || mousey >= 8) return 0;
+    if (mouseX < 0 || mouseY < 0 || mouseX >= 8 || mouseY >= 8) return 0;
 
     avatar[ x ][ y ] = paintColor;
     drawAvatar(ctx,160);
