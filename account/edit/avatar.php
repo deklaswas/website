@@ -162,32 +162,32 @@ function test_input($data) {
   const ctx = c.getContext("2d");
 
   var textFieldAvatar = document.getElementById("avatarInput");
-
   var avatar = <?php echo json_encode($avatar);?> ;
   
   var drawStyle = "pencil";
-
   var paintColor = "0";
 
 
   var mousePressed = -1;
   var eventMouse;
+
   var mouseX = 0;
   var mouseY = 0;
 
-  
+  //fetch canvas coordinates of the mouse
   function mouseCoords(event) {
-        mouseX = event.clientX;
-        mouseY = event.clientY;
+    const rect = c.getBoundingClientRect()
+    mouseX = Math.floor((event.clientX - rect.left)/20);
+    mouseY = Math.floor((event.clientY - rect.top)/20);
   }
 
+  //edit a pixel of the canvas
   function drawCanvas() {
-    const rect = c.getBoundingClientRect()
-    const x = Math.floor((mouseX - rect.left)/20)
-    const y = Math.floor((mouseY - rect.top)/20)
+    const x = mouseX
+    const y = mouseY
 
-    if (x < 0 or y < 0 or x >= 8 or y >= 8) return 0;
-
+    if (mouseX < 0 or mousey < 0 or mousex >= 8 or mousey >= 8) return 0;
+    
     avatar[ x ][ y ] = paintColor;
     drawAvatar(ctx,160);
   }
@@ -201,13 +201,18 @@ function test_input($data) {
     drawAvatar(ctx,160);
   }
 
+  function loadCanvas() {
+    drawAvatar(ctx,160);
+  }
+
   function test() {
     console.log("hold")
   }
 
   //mouse down- start drawing
   document.addEventListener('mousedown', function(e) {
-    eventMouse = e;
+    mouseCoords(e)
+
     drawCanvas();
     
     console.log("down")
