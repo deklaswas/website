@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 include '/var/www/mylibrary.php';
 
