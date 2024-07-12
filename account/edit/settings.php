@@ -51,8 +51,8 @@ try {
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    $invert = test_input($_POST["invert"]);
-    if ( !is_string($invert)) $invert = "0"; else $invert = "1";
+    //$invert = test_input($_POST["invert"]);
+    //if ( !is_string($invert)) $invert = "0"; else $invert = "1";
 
     try {
       //$sql = 'UPDATE users SET invert = "'. $invert . '" WHERE name = "' . $_SESSION["username"] . '";';
@@ -77,8 +77,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <form  method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
   <div class='parent'>
-    <input type="checkbox" id="invert" name="invert" <?php echo $darkmode ?> />
-    <label for="invert">Dark Mode</label>
     <br><br><button type="submit">Submit</button>
   </div>
 </form>
