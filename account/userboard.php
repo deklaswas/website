@@ -81,7 +81,7 @@ echo '</div>';
   //turn number into color
 function colorGrab(c) {
     switch ( String(c) ) {
-      case "0": return $colorText;  // user
+      case "0": return "black";     // user
       case "1": return "white";     //
       case "2": return "red";       // playtester
       case "3": return "blue";      // verified
