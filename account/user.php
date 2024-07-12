@@ -22,7 +22,7 @@ if ($_GET['id'] == null) {
 <script type="module">
 export function colorGrab(c) {
   switch ( String(c) ) {
-    case "0": return "black";     // user
+    case "0": return $colorText;  // user
     case "1": return "white";     //
     case "2": return "red";       // playtester
     case "3": return "blue";      // verified

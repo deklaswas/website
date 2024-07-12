@@ -8,6 +8,7 @@ include '/var/www/mylibrary.php';
 <html>
 
 
+
 <head>
     <style>
       <?php echo $colorString; ?>
