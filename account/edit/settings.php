@@ -51,8 +51,8 @@ try {
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    //$invert = test_input($_POST["invertInput"]);
-    //if ( !is_string($invert)) $invert = "0"; else $invert = "1";
+    $invert = $_POST["invertInput"];
+    if ( !is_string($invert)) $invert = "0"; else $invert = "1";
 
     try {
       //$sql = 'UPDATE users SET invert = "'. $invert . '" WHERE name = "' . $_SESSION["username"] . '";';
