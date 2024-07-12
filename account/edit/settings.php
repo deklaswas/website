@@ -78,6 +78,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <p>
   Welcome to the settings! So far all you can do is turn on dark mode but there will probably be more soon!
   <br> <?php echo $_SESSION["darkmode"] ?>
+  <br> <?php echo $_SESSION["username"] ?>
 </p>
 
 <form  method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
