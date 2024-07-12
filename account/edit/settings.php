@@ -15,6 +15,7 @@ if ( !(isset($_SESSION["username"])) ) {
     <style>
       body {
         background-color: <?php if ($_SESSION["darkmode"]) echo "black"; else echo "white"; ?> ;
+        color: <?php if ($_SESSION["darkmode"]) echo "white"; else echo "black"; ?> ;
       }
         .wrapper {
             margin: auto;
@@ -77,8 +78,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <h1>Settings Editor</h1>
 <p>
   Welcome to the settings! So far all you can do is turn on dark mode but there will probably be more soon!
-  <br> <?php echo $_SESSION["darkmode"] ?>
-  <br> <?php echo $_SESSION["username"] ?>
 </p>
 
 <form  method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
