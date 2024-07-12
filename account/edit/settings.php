@@ -6,6 +6,11 @@ if ( !(isset($_SESSION["username"])) ) {
   header('Location: http://www.deklaswas.com/account/login.php');
   die();
 }
+
+
+$colorString = "body { background-color:" . (($_SESSION["darkmode"]) ? ("black") : ("white")) . "; color:" . (($_SESSION["darkmode"]) ? ("white") : ("black")) . ";}";
+
+
 ?>
 
 <!DOCTYPE HTML>  
@@ -13,10 +18,7 @@ if ( !(isset($_SESSION["username"])) ) {
 
 <head>
     <style>
-      body {
-        background-color: <?php if ($_SESSION["darkmode"]) echo "black"; else echo "white"; ?> ;
-        color: <?php if ($_SESSION["darkmode"]) echo "white"; else echo "black"; ?> ;
-      }
+      <?php echo $colorString; ?>
         .wrapper {
             margin: auto;
             padding: 30px;
