@@ -51,14 +51,11 @@ try {
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-  //make sure avatar string is not empty
-  //if (!empty($_POST["status"])) {
-    //$aboutme = preg_replace("/[^a-z0-9 .\-]+/", "", test_input($_POST["status"]));
-    $aboutme = test_input($_POST["status"]);
-
+    $invert = test_input($_POST["invert"]);
+    if ( !is_string($invert)) $invert = 0; else $invert = 1;
 
     try {
-      $sql = 'UPDATE users SET aboutme = "'. $aboutme . '" WHERE name = "' . $_SESSION["username"] . '";';
+      $sql = 'UPDATE users SET invert = '. $invert . ' WHERE name = "' . $_SESSION["username"] . '";';
       $db->exec($sql);
 
       header('Location: http://www.deklaswas.com/account/myaccount.php');
@@ -82,7 +79,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <div class='parent'>
     <input type="checkbox" id="invert" name="invert" <?php echo $darkmode ?> />
     <label for="invert">Dark Mode</label>
-    <br><button type="submit">Submit</button>
+    <br><br><button type="submit">Submit</button>
   </div>
 </form>
 
