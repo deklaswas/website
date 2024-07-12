@@ -7,8 +7,9 @@ if ( !(isset($_SESSION["username"])) ) {
   die();
 }
 
+include '../../../mylibrary.php';
 
-$colorString = "body { background-color:" . (($_SESSION["darkmode"]) ? ("black") : ("white")) . "; color:" . (($_SESSION["darkmode"]) ? ("white") : ("black")) . ";}";
+//$colorString = "body { background-color:" . (($_SESSION["darkmode"]) ? ("black") : ("white")) . "; color:" . (($_SESSION["darkmode"]) ? ("white") : ("black")) . ";}";
 
 
 ?>
