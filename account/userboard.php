@@ -115,7 +115,9 @@ function colorGrab(c) {
 
     drawAvatar(pctx,userTable[i].avatar);
 
-    pc.setAttribute("style", pc.getAttribute("style") + colorGrab( userTable[i].color ) + ";");
+    $borderColor = colorGrab( userTable[i].color );
+    if ($borderColor == "black" && $_SESSION["darkmode"]) $borderColor = "white";
+    pc.setAttribute("style", pc.getAttribute("style") + $borderColor + ";");
   }
 
 </script>
