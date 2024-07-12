@@ -186,6 +186,8 @@ function test_input($data) {
     const x = Math.floor((mouseX - rect.left)/20)
     const y = Math.floor((mouseY - rect.top)/20)
 
+    if (x < 0 or y < 0 or x >= 8 or y >= 8) return 0;
+
     avatar[ x ][ y ] = paintColor;
     drawAvatar(ctx,160);
   }
