@@ -176,7 +176,7 @@ function test_input($data) {
   var mouseY = 0;
 
   
-  function coordinate(event) {
+  function mouseCoords(event) {
         let mouseX = event.clientX;
         let mouseY = event.clientY;
   }
