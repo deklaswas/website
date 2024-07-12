@@ -80,6 +80,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION["username"] = $name;
         $_SESSION["id"] = $userRow["rowid"];
         $_SESSION["avatar"] = $userRow["avatar"];
+        $_SESSION["darkmode"] = ($userRow["invert"] == "1");
         header('Location: http://www.deklaswas.com/account/myaccount.php');
         die();
       }

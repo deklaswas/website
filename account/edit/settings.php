@@ -13,6 +13,9 @@ if ( !(isset($_SESSION["username"])) ) {
 
 <head>
     <style>
+      body {
+        background-color: <?php if ($_SESSION["darkmode"]) echo "black"; else echo "white"; ?> ;
+      }
         .wrapper {
             margin: auto;
             padding: 30px;
@@ -53,6 +56,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $invert = $_POST["invertInput"];
     if ( !is_string($invert)) $invert = "0"; else $invert = "1";
+    $_SESSION["darkmode"] = ($invert == "1");
+
 
     try {
       $sql = 'UPDATE users SET invert = "'. $invert . '" WHERE name = "' . $_SESSION["username"] . '";';
