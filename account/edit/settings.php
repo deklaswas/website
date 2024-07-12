@@ -55,8 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ( !is_string($invert)) $invert = "0"; else $invert = "1";
 
     try {
-      //$sql = 'UPDATE users SET invert = "'. $invert . '" WHERE name = "' . $_SESSION["username"] . '";';
-      $sql = 'UPDATE users SET invert = "0" WHERE name = "deklaswas";';
+      $sql = 'UPDATE users SET invert = "'. $invert . '" WHERE name = "' . $_SESSION["username"] . '";';
       $db->exec($sql);
 
       header('Location: http://www.deklaswas.com/account/myaccount.php');
