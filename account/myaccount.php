@@ -7,7 +7,7 @@ if ( !(isset($_SESSION["username"])) ) {
   die();
 }
 
-include 'var/www/mylibrary.php';
+include '/var/www/mylibrary.php';
 
 ?>
 
