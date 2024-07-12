@@ -9,9 +9,6 @@ if ( !(isset($_SESSION["username"])) ) {
 
 include '../../../mylibrary.php';
 
-//$colorString = "body { background-color:" . (($_SESSION["darkmode"]) ? ("black") : ("white")) . "; color:" . (($_SESSION["darkmode"]) ? ("white") : ("black")) . ";}";
-
-
 ?>
 
 <!DOCTYPE HTML>  

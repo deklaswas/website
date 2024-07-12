@@ -6,6 +6,9 @@ if ( !(isset($_SESSION["username"])) ) {
   header('Location: http://www.deklaswas.com/account/login.php');
   die();
 }
+
+include '../../../mylibrary.php';
+
 ?>
 
 <!DOCTYPE HTML>  
@@ -13,6 +16,7 @@ if ( !(isset($_SESSION["username"])) ) {
 
 <head>
     <style>
+      <?php echo $colorString; ?>
         .error {
             color: #FF0000;
             font-size: 0.875em;
