@@ -202,7 +202,7 @@ function test_input($data) {
     drawCanvas();
     
     console.log("down")
-    if (mousePressed == -1) mousePressed = setInterval( test(), 100);
+    if (mousePressed == -1) mousePressed = setInterval( test, 100);
   })
   
   //mouse up- stop drawing
