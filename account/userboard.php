@@ -1,6 +1,7 @@
 <?php
-// Start the session
-session_start();
+
+include '/var/www/mylibrary.php';
+
 ?>
 
 <!DOCTYPE HTML>  
@@ -9,6 +10,7 @@ session_start();
 
 <head>
     <style>
+      <?php echo $colorString; ?>
         .wrapper {
             margin: auto;
             padding: 30px;

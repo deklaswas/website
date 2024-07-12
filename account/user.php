@@ -43,11 +43,7 @@ export function colorGrab(c) {
 
 <head>
     <style>
-        .error {
-            color: #FF0000;
-            font-size: 0.875em;
-        }
-        .disclaimer {color: #7F7F7F;}
+      <?php echo $colorString; ?>
         .wrapper {
             display: inline-block; 
             padding: 30px;
@@ -55,10 +51,6 @@ export function colorGrab(c) {
             width: 83%;
             height: 82px;
             border-style: inset;
-        }
-        .colbutton {
-            height:20px;
-            width:100px;
         }
         .parent {
             border-style: inset;
