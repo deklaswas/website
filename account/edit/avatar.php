@@ -198,6 +198,7 @@ function test_input($data) {
 
   //mouse down- start drawing
   c.addEventListener('mousedown', function(e) {
+    eventMouse = e;
     drawCanvas();
     
     console.log("down")
