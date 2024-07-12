@@ -103,7 +103,6 @@ $nameString = "";
 
 try {
   $sql = "SELECT * FROM users WHERE rowid = " . $userid . ";";
-  //$sql = "SELECT * FROM users WHERE rowid = 1;";
   $stringTest = $db->query($sql);
   $row = $stringTest->fetch(PDO::FETCH_ASSOC);
   $avatarString =  $row["avatar"];
@@ -141,8 +140,8 @@ for ($i = 0; $i < count($avatar); $i++) {
         height="80"
         style="border:1px solid grey; display: inline-block; float: left; margin-right: 20px">
       </canvas>
-      <h2 id = "nameColor" style="line-height: 0;"> <?php echo $nameString ?> </h2>
-      <h3 id = "roleColor" style="line-height: 0;"> User </h3>
+      <h2 id = "nameText" style="line-height: 0;"> <?php echo $nameString ?> </h2>
+      <h3 id = "roleText" style="line-height: 0;"> User </h3>
       <p id = "status"> <?php echo $row["aboutme"] . " ";?> </p>
   </div>
 
@@ -212,11 +211,13 @@ for ($i = 0; $i < count($avatar); $i++) {
   drawAvatar(pctx,80);
 
   //if ( <?php echo $nameString?> != "User does not exist!") {
-    const nameColor = document.getElementById("nameColor");
-    nameColor.setAttribute("style", nameColor.getAttribute("style") + "; color:" + colorGrab( <?php echo $row["namecolor"] ?> ) + ";");
+    const nameText = document.getElementById("nameText");
+    $nameCol = colorGrab( <?php echo $row["namecolor"] ?> );
+    if ($nameCol == "black" && $_SESSION["darkmode"]) $nameCol = "white";
+    nameText.setAttribute("style", nameText.getAttribute("style") + "; color:" + $nameCol + ";");
 
-    const roleColor = document.getElementById("roleColor");
-    roleColor.innerHTML = roleGrab(<?php echo $row["namecolor"] ?>) ;
+    const roleText = document.getElementById("roleText");
+    roleText.innerHTML = roleGrab(<?php echo $row["namecolor"] ?>) ;
   //}
 
 </script> 
