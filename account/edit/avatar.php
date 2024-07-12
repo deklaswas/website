@@ -204,7 +204,7 @@ function test_input($data) {
   }
 
   //mouse down- start drawing
-  c.addEventListener('mousedown', function(e) {
+  document.addEventListener('mousedown', function(e) {
     eventMouse = e;
     drawCanvas();
     
@@ -213,7 +213,7 @@ function test_input($data) {
   })
   
   //mouse up- stop drawing
-  c.addEventListener('mouseup', function(e) {
+  document.addEventListener('mouseup', function(e) {
     clearInterval(mousePressed);
     mousePressed = -1;
 
