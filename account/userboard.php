@@ -117,10 +117,9 @@ function colorGrab(c) {
 
     
     $borderColor = colorGrab( userTable[i].color );
-    if ($borderColor == "black" && $_SESSION["darkmode"]) $borderColor = "white";
-    //pc.setAttribute("style", pc.getAttribute("style") + $borderColor + ";");
-    pc.setAttribute("style", pc.getAttribute("style") + colorGrab( userTable[i].color ) + ";");
-  }
+    //if ($borderColor == "black" && $_SESSION["darkmode"]) $borderColor = "white";
+    pc.setAttribute("style", pc.getAttribute("style") + $borderColor + ";");
+    }
 
 </script>
 
