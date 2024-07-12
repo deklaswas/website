@@ -35,14 +35,14 @@ if ( !(isset($_SESSION["username"])) ) {
 
 <?php
 //avatar array
-$darkmode = false;
+$darkmode = "";
 
 $db = new PDO('sqlite:../sqluserbase.db');
 try {
   $sql = "SELECT invert FROM users WHERE name = '" . $_SESSION["username"] . "';";
   $stringTest = $db->query($sql);
   $row = $stringTest->fetch(PDO::FETCH_ASSOC);
-  $darkmode =  $row["invert"];
+  if ($row["invert"] == "1") $darkmode = "checked";
 } catch(PDOException $e) {
   echo $sql . "<br>" . $e->getMessage();
 }
@@ -75,14 +75,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <h1>Settings Editor</h1>
 <p>
-  Welcome to the status editor! So far all you can do is turn on dark mode but there will probably be more soon!
+  Welcome to the settings! So far all you can do is turn on dark mode but there will probably be more soon!
 </p>
 
 <form  method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
   <div class='parent'>
-    <input type="checkbox" id="invert" name="invert" checked />
+    <input type="checkbox" id="invert" name="invert" <?php echo $darkmode ?> />
     <label for="invert">Dark Mode</label>
-    <button type="submit">Submit</button>
+    <br><button type="submit">Submit</button>
   </div>
 </form>
 
