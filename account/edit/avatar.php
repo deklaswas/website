@@ -190,27 +190,18 @@ function test_input($data) {
     drawAvatar(ctx,160);
   }
 
-  function swapCanvas() {
-    drawAvatar(ctx,160);
+  function test() {
+    console.log("hold")
   }
 
   //setInterval( drawCanvas(), 100);
-  c.addEventListener('mouseon', function(e) {
-    eventMouse = e;
-    //if (mousePressed == -1)
-    drawCanvas()
-    mousePressed = setInterval(drawCanvas,100);
-    //console.log(mousePressed);
-  })
 
-  //mouse up- start drawing
+  //mouse down- start drawing
   c.addEventListener('mousedown', function(e) {
-    eventMouse = e;
     drawCanvas();
-    mousePressed = setInterval(drawCanvas,100);
-    //console.log(mousePressed);
     
     console.log("down")
+    mousePressed = setInterval( test(), 100);
   })
   
   //mouse up- stop drawing
