@@ -3,7 +3,7 @@
 session_start();
 
 //get library
-//require '/var/www/mylibrary.php';
+include '/var/www/mylibrary.php';
 
 $userid = -1;
 if ($_GET['id'] == null) {
