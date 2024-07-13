@@ -199,7 +199,7 @@ for ($i = 0; $i < count($avatar); $i++) {
   //if ( <?php echo $nameString?> != "User does not exist!") {
     const nameText = document.getElementById("nameText");
     $nameCol = colorGrab( <?php echo $row["namecolor"] ?> );
-    if ($nameCol == "black" && $_SESSION["darkmode"]) $nameCol = "white";
+    if ($nameCol == "black" && <?php echo ($_SESSION["darkmode"] == true)? "true" : "false" ; ?>) $nameCol = "white";
     nameText.setAttribute("style", nameText.getAttribute("style") + "; color:" + $nameCol + ";");
 
     const roleText = document.getElementById("roleText");
