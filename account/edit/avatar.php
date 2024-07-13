@@ -232,20 +232,8 @@ function test_input($data) {
   })
 
 
-  function colorGrab(c) {
-    switch ( String(c) ) {
-      case "0": return "black";     // user
-      case "1": return "white";     //
-      case "2": return "red";       // playtester
-      case "3": return "blue";      // verified
-      case "4": return "lime";      //
-      case "5": return "cyan";      //
-      case "6": return "magenta";   // moderator
-      case "7": return "yellow";    //
-      case "8": return "sienna";    // poopy
-      case "9": return "green";     // owner
-    }
-  }
+  //DETERMINE COLORSZ
+  <?php echo $colorSwitch ?>
 
   function drawAvatar(contextDraw,sizeo) {
     sizeo /= 8;
