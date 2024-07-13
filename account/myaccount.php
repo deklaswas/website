@@ -148,6 +148,8 @@ function test_input($data) {
     <br>
     <br>
     <br>
+    <b id = "ageString">Your account is </b>
+    <br>
 
     <a href = "https://www.deklaswas.com/account/edit/avatar.php" > Click here to edit avatar </a><br>
     <a href = "https://www.deklaswas.com/account/edit/aboutme.php" > Click here to edit status </a><br>
@@ -221,6 +223,11 @@ function test_input($data) {
 
   const accountLink = document.getElementById("accountLink");
   accountLink.setAttribute("href", "https://www.deklaswas.com/account/user.php/?id=" + <?php echo json_encode($idNum);?> );
+
+  const ageString = document.getElementById("ageString");
+  var seconds = new Date() / 1000;
+  ageString.innerHTML = "Your account is " + String(seconds - <?php echo $row["time"] ?> ) +  " seconds old"
+  
 
 </script> 
 
