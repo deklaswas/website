@@ -78,6 +78,7 @@ echo '</div>';
   const txt = '<?php echo json_encode($userTable); ?>'
   var userTable = JSON.parse( txt )
 
+  //DETERMINE COLORSZ
   <?php echo $colorSwitch ?>
 
   //drawing the canvas itself
