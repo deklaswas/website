@@ -225,8 +225,20 @@ function test_input($data) {
   accountLink.setAttribute("href", "https://www.deklaswas.com/account/user.php/?id=" + <?php echo json_encode($idNum);?> );
 
   const ageString = document.getElementById("ageString");
-  var seconds = new Date() / 1000;
-  ageString.innerHTML = "Your account is " + String(seconds - <?php echo $row["time"] ?> ) +  " seconds old"
+
+  var accountTime = new Date() / 1000 - <?php echo $row["time"] ?> ;
+  var unitTime = "second" //default is seconds
+
+  if (accountTime >= 60) {accountTime /= 60;unitTime = "minute"} //turn into minutes 
+  if (accountTime >= 60) {accountTime /= 60;unitTime = "hour"} //into hours
+  if (accountTime >= 24) {accountTime /= 24;unitTime = "day"} //into days
+  if (accountTime >= 7) {accountTime /= 7;unitTime = "week"} //into weeks
+  if (accountTime >= 4.345) {accountTime /= 4.345;unitTime = "month"} //into months (roughly)
+  if (accountTime >= 12) {accountTime /= 12;unitTime = "year"} //into years (roughly)
+
+  if (accountTime >= 2) unitTime += "s"; //pluralize
+
+  ageString.innerHTML = "Your account is " + String( Math.floor(accountTime) ) + " " + unitTime +  "old"
   
 
 </script> 
