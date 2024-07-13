@@ -150,6 +150,8 @@ function test_input($data) {
     <br>
     <b id = "ageString">Your account is </b>
     <br>
+    <br>
+    <br>
 
     <a href = "https://www.deklaswas.com/account/edit/avatar.php" > Click here to edit avatar </a><br>
     <a href = "https://www.deklaswas.com/account/edit/aboutme.php" > Click here to edit status </a><br>
@@ -238,7 +240,7 @@ function test_input($data) {
 
   if (accountTime >= 2) unitTime += "s"; //pluralize
 
-  ageString.innerHTML = "Your account is " + String( Math.floor(accountTime) ) + " " + unitTime +  "old"
+  ageString.innerHTML = "Your account is " + String( Math.floor(accountTime) ) + " " + unitTime +  " old"
   
 
 </script> 
