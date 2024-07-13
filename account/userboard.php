@@ -93,6 +93,7 @@ function colorGrab(c) {
       case "9": return "green";     // owner
 
       case "?": return colorGrab(Math.floor(Math.random()*10).toString()); // wildcard
+      case ".": return <?php echo $colorBackground ?> ; // transparent/background
     }
 };
 
