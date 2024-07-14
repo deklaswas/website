@@ -90,7 +90,7 @@
     
 
     <body>
-        <div class="gm4html5_div_class" id="gm4html5_div_id"
+        <div class="gm4html5_div_class" id="gm4html5_div_id" 
         style="position: absolute; top: 50%; left: 50%; bottom: -50%; right: -50%; transform: translate(-50%, -50%);">
             
             <!-- Builtin injector for splash screen -->
@@ -103,7 +103,7 @@
         </div>
 
         <!-- Run the game code -->
-        <script type="text/javascript" src="html5game/untitledcraft 2.js?cachebust=1456849076"></script>
+        <script id="code" type="text/javascript" src="html5game/untitledcraft 2.js?cachebust=1456849076" data-pfpAccountString= "<?php echo $_SESSION["avatar"] ?>" ></script>
 
         <!-- Builtin injector for injecting runner path -->
         
