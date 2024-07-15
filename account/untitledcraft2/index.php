@@ -1,16 +1,3 @@
-<?php
-// Start the session
-session_start();
-
-if ( !(isset($_SESSION["username"])) ) {
-  header('Location: http://www.deklaswas.com/account/login.php');
-  die();
-}
-
-include '/var/www/mylibrary.php';
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
