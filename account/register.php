@@ -129,7 +129,7 @@ function test_input($data) {
 
         Password <input type="password" name="password" value="<?php echo $password;?>"><br>
         <span class="error"><?php echo $passwordErr;?></span><br>
-        <span class="disclaimer">Please don't use a password you would typically use for other websites...<br>unless you want me to see it</span><br>
+        <span class="disclaimer">Please don't use a password you would typically use for other websites...<br>this is just a silly project of mine!</span><br>
 
         <br>
 
