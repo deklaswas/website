@@ -1,3 +1,16 @@
+<?php
+// Start the session
+session_start();
+
+if ( !(isset($_SESSION["username"])) ) {
+  header('Location: http://www.deklaswas.com/account/login.php');
+  die();
+}
+
+include '/var/www/mylibrary.php';
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -102,7 +115,7 @@
         </div>
 
         <!-- Run the game code -->
-        <script id="jscode" type="text/javascript" src="html5game/untitledcraft 2.js?cachebust=1213571314" data-accountPfpString="<?php echo $_SESSION["avatar"] ?>"></script>
+        <script id="jscode" type="text/javascript" src="html5game/untitledcraft 2.js?cachebust=1213571314" data-accountPfpString=<?php echo '"' . $_SESSION["avatar"] . '"'; ?>></script>
 
         <!-- Builtin injector for injecting runner path -->
         
