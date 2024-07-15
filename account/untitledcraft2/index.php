@@ -102,7 +102,7 @@
         </div>
 
         <!-- Run the game code -->
-        <script type="text/javascript" src="html5game/untitledcraft 2.js?cachebust=145877625" data-accountPfpString="1441144444444441499449914904409444499144449009411400004444944944" ></script>
+        <script type="text/javascript" src="html5game/untitledcraft 2.js?cachebust=12" data-accountPfpString="1441144444444441499449914904409444499144449009411400004444944944" ></script>
 
         <!-- Builtin injector for injecting runner path -->
         
