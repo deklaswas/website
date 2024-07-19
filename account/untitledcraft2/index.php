@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <?php
 // Start the session
 session_start();
@@ -10,7 +11,7 @@ if ( !(isset($_SESSION["username"])) ) {
 include '/var/www/mylibrary.php';
 
 ?>
-<!DOCTYPE html>
+
 <html lang="en">
 
     <!-- Custom PreHead code is injected here -->
@@ -108,13 +109,13 @@ include '/var/www/mylibrary.php';
             
 
             <!-- Create the canvas element the game draws to -->
-            <canvas id="canvas" width="320" height="320" >
+            <canvas id="canvas" width="320" height="320" style="position: absolute; top: 50%; left: 50%; bottom: -50%; right: -50%; transform: translate(-50%, -50%);">
                 <p>Your browser doesn't support HTML5 canvas.</p>
             </canvas>
         </div>
 
         <!-- Run the game code -->
-        <script id="jscode" type="text/javascript" src="html5game/untitledcraft 2.js?cachebust=1213571314" data-accountPfpString=<?php echo '"' . $_SESSION["avatar"] . '"'; ?>  data-accountRoleNum=<?php echo '"' . $_SESSION["namecolor"] . '"'; ?> ></script>
+        <script id="jscode" type="text/javascript" src="html5game/untitledcraft 2.js?cachebust=898215036" data-accountPfpString=<?php echo '"' . $_SESSION["avatar"] . '"'; ?>  data-accountRoleNum=<?php echo '"' . $_SESSION["namecolor"] . '"'; ?> ></script>
 
         <!-- Builtin injector for injecting runner path -->
         
