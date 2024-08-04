@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<p?php
+<?php
 // Start the session
 session_start();
 
