@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <?php
 // Start the session
 session_start();
@@ -115,7 +116,7 @@ include '/var/www/mylibrary.php';
         </div>
 
         <!-- Run the game code -->
-        <script id="jscode" type="text/javascript" src="html5game/untitledcraft 2.js?cachebust=898215036" data-accountPfpString=<?php echo '"' . $_SESSION["avatar"] . '"'; ?>  data-accountRoleNum=<?php echo '"' . $_SESSION["namecolor"] . '"'; ?> ></script>
+        <script id="jscode" type="text/javascript" src="html5game/untitledcraft 2.js?cachebust=1348272780" data-accountPfpString=<?php echo '"' . $_SESSION["avatar"] . '"'; ?>  data-accountRoleNum=<?php echo '"' . $_SESSION["namecolor"] . '"'; ?> ></script>
 
         <!-- Builtin injector for injecting runner path -->
         
