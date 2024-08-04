@@ -104,17 +104,17 @@ include '/var/www/mylibrary.php';
     
 
     <body>
-        <div class="gm4html5_div_class" id="gm4html5_div_id">
+        <div class="gm4html5_div_class" id="gm4html5_div_id"  style="position: absolute; top: 50%; left: 50%; bottom: -50%; right: -50%; transform: translate(-50%, -50%);">
             
             <!-- Builtin injector for splash screen -->
             
 
             <!-- Create the canvas element the game draws to -->
-            <canvas id="canvas" width="320" height="320" style="position: absolute; top: 50%; left: 50%; bottom: -50%; right: -50%; transform: translate(-50%, -50%);">
+            <canvas id="canvas" width="320" height="320" >
                 <p>Your browser doesn't support HTML5 canvas.</p>
             </canvas>
 
-            <p style="position: absolute; top: 50%; left: 50%; bottom: -50%; right: -50%; transform: translate(-50%, -50%);">untitled world!</p>
+            <p>untitled world!</p>
         </div>
 
         <!-- Run the game code -->
