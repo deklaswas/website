@@ -115,7 +115,7 @@ include '/var/www/mylibrary.php';
                 <p>Your browser doesn't support HTML5 canvas.</p>
             </canvas>
 
-            <p>untitled world!</p>
+            <p id="npctalk">untitled world!</p>
         </div>
 
         <!-- Run the game code -->
