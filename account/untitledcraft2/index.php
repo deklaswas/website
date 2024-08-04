@@ -113,6 +113,8 @@ include '/var/www/mylibrary.php';
             <canvas id="canvas" width="320" height="320" style="position: absolute; top: 50%; left: 50%; bottom: -50%; right: -50%; transform: translate(-50%, -50%);">
                 <p>Your browser doesn't support HTML5 canvas.</p>
             </canvas>
+            
+            <p>untitled world!</p>
         </div>
 
         <!-- Run the game code -->
@@ -125,7 +127,6 @@ include '/var/www/mylibrary.php';
 
         <!-- Builtin injector for injecting google analytics code -->
         
-        <p>untitled world!</p>
 
     </body>
 
