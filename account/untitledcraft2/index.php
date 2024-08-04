@@ -64,9 +64,8 @@ include '/var/www/mylibrary.php';
             
             /* Custom Runner Styles */
             div.gm4html5_div_class {
-                margin: 0px;
-                padding: 0px;
-                border: 0px;
+                
+                top: 50%; left: 50%; bottom: -50%; right: -50%; transform: translate(-50%, -50%);
             }
             div.gm4html5_login {
                 padding: 20px;
@@ -103,8 +102,9 @@ include '/var/www/mylibrary.php';
     <!-- Custom PreBody code is injected here -->
     
 
+        <!-- style="position: absolute; top: 50%; left: 50%; bottom: -50%; right: -50%; transform: translate(-50%, -50%);" -->
     <body>
-        <div class="gm4html5_div_class" id="gm4html5_div_id"  style="position: absolute; top: 50%; left: 50%; bottom: -50%; right: -50%; transform: translate(-50%, -50%);">
+        <div class="gm4html5_div_class" id="gm4html5_div_id"  >
             
             <!-- Builtin injector for splash screen -->
             
