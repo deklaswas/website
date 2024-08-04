@@ -38,7 +38,7 @@ include '/var/www/mylibrary.php';
         <style>
             body {
                 background: #0;
-                color: #cccccc;
+                color: #000000;
                 margin: 0px;
                 padding: 0px;
                 border: 0px;
@@ -64,7 +64,7 @@ include '/var/www/mylibrary.php';
             
             /* Custom Runner Styles */
             div.gm4html5_div_class {
-                
+                top: 50%; left: 50%;
                 
             }
             div.gm4html5_login {
