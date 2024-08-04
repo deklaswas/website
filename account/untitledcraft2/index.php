@@ -65,7 +65,7 @@ include '/var/www/mylibrary.php';
             /* Custom Runner Styles */
             div.gm4html5_div_class {
                 
-                top: 50%; left: 50%; bottom: -50%; right: -50%; transform: translate(-50%, -50%);
+                
             }
             div.gm4html5_login {
                 padding: 20px;
