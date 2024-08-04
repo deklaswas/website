@@ -66,7 +66,7 @@ include '/var/www/mylibrary.php';
             div.gm4html5_div_class {
                 margin: auto;
                 padding: 30px;
-                width: 50%;
+                width: 320px;
             }
             div.gm4html5_login {
                 padding: 20px;
