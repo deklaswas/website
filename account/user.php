@@ -4,9 +4,8 @@ session_start();
 
 //get library
 include '/var/www/mylibrary.php';
-
-
 $db = new PDO('sqlite:sqluserbase.db');
+
 
 $userid = -1;
 if ($_GET['id'] == null) {
@@ -26,7 +25,7 @@ if ($_GET['id'] == null) {
   } catch(PDOException $e) {
     echo $sql . "<br>" . $e->getMessage();
   }
-
+  echo $rowCount;
   if ($userid > $rowCount ) $userid = 0;
 }
 
