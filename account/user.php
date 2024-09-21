@@ -5,6 +5,9 @@ session_start();
 //get library
 include '/var/www/mylibrary.php';
 
+
+$db = new PDO('sqlite:sqluserbase.db');
+
 $userid = -1;
 if ($_GET['id'] == null) {
   header('Location: http://www.deklaswas.com/account/login.php');
@@ -14,6 +17,17 @@ if ($_GET['id'] == null) {
   die();
 } else {
   $userid = $_GET['id'];
+
+  $rowCount = 0
+  try {
+    $sql = "SELECT COUNT(*) FROM users;";
+    $stringTest = $db->query($sql);
+    $rowCount = $stringTest->fetch(PDO::FETCH_ASSOC);
+  } catch(PDOException $e) {
+    echo $sql . "<br>" . $e->getMessage();
+  }
+
+  if ($userid > $rowCount ) $userid = 0;
 }
 
 
@@ -95,7 +109,6 @@ $avatar = array (
   array("","","","","","","",""),
 );
 
-$db = new PDO('sqlite:sqluserbase.db');
 
 $row;
 $avatarString = "";
