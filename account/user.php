@@ -18,13 +18,13 @@ if ($_GET['id'] == null) {
   $userid = $_GET['id'];
 
   $rowCount = 0
-  try {
+  //try {
     //$sql = "SELECT COUNT(1) FROM users;";
     //$stringTest = $db->query($sql);
     //$rowCount = $stringTest->fetch(PDO::FETCH_ASSOC);
-  } catch(PDOException $e) {
-    echo $sql . "<br>" . $e->getMessage();
-  }
+  //} catch(PDOException $e) {
+    //echo $sql . "<br>" . $e->getMessage();
+  //}
   echo $rowCount;
   //if ($userid >= $rowCount ) $userid = 0;
 }
