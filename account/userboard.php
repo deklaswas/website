@@ -38,8 +38,8 @@ include '/var/www/mylibrary.php';
   "list-style-type:none; margin:0; padding:0; background-color: #dddddd;"
   >
     <li style="float:left;"><a href="/">Home</a></li>
-    <li style="float:left"><a href="/accounts/userboard.php">Users</a></li>
-    <li style="float:right"><a href="/accounts/login.php">Login</a></li>
+    <li style="float:left"><a href="/account/userboard.php">Users</a></li>
+    <li style="float:right"><a href="/account/login.php">Login</a></li>
   </ul>
 
   <?php
