@@ -17,16 +17,16 @@ if ($_GET['id'] == null) {
 } else {
   $userid = $_GET['id'];
 
-  //$rowCount = 0
-  //try {
-  //  $sql = "SELECT COUNT(*) FROM users;";
-  //  $stringTest = $db->query($sql);
-  //  $rowCount = $stringTest->fetch(PDO::FETCH_ASSOC);
-  //} catch(PDOException $e) {
-  //  echo $sql . "<br>" . $e->getMessage();
-  //}
-  //echo $rowCount;
-  //if ($userid > $rowCount ) $userid = 0;
+  $rowCount = 0
+  try {
+    $sql = "SELECT COUNT(1) FROM users;";
+    $stringTest = $db->query($sql);
+    $rowCount = $stringTest->fetch(PDO::FETCH_ASSOC);
+  } catch(PDOException $e) {
+    echo $sql . "<br>" . $e->getMessage();
+  }
+  echo $rowCount;
+  if ($userid >= $rowCount ) $userid = 0;
 }
 
 
