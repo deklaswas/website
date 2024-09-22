@@ -9,10 +9,10 @@ $db = new PDO('sqlite:sqluserbase.db');
 
 $userid = -1;
 if ($_GET['id'] == null) {
-  header('Location: http://www.deklaswas.com/account/login.php');
+  header('Location: ./login.php');
   die();
 } elseif ( !ctype_digit($_GET['id']) ) {
-  header('Location: http://www.deklaswas.com/account/login.php');
+  header('Location: ./login.php');
   die();
 } else {
   $userid = $_GET['id'];
@@ -25,7 +25,7 @@ if ($_GET['id'] == null) {
   } catch(PDOException $e) {
     echo $sql . "<br>" . $e->getMessage();
   }
-  if ($userid >= $rowCount ) header('Location: http://www.deklaswas.com/account/user.php/?id=1');
+  if ($userid >= $rowCount ) header('Location: ./user.php/?id=0');
 }
 
 
@@ -141,7 +141,7 @@ for ($i = 0; $i < count($avatar); $i++) {
 
 <div style="margin: auto; width: 60%;">
   <!-- triangle links to go to neighboring accounts -->
-  <a href= <?php echo "https://www.deklaswas.com/account/user.php/?id=" . ($userid-1); ?>  > <div class="triangle-left"></div> </a>
+  <a href= <?php echo "./user.php/?id=" . ($userid-1); ?>  > <div class="triangle-left"></div> </a>
 
   <!-- profile display -->
   <div class="wrapper">
@@ -157,13 +157,13 @@ for ($i = 0; $i < count($avatar); $i++) {
   </div>
 
   <!-- triangle links to go to neighboring accounts -->
-  <a href= <?php echo "https://www.deklaswas.com/account/user.php/?id=" . ($userid+1); ?>  > <div class="triangle-right"></div> </a>
+  <a href= <?php echo "./user.php/?id=" . ($userid+1); ?>  > <div class="triangle-right"></div> </a>
 </div>
 
 <p style="text-align: center;">
-  <a href="https://www.deklaswas.com/account/userboard.php">Go to userboard</a>
+  <a href="./userboard.php">Go to userboard</a>
   |
-  <a href="https://www.deklaswas.com/account/myaccount.php">Go to my account</a>
+  <a href="./myaccount.php">Go to my account</a>
 </p>
 
 <script>
