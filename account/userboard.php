@@ -1,6 +1,6 @@
 <?php
 session_start();
-include '/var/www/mylibrary.php';
+include '/nonaccess/mylibrary.php';
 ?>
 
 <!DOCTYPE HTML>  
