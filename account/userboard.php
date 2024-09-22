@@ -20,6 +20,14 @@ include '/var/www/mylibrary.php';
             border-style: inset;
             padding: 50px;
         }
+
+        li a {
+          display:block;
+          color:white;
+          text-align:center;
+          padding: 14px 16px;
+          text-decoration:none;
+        }
     </style>
 </head>
 
@@ -27,7 +35,7 @@ include '/var/www/mylibrary.php';
 
   <!--nav bar-->
   <ul style=
-  "list-style-type:none; margin:0; padding:8px; background-color: #dddddd;"
+  "list-style-type:none; margin:0; padding:0; background-color: #dddddd;"
   >
     <li style="float:left;"><a href="/">Home</a></li>
     <li style="float:left"><a href="/accounts/userboard.php">Users</a></li>
