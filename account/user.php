@@ -9,10 +9,10 @@ $db = new PDO('sqlite:sqluserbase.db');
 
 $userid = -1;
 if ($_GET['id'] == null) {
-  header('Location: ./login.php');
+  header('Location: /account/login.php');
   die();
 } elseif ( !ctype_digit($_GET['id']) ) {
-  header('Location: ./login.php');
+  header('Location: /account/login.php');
   die();
 } else {
   $userid = $_GET['id'];
@@ -25,7 +25,7 @@ if ($_GET['id'] == null) {
   } catch(PDOException $e) {
     echo $sql . "<br>" . $e->getMessage();
   }
-  if ($userid >= $rowCount ) header('Location: ./user.php/?id=0');
+  if ($userid >= $rowCount ) header('Location: /account/user.php/?id=0');
 }
 
 
@@ -107,7 +107,6 @@ $avatar = array (
   array("","","","","","","",""),
 );
 
-
 $row;
 $avatarString = "";
 $nameString = "";
@@ -141,7 +140,7 @@ for ($i = 0; $i < count($avatar); $i++) {
 
 <div style="margin: auto; width: 60%;">
   <!-- triangle links to go to neighboring accounts -->
-  <a href= <?php echo "./user.php/?id=" . ($userid-1); ?>  > <div class="triangle-left"></div> </a>
+  <a href= <?php echo "./user.php/?id=" . ( ($userid!=0)? ($userid-1) : ($rowCount-1)); ?>  > <div class="triangle-left"></div> </a>
 
   <!-- profile display -->
   <div class="wrapper">
