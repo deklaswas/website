@@ -25,7 +25,7 @@ if ($_GET['id'] == null) {
   } catch(PDOException $e) {
     echo $sql . "<br>" . $e->getMessage();
   }
-  //echo $rowCount;
+  echo $rowCount;
   if ($userid >= $rowCount ) $userid = 0;
 }
 
