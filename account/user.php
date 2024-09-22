@@ -21,7 +21,7 @@ if ($_GET['id'] == null) {
   try {
     $sql = "SELECT COUNT(1) FROM users;";
     $stringTest = $db->query($sql);
-    $rowCount = $stringTest->fetch(PDO::FETCH_ASSOC);
+    $rowCount = $stringTest->fetch(PDO::FETCH_ASSOC)[0];
   } catch(PDOException $e) {
     echo $sql . "<br>" . $e->getMessage();
   }
