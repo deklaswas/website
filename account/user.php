@@ -21,12 +21,12 @@ if ($_GET['id'] == null) {
   try {
     $sql = "SELECT COUNT(1) FROM users;";
     $stringTest = $db->query($sql);
-    $rowCount = $stringTest->fetch(PDO::FETCH_ASSOC)[0];
+    $rowCount = $stringTest->fetch(PDO::FETCH_ASSOC);
   } catch(PDOException $e) {
     echo $sql . "<br>" . $e->getMessage();
   }
-  echo $rowCount;
-  if ($userid >= $rowCount ) $userid = 0;
+  echo print_r($rowCount);
+  if ($userid >= $rowCount ) header('Location: http://www.deklaswas.com/account/user.php/?id=1');
 }
 
 
