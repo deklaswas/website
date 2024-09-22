@@ -26,7 +26,7 @@ if ($_GET['id'] == null) {
     echo $sql . "<br>" . $e->getMessage();
   }
   echo $rowCount;
-  if ($userid >= $rowCount ) $userid = 0;
+  //if ($userid >= $rowCount ) $userid = 0;
 }
 
 
