@@ -161,9 +161,9 @@ for ($i = 0; $i < count($avatar); $i++) {
 </div>
 
 <p style="text-align: center;">
-  <a href="../account/userboard.php">Go to userboard</a>
+  <a href="/account/userboard.php">Go to userboard</a>
   |
-  <a href="../account/myaccount.php">Go to my account</a>
+  <a href="/account/myaccount.php">Go to my account</a>
 </p>
 
 <script>
