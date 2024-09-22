@@ -69,7 +69,7 @@ include '../nonaccess/mylibrary.php';
       $userTable[$rowid] = $profileData;
 
       echo '
-      <a href="/account/user.php/?id=' . $rowid . '" style="text-decoration:none">
+      <a href="user.php/?id=' . $rowid . '" style="text-decoration:none">
       <canvas 
         id="profileCanvas' . $nameString . '"
         width="80"

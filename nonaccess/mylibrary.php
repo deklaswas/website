@@ -1,7 +1,7 @@
 <?php
-$colorText = (isset($_SESSION["darkmode"])) ? (($_SESSION["darkmode"]) ? ("white") : ("black")) : ("black");
-$colorBackground = ($_SESSION["darkmode"]) ? ("black") : ("white");
-$colorString = "body { background-color:" . (($_SESSION["darkmode"]) ? ("black") : ("white")) . "; color:" . $colorText . ";}";
+$colorText = (isset($_SESSION["darkmode"])) ? (($_SESSION["darkmode"]) ? "white" : "black") : "black";
+$colorBackground = (isset($_SESSION["darkmode"])) ? (($_SESSION["darkmode"]) ? "black" : "white") : "white";
+$colorString = "body { background-color:" . $colorBackground . "; color:" . $colorText . ";}";
 
 $colorSwitch = '
 function colorGrab(c) {
