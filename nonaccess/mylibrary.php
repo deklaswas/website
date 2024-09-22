@@ -1,5 +1,5 @@
 <?php
-$colorText = ($_SESSION["darkmode"]) ? ("white") : ("black");
+$colorText = (isset($_SESSION["darkmode"])) ? (($_SESSION["darkmode"]) ? ("white") : ("black")) : ("black");
 $colorBackground = ($_SESSION["darkmode"]) ? ("black") : ("white");
 $colorString = "body { background-color:" . (($_SESSION["darkmode"]) ? ("black") : ("white")) . "; color:" . $colorText . ";}";
 
