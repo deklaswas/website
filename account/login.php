@@ -82,7 +82,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION["avatar"] = $userRow["avatar"];
         $_SESSION["namecolor"] = $userRow["namecolor"];
         $_SESSION["darkmode"] = ($userRow["invert"] == "1");
-        header('Location: http://www.deklaswas.com/account/myaccount.php');
+        header('Location: myaccount.php');
         die();
       }
     }

@@ -1,3 +1,8 @@
+<?php
+session_start();
+include '../nonaccess/mylibrary.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,14 +11,14 @@
     <title>DEKLASWAS.COM</title>
     <style>
       .boxgame {
-		height:140px;	width: 700px;
-  		margin-left: 50px;	margin-bottom: 20px;
+		    height:140px;	width: 700px;
+  		  margin-left: 50px;	margin-bottom: 20px;
         
         font-family:arial;
         font-size:14px;
         
- 		border-style: solid;
-  		border-width: 4px;
+ 		    border-style: solid;
+  		  border-width: 4px;
         box-shadow:5px 10px dimgrey;
        }
        
@@ -25,10 +30,15 @@
        h4 {
        	font-family:verdana;
        }
+
+       <?php echo $navString; ?>
+
     </style>
 </head>
 
 <body>
+  <?php echo $navString; ?>
+
   <marquee height="200" scrollamount="15">
   	<h1 style="font-size:95px">DEKLASWAS.COM</h1>
   </marquee>

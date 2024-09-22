@@ -1,22 +1,19 @@
 <?php
 // Start the session
 session_start();
+include '../nonaccess/mylibrary.php';
 
-//get library
-include '/var/www/mylibrary.php';
 $db = new PDO('sqlite:sqluserbase.db');
-
 
 $userid = -1;
 if ($_GET['id'] == null) {
-  header('Location: /account/login.php');
+  header('Location: login.php');
   die();
 } elseif ( !ctype_digit($_GET['id']) ) {
-  header('Location: /account/login.php');
+  header('Location: login.php');
   die();
-} else {
+} else { //legitamate ID
   $userid = $_GET['id'];
-
   $rowCount = 0;
   try {
     $sql = "SELECT COUNT(1) FROM users;";
@@ -25,29 +22,9 @@ if ($_GET['id'] == null) {
   } catch(PDOException $e) {
     echo $sql . "<br>" . $e->getMessage();
   }
-  if ($userid >= $rowCount ) header('Location: /account/user.php/?id=0');
+  if ($userid >= $rowCount ) header('Location: ?id=0');
 }
-
-
 ?>
-
-<script type="module">
-export function colorGrab(c) {
-  switch ( String(c) ) {
-    case "0": return "black";     // user
-    case "1": return "white";     //
-    case "2": return "red";       // playtester
-    case "3": return "blue";      // verified
-    case "4": return "lime";      //
-    case "5": return "cyan";      //
-    case "6": return "magenta";   // moderator
-    case "7": return "yellow";    //
-    case "8": return "sienna";    // poopy
-    case "9": return "green";     // owner
-
-    case "?": return colorGrab(Math.floor(Math.random()*10).toString()); // wildcard
-  }
-};</script>
 
 
 <!DOCTYPE HTML>  
@@ -131,16 +108,12 @@ for ($i = 0; $i < count($avatar); $i++) {
     $avatar[$i][$j] = substr($avatarString, $i + $j*8,1);
   }
 }
-
-
-
-
 ?>
 
 
 <div style="margin: auto; width: 60%;">
   <!-- triangle links to go to neighboring accounts -->
-  <a href= <?php echo "/account/user.php/?id=" . ( ($userid!=0)? ($userid-1) : ($rowCount-1)); ?>  > <div class="triangle-left"></div> </a>
+  <a href= <?php echo "?id=" . ( ($userid!=0)? ($userid-1) : ($rowCount-1)); ?>  > <div class="triangle-left"></div> </a>
 
   <!-- profile display -->
   <div class="wrapper">
@@ -156,13 +129,13 @@ for ($i = 0; $i < count($avatar); $i++) {
   </div>
 
   <!-- triangle links to go to neighboring accounts -->
-  <a href= <?php echo "/account/user.php/?id=" . ($userid+1); ?>  > <div class="triangle-right"></div> </a>
+  <a href= <?php echo "?id=" . ($userid+1); ?>  > <div class="triangle-right"></div> </a>
 </div>
 
 <p style="text-align: center;">
-  <a href="/account/userboard.php">Go to userboard</a>
+  <a href="../userboard.php">Go to userboard</a>
   |
-  <a href="/account/myaccount.php">Go to my account</a>
+  <a href="../myaccount.php">Go to my account</a>
 </p>
 
 <script>
@@ -172,23 +145,11 @@ for ($i = 0; $i < count($avatar); $i++) {
 
   //get avatar from php
   var avatar = <?php echo json_encode($avatar);?> ;
+
   //DETERMINE COLORSZ
   <?php echo $colorSwitch ?>
 
-  function roleGrab(c) {
-    switch ( String(c) ) {
-      case "8": return "Poopy";       // poopy
-      case "0": return "User";        // user
-      case "3": return "Certified";   // certified
-      case "2": return "Playtester";  // playtester
-      case "6": return "Moderator";   // moderator
-      case "9": return "Owner";       // owner
-      case "1": return "white";       //
-      case "4": return "lime";        //
-      case "5": return "cyan";        //
-      case "7": return "yellow";      //
-    }
-  }
+  <?php echo $roleSwitch ?>
 
   //drawing the canvas itself
   function drawAvatar(contextDraw,sizeo) {

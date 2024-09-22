@@ -9,8 +9,10 @@ include '../nonaccess/mylibrary.php';
 <head>
     <style>
       <?php echo $colorString; ?>
+      <?php echo $navString; ?>
         .wrapper {
             margin: auto;
+            margin-top: 80px;
             padding: 30px;
             
             width: 50%;
@@ -21,26 +23,17 @@ include '../nonaccess/mylibrary.php';
             padding: 50px;
         }
 
-        li a {
-          display:block;
-          color:white;
-          text-align:center;
-          padding: 14px 16px;
-          text-decoration:none;
-        }
+        
     </style>
 </head>
 
 <body>
 
+
   <!--nav bar-->
-  <ul style=
-  "list-style-type:none; margin:0; padding:0; background-color: #dddddd;"
-  >
-    <li style="float:left;"><a href="/">Home</a></li>
-    <li style="float:left"><a href="/account/userboard.php">Users</a></li>
-    <li style="float:right"><a href="/account/login.php">Login</a></li>
-  </ul>
+  <?php echo $navBar; ?>
+
+
 
   <?php
   $db = new PDO('sqlite:sqluserbase.db');
@@ -94,8 +87,7 @@ include '../nonaccess/mylibrary.php';
     <?php echo $colorSwitch ?>
 
     //drawing the canvas itself
-    function drawAvatar(contextDraw,avatar) {
-      sizeo = 10;
+    function drawAvatar(contextDraw,avatar, sizeo = 10) {
       var valo = "";
       for (let i = 0; i < 8; i++) {
         for (let j = 0; j < 8; j++) {
@@ -114,10 +106,9 @@ include '../nonaccess/mylibrary.php';
 
       
       $borderColor = colorGrab( userTable[i].color );
-      if ($borderColor == "black" && <?php echo ($_SESSION["darkmode"] == true)? "true" : "false" ; ?> ) $borderColor = "white";
+      if ($borderColor == "black" && <?php echo ($darkMode)? "true" : "false" ; ?> ) $borderColor = "white";
       pc.setAttribute("style", pc.getAttribute("style") + $borderColor + ";");
     }
-
   </script>
 </body>
 </html>

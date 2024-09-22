@@ -3,11 +3,11 @@
 session_start();
 
 if ( !(isset($_SESSION["username"])) ) {
-  header('Location: http://www.deklaswas.com/account/login.php');
+  header('Location: login.php');
   die();
 }
 
-include '/var/www/mylibrary.php';
+include '../nonaccess/mylibrary.php';
 
 ?>
 
@@ -153,9 +153,9 @@ function test_input($data) {
     <br>
     <br>
 
-    <a href = "https://www.deklaswas.com/account/edit/avatar.php" > Click here to edit avatar </a><br>
-    <a href = "https://www.deklaswas.com/account/edit/aboutme.php" > Click here to edit status </a><br>
-    <a href = "https://www.deklaswas.com/account/edit/settings.php" > Click here to edit settings </a><br>
+    <a href = "edit/avatar.php" > Click here to edit avatar </a><br>
+    <a href = "edit/aboutme.php" > Click here to edit status </a><br>
+    <a href = "edit/settings.php" > Click here to edit settings </a><br>
     <br>
     <a id="accountLink"> Link to your user page </a>
 
@@ -213,7 +213,7 @@ function test_input($data) {
   roleColor.innerHTML = roleGrab(<?php echo $row["namecolor"] ?>) ;
 
   const accountLink = document.getElementById("accountLink");
-  accountLink.setAttribute("href", "https://www.deklaswas.com/account/user.php/?id=" + <?php echo json_encode($idNum);?> );
+  accountLink.setAttribute("href", "user.php/?id=" + <?php echo json_encode($idNum);?> );
 
   const ageString = document.getElementById("ageString");
 
