@@ -19,9 +19,9 @@ if ($_GET['id'] == null) {
 
   $rowCount = 0
   try {
-    $sql = "SELECT COUNT(1) FROM users;";
-    $stringTest = $db->query($sql);
-    $rowCount = $stringTest->fetch(PDO::FETCH_ASSOC);
+    //$sql = "SELECT COUNT(1) FROM users;";
+    //$stringTest = $db->query($sql);
+    //$rowCount = $stringTest->fetch(PDO::FETCH_ASSOC);
   } catch(PDOException $e) {
     echo $sql . "<br>" . $e->getMessage();
   }
