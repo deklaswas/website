@@ -27,7 +27,7 @@ include '/var/www/mylibrary.php';
 
   <!--nav bar-->
   <ul style=
-  "list-style-type:none; margin:0; padding:0; background-color: #dddddd;"
+  "list-style-type:none; margin:0; padding:8px; background-color: #dddddd;"
   >
     <li style="float:left;"><a href="/">Home</a></li>
     <li style="float:left"><a href="/accounts/userboard.php">Users</a></li>
