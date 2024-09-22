@@ -1,14 +1,10 @@
 <?php
 session_start();
-
 include '/var/www/mylibrary.php';
-
 ?>
 
 <!DOCTYPE HTML>  
 <html>
-
-
 
 <head>
     <style>
@@ -26,89 +22,94 @@ include '/var/www/mylibrary.php';
         }
     </style>
 </head>
+
 <body>
 
+  <!--nav bar-->
+  <ul style=
+  "list-style-type:none; margin:0; padding:0; background-color: #dddddd;"
+  >
+    <li style="float:left;"><a href="/">Home</a></li>
+    <li style="float:left"><a href="/accounts/userboard.php">Users</a></li>
+    <li style="float:right"><a href="/accounts/login.php">Login</a></li>
+  </ul>
 
-<?php
+  <?php
+  $db = new PDO('sqlite:sqluserbase.db');
 
-$db = new PDO('sqlite:sqluserbase.db');
+  echo '<div class="wrapper">';
 
-echo '<div class="wrapper">';
+  $userTable = [];
+  $rowid = -1;
 
-$userTable = [];
-$rowid = -1;
+  try {
+    $sql = "SELECT * FROM users;";
+    foreach ($db->query($sql) as $row) {
+      $rowid++;
+      $nameString = $row["name"];
+      $avatarString =  $row["avatar"];
+      $colorString =  $row["namecolor"];
+      if (!is_string($nameString)) {
+        continue;
+      }
 
-try {
-  $sql = "SELECT * FROM users;";
-  foreach ($db->query($sql) as $row) {
-    $rowid++;
-    $nameString = $row["name"];
-    $avatarString =  $row["avatar"];
-    $colorString =  $row["namecolor"];
-    if (!is_string($nameString)) {
-      continue;
+      $profileData = array(
+          "name" => $nameString,
+          "avatar" => $avatarString,
+          "color" => $colorString,
+      );
+      $userTable[$rowid] = $profileData;
+
+      echo '
+      <a href="/account/user.php/?id=' . $rowid . '" style="text-decoration:none">
+      <canvas 
+        id="profileCanvas' . $nameString . '"
+        width="80"
+        height="80"
+        style="display: inline-block; margin: 9px; border:2px solid "
+        title=" ' . $nameString . ' ">
+      </canvas>
+      </a>';
     }
-
-    $profileData = array(
-        "name" => $nameString,
-        "avatar" => $avatarString,
-        "color" => $colorString,
-    );
-    $userTable[$rowid] = $profileData;
-
-    echo '
-    <a href="https://www.deklaswas.com/account/user.php/?id=' . $rowid . '" style="text-decoration:none">
-     <canvas 
-       id="profileCanvas' . $nameString . '"
-       width="80"
-       height="80"
-       style="display: inline-block; margin: 9px; border:2px solid "
-       title=" ' . $nameString . ' ">
-     </canvas>
-    </a>';
+  } catch(PDOException $e) {
+    echo $sql . "<br>" . $e->getMessage();
   }
-} catch(PDOException $e) {
-  echo $sql . "<br>" . $e->getMessage();
-}
+  echo '</div>';
+  ?>
 
-echo '</div>';
-?>
 
-<script>
-  const txt = '<?php echo json_encode($userTable); ?>'
-  var userTable = JSON.parse( txt )
+  <script>
+    const txt = '<?php echo json_encode($userTable); ?>'
+    var userTable = JSON.parse( txt )
 
-  //DETERMINE COLORSZ
-  <?php echo $colorSwitch ?>
+    //DETERMINE COLORSZ
+    <?php echo $colorSwitch ?>
 
-  //drawing the canvas itself
-  function drawAvatar(contextDraw,avatar) {
-    sizeo = 10;
-    var valo = "";
-    for (let i = 0; i < 8; i++) {
-      for (let j = 0; j < 8; j++) {
-        contextDraw.fillStyle = colorGrab(avatar[i + j*8]);
-        contextDraw.fillRect(i*sizeo, j*sizeo, sizeo, sizeo);
+    //drawing the canvas itself
+    function drawAvatar(contextDraw,avatar) {
+      sizeo = 10;
+      var valo = "";
+      for (let i = 0; i < 8; i++) {
+        for (let j = 0; j < 8; j++) {
+          contextDraw.fillStyle = colorGrab(avatar[i + j*8]);
+          contextDraw.fillRect(i*sizeo, j*sizeo, sizeo, sizeo);
+        }
       }
     }
-  }
 
-  for (var i = 0; i < userTable.length ; i++) {
-    //canvas for avatar
-    const pc = document.getElementById("profileCanvas" + userTable[i].name  );
-    const pctx = pc.getContext("2d");
+    for (var i = 0; i < userTable.length ; i++) {
+      //canvas for avatar
+      const pc = document.getElementById("profileCanvas" + userTable[i].name  );
+      const pctx = pc.getContext("2d");
 
-    drawAvatar(pctx,userTable[i].avatar);
+      drawAvatar(pctx,userTable[i].avatar);
 
-    
-    $borderColor = colorGrab( userTable[i].color );
-    if ($borderColor == "black" && <?php echo ($_SESSION["darkmode"] == true)? "true" : "false" ; ?> ) $borderColor = "white";
-    pc.setAttribute("style", pc.getAttribute("style") + $borderColor + ";");
-  }
+      
+      $borderColor = colorGrab( userTable[i].color );
+      if ($borderColor == "black" && <?php echo ($_SESSION["darkmode"] == true)? "true" : "false" ; ?> ) $borderColor = "white";
+      pc.setAttribute("style", pc.getAttribute("style") + $borderColor + ";");
+    }
 
-</script>
-
-
-
+  </script>
 </body>
 </html>
