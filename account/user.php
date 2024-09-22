@@ -140,7 +140,7 @@ for ($i = 0; $i < count($avatar); $i++) {
 
 <div style="margin: auto; width: 60%;">
   <!-- triangle links to go to neighboring accounts -->
-  <a href= <?php echo "./user.php/?id=" . ( ($userid!=0)? ($userid-1) : ($rowCount-1)); ?>  > <div class="triangle-left"></div> </a>
+  <a href= <?php echo "/account/user.php/?id=" . ( ($userid!=0)? ($userid-1) : ($rowCount-1)); ?>  > <div class="triangle-left"></div> </a>
 
   <!-- profile display -->
   <div class="wrapper">
@@ -156,7 +156,7 @@ for ($i = 0; $i < count($avatar); $i++) {
   </div>
 
   <!-- triangle links to go to neighboring accounts -->
-  <a href= <?php echo "./user.php/?id=" . ($userid+1); ?>  > <div class="triangle-right"></div> </a>
+  <a href= <?php echo "/account/user.php/?id=" . ($userid+1); ?>  > <div class="triangle-right"></div> </a>
 </div>
 
 <p style="text-align: center;">
