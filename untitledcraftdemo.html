@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- Custom PreHead code is injected here -->
-
-
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -11,19 +8,16 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta charset="utf-8" />
 
-    <!-- Builtin injector for disabling cache -->
+    <!-- injector for disabling cache -->
     <meta http-equiv="pragma" content="no-cache" />
-
-    <!-- Set the title bar of the page -->
-    <title>Created with GameMaker</title>
+    
+    <title>Untitledcraft Indev</title>
 
     <!-- Custom PreStyle code is injected here -->
 
-
-    <!-- Set the background colour of the document -->
     <style>
         body {
-            background: #0;
+            background: #FFFFFF;
             color: #000000;
             margin: 0px;
             padding: 0px;
@@ -50,7 +44,7 @@
             height: 100%;
         }
 
-        /* Custom Runner Styles */
+        /* maybe dont need any of this */
         div.gm4html5_div_class {
             margin: 0px;
             padding: 0px;
@@ -78,21 +72,10 @@
         div.gm4html5_login_header {
             text-align: center;
         }
-
         /* END - Custom Runner Styles */
     </style>
-
-    <!-- Custom PostStyle code is injected here -->
-
-
-    <!-- Builtin injector for injecting flurry analytics code -->
-
 </head>
 
-<!-- Custom PostHead code is injected here -->
-
-
-<!-- Custom PreBody code is injected here -->
 
 
 <body>
@@ -104,7 +87,7 @@
         <!-- Create the canvas element the game draws to -->
         <canvas id="canvas" width="500" height="500"
             style="position: absolute; top: 50%; left: 50%; bottom: -50%; right: -50%; transform: translate(-50%, -50%);">
-            <p>Your browser doesn't support HTML5 canvas.</p>
+            <p>your browser doesn't support HTML5 canvas.</p>
         </canvas>
     </div>
 
@@ -120,20 +103,24 @@
 
     <h1 style="text-indent:30px;">Untitled Demo</h1>
 
+    <!--
     <img src = "https://cdn.discordapp.com/emojis/1191306899040239616.webp?size=32&quality=lossless" style="margin-left:40px;float:left;">
     <h2 style="text-indent:20px;color:Black;">The Fun Update!</h2>
+    -->
+
+    
+    <img src = "https://cdn.discordapp.com/emojis/1191306900617314334.webp?size=32&quality=lossless" style="margin-left:40px;float:left;">
+    <h2 style="text-indent:20px;color:Black;">The Surprise Multiplayer Update!</h2>
+    
 
     <div style="text-indent:50px;">
         <h3>Whats new?</h3>
         <ul style="color:Black;">
-            <li> THe fun zone can NO LONGER be cheated! Fun is MANDATORY </li>
-            <li> Nosey now talks to you more! </li>
-            <li> Nosey can also now throw coins! </li>
-            <li> New "blue is lava"! </li>
-            <li> Added new structure to blue bridge! </li>
+            <li> Added a dedicated (rudimentary) multiplayer server. </li>
+            <li> Devlog is now contained in a scrollbox so the page is not crazy long </li>
         </ul>
         <h3>Whats old?</h3>
-        <ul>
+        <ul style="overflow: auto; height:300px; width:600px; border: outset 5px; margin-left:30px; text-indent:0px;">
             <li> Added 2 new challenges- the floor is lava! </li>
             <li> The monkeys from April FOols are all GONE (except for 1 of them, he can stay) </li>
             <li> Game no longer crashes trying to load empty 'chunk' </li>
