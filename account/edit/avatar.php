@@ -7,7 +7,7 @@ if ( !(isset($_SESSION["username"])) ) {
   die();
 }
 
-include '../nonaccess/mylibrary.php';
+include '../../nonaccess/mylibrary.php';
 
 ?>
 
