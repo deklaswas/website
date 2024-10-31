@@ -52,7 +52,7 @@ include '../nonaccess/mylibrary.php';
 
   <h3>Current games:</h3>
   
-  <a href="https://deklaswas.itch.io/untitledcraft" style="text-decoration:none">
+  <a href="https://deklaswas.com/amazingpooprpg" style="text-decoration:none">
       <table class = "boxgame" style = "border-color: DodgerBlue ; background-color: DarkOrange ; color:black;"> 
         <td>
           <img src="images/amazingpooprpg.png">
