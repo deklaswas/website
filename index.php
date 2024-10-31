@@ -46,14 +46,14 @@ include '../nonaccess/mylibrary.php';
   <h2>hello! welcome to my website!</h2>
   I am a computer science student who likes to make game-projects in his free time. I do not wish to make games as a career but they are just fun to make for my hobby.
 
-  <br><br>NEW: Check out Untitledcraft, my most recent game. Expect a 'story mode' to be published soon with an achievement system and npc dialogue.
+  <br><br>NEW: Check out 'Amazing Poop Rpg', a mostly-unfinished gag RPG.
 
   <!--I make video games and 'hang out' with my buddies...-->
 
   <h3>Current games:</h3>
   
   <a href="https://deklaswas.itch.io/untitledcraft" style="text-decoration:none">
-      <table class = "boxgame" style = "border-color: deepskyblue ; background-color: orange ; color:black;"> 
+      <table class = "boxgame" style = "border-color: DodgerBlue ; background-color: DarkOrange ; color:black;"> 
         <td>
           <img src="images/amazingpooprpg.png">
         </td>
