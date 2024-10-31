@@ -52,6 +52,18 @@ include '../nonaccess/mylibrary.php';
 
   <h3>Current games:</h3>
   
+  <a href="https://deklaswas.itch.io/untitledcraft" style="text-decoration:none">
+      <table class = "boxgame" style = "border-color: deepskyblue ; background-color: orange ; color:black;"> 
+        <td>
+          <img src="images/amazingpooprpg.png">
+        </td>
+        <td>
+          <h4><div style="font-size:20px">Amazing Poop Rpg 2024 [GOTY Edition]</div><i>(2023)</i> Zip Game (playable on web)</h4>
+          <p>Spiteful joke-rpg mainly composed in little under a week. Mostly unfinished after first 5 minutes of gameplay.</p> 
+        </td> 
+      </table> 
+    </a>
+
     <a href="https://deklaswas.itch.io/untitledcraft" style="text-decoration:none">
       <table class = "boxgame" style = "border-color:yellow; background-color: deepskyblue ; color:red;"> 
         <td>
