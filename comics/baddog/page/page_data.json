@@ -1,0 +1,31 @@
+{
+    "1": {
+        "image": "cover/title.png",
+        "alt": "BAD DOG"
+    },
+    "2": {
+        "image": "cover/credits.png",
+        "alt": "by deklaswas"
+    },
+    "3": {
+        "image": "cover/credits.png",
+        "alt": "by deklaswas"
+    },
+    "4": {
+        "image": "ch1/cover.png",
+        "alt": "CHAPTER ONE: MY SECRET BATTLE WITH PRIMER AGENT (AND: HOW FERTILIZER MAKES GREAT BOMBS)"
+    },
+
+
+
+
+
+    "400": {
+        "image": "ch2/cover.png",
+        "alt": "CHAPTER TWO: LOVE (AND: THE ESSENCE OF BAD)"
+    },
+    "500": {
+        "image": "ch3/cover.png",
+        "alt": "CHAPTER TWO: BAD FOREVER (AND: WHY VILLAINS NEVER WIN)"
+    }
+}

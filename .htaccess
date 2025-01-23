@@ -1,0 +1,8 @@
+RewriteEngine On
+
+#pagination for comics
+RewriteRule ^comics/baddog/page/([0-9]+)$ comics/baddog/page/index.php?page=$1 [L,QSA]
+
+
+#redirect 404 errors
+ErrorDocument 404 /shitworld.html
