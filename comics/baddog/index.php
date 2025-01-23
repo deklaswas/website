@@ -1,3 +1,10 @@
+<?php
+
+  $jsonData = file_get_contents('page/page_data.json');
+  $comicData = json_decode($jsonData, true);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,6 +21,7 @@
         height: 100%;
         margin: 0;
         padding: 0;
+        overflow: hidden;
       }
 
       #description {
@@ -28,7 +36,7 @@
         background: #000;
 
         justify-content: center;
-        font-family: arial;
+        font-family: verdana;
       }
 
       h1 {
@@ -46,15 +54,20 @@
 
 <body>
 
+  <img src="bg_villain.png" style="position:absolute">
+
   <div id="description">
     <center>
       <marquee behavior="scroll" scrollamount="15" hspace="0">
-        <h1>BAD DOG - BAD DOG - BAD DOG - BAD DOG - BAD DOG - </h1>
+        <h1>BAD DOG - BAD DOG - BAD DOG - BAD DOG - BAD DOG</h1>
       </marquee>
-      <h2>VILLAINS DO COLLEGE</h2>
+      <h2>THE WORK IN PROGRESS COMIC</h2>
     </center>
 
-    <p>A Work in progress comic</p>
+    <div style="margin: 50px">
+      <p>BAD DOG features the exploits of dog-themed villainry in comic format (with <?php echo count($comicData); ?> pages and counting).</p>
+      <p>It is recommended to enter fullscreen mode (Press F11) to see each page in its entirety</p>
+    </div>
 
   </div>
 
