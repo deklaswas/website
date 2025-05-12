@@ -67,6 +67,8 @@
     <div style="margin: 50px">
       <p>BAD DOG features the exploits of dog-themed villainry in comic format (with <?php echo count($comicData); ?> pages and counting).</p>
       <p>It is recommended to enter fullscreen mode (Press F11) to see each page in its entirety</p>
+
+      <p>Click <a href="/page">here</a> to begin reading from page 1</p>
     </div>
 
   </div>
