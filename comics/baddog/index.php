@@ -71,6 +71,7 @@
 
   </div>
 
+  <img src="bg_hero.png" style="position:absolute">
 
 </body>
 </html>
