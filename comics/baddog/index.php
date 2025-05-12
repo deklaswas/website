@@ -61,7 +61,7 @@
       <marquee behavior="scroll" scrollamount="15" hspace="0">
         <h1>BAD DOG - BAD DOG - BAD DOG - BAD DOG - BAD DOG</h1>
       </marquee>
-      <h2>THE WORK IN PROGRESS COMIC</h2>
+      <h2>WORK IN PROGRESS COMIC</h2>
     </center>
 
     <div style="margin: 50px">
